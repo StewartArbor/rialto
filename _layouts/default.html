@@ -10,11 +10,23 @@
 
 <div class="top">
   <strong>Rialto</strong>
-  <nav class="lang">
-    <a href="/en/">EN</a>
-    <a href="/ru/">RU</a>
-    <a href="/kz/">KZ</a>
-  </nav>
+<nav class="lang">
+  <a href="/en/"
+     class="{% if page.lang == 'en' %}active{% endif %}">
+    EN
+  </a>
+
+  <a href="/ru/"
+     class="{% if page.lang == 'ru' %}active{% endif %}">
+    RU
+  </a>
+
+  <a href="/kz/"
+     class="{% if page.lang == 'kk' %}active{% endif %}">
+    KZ
+  </a>
+</nav>
+
 </div>
 
 {{ content }}
