@@ -1,79 +1,27 @@
-<!DOCTYPE html>
-<html lang="kk">
-<head>
-  <meta charset="UTF-8" />
-  <title>Тауарлар. Rialto</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background: #f2f2f2;
-  color: #222;
-}
+---
+layout: default
+lang: kk
+title: Rialto
+---
 
-.header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+<div class="wrap">
+  <h1>Rialto</h1>
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 12px;
-  padding: 16px;
-}
+  <p class="desc">
+    Тауарлар мен қызметтердің тәуелсіз индексі.
+  </p>
 
-.card {
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,.08);
-  border-radius: 6px;
-  overflow: hidden;
-}
+  <div class="grid">
+    <div class="card">
+      <a href="/kz/items/">Тауарлар</a>
+    </div>
 
-.card img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  background: #eee;
-}
+    <div class="card">
+      <a href="/kz/services/">Қызметтер</a>
+    </div>
 
-.card .info {
-  padding: 10px;
-}
-
-.price {
-  color: #ff3d00;
-  font-weight: 700;
-}
-</style>
-
-</head>
-<body>
-
-<nav class="lang">
-  <a href="/en/items/">EN</a>
-  <a href="/ru/items/">RU</a>
-  <a href="/kz/items/">KZ</a>
-</nav>
-
-<h1>Тауарлар</h1>
-
-<p>
-Тауарлар каталогы
-</p>
-
-<ul>
-  <li><a href="/kz/items/electronics.html">Электроника</a></li>
-  <li><a href="/kz/items/phones.html">Телефондар</a></li>
-  <li><a href="/kz/items/home.html">Үйге арналған</a></li>
-</ul>
-
-<p><a href="/kz/">← Басты бет</a></p>
-
-</body>
-</html>
+    <div class="card">
+      <a href="/kz/disclaimer.html">Ескерту</a>
+    </div>
+  </div>
+</div>
