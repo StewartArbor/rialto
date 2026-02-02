@@ -8,7 +8,13 @@
 </head>
   <footer class="footer">
   <a href="https://t.me/rialtokz" target="_blank" rel="noopener">
-    Rialto: Telegram
+{% if page.lang == 'ru' %}
+  Присоединяйтесь к нашему Telegram
+{% elsif page.lang == 'kk' %}
+  Telegram чатына қосылыңыз
+{% else %}
+  Join our Telegram chat
+{% endif %}
   </a>
 </footer>
 
