@@ -31,8 +31,15 @@ body {
 .lang a {
   margin-left: 12px;
   font-size: 13px;
-  color: var(--muted);
   text-decoration: none;
+  color: #777;
+}
+
+.lang a.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom: 2px solid #ff3d00;
+  padding-bottom: 2px;
 }
 
 .container {
