@@ -1,23 +1,39 @@
 - id: headphones-01
   lang: en
+  category: electronics
   title: Wireless Headphones
   desc: Bluetooth 5.3, noise cancelling
   price: "₸ 12 990"
   image: https://via.placeholder.com/300
   link: https://example.com/affiliate
+  hot: true
 
 - id: headphones-01
   lang: ru
+  category: electronics
   title: Беспроводные наушники
   desc: Bluetooth 5.3, шумоподавление
   price: "₸ 12 990"
   image: https://via.placeholder.com/300
   link: https://example.com/affiliate
+  hot: true
 
-- id: headphones-01
-  lang: kz
-  title: Сымсыз құлаққаптар
-  desc: Bluetooth 5.3, шуды басу
-  price: "₸ 12 990"
+- id: phone-01
+  lang: en
+  category: phones
+  title: Smartphone X
+  desc: 6.5″ OLED, 128GB
+  price: "₸ 189 000"
   image: https://via.placeholder.com/300
   link: https://example.com/affiliate
+  hot: false
+
+- id: repair-01
+  lang: en
+  category: services
+  title: Phone Repair
+  desc: Screen and battery replacement
+  price: "from ₸ 5 000"
+  image: https://via.placeholder.com/300
+  link: https://oy.kz/service
+  hot: false
