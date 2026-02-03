@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="wrap">
+  <div class="grid">
+    {% for item in site.data.items %}
+      {% if item.lang == page.lang %}
+        <div class="card">
+          <img src="{{ item.image }}">
+          <div class="info">
+            <div class="title">{{ item.title }}</div>
+            <div class="desc">{{ item.desc }}</div>
+            <div class="price">{{ item.price }}</div>
+          </div>
+          <a class="action" href="{{ item.link }}">Buy</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
