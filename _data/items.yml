@@ -1,0 +1,23 @@
+- id: headphones-01
+  lang: en
+  title: Wireless Headphones
+  desc: Bluetooth 5.3, noise cancelling
+  price: "₸ 12 990"
+  image: https://via.placeholder.com/300
+  link: https://example.com/affiliate
+
+- id: headphones-01
+  lang: ru
+  title: Беспроводные наушники
+  desc: Bluetooth 5.3, шумоподавление
+  price: "₸ 12 990"
+  image: https://via.placeholder.com/300
+  link: https://example.com/affiliate
+
+- id: headphones-01
+  lang: kz
+  title: Сымсыз құлаққаптар
+  desc: Bluetooth 5.3, шуды басу
+  price: "₸ 12 990"
+  image: https://via.placeholder.com/300
+  link: https://example.com/affiliate
