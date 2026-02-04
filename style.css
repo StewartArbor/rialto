@@ -285,4 +285,120 @@ main {
   }
 
 }
+/* ===== AliExpress Theme ===== */
+
+:root {
+  --ae-red: #ff4747;
+  --ae-orange: #ff6a00;
+  --ae-yellow: #ffd200;
+  --ae-bg: #fff6f0;
+}
+
+
+/* Page Background */
+
+body {
+  background: linear-gradient(#fff6f0, #ffffff);
+}
+
+
+/* Header */
+
+.top {
+  background: linear-gradient(90deg, #ff4747, #ff6a00);
+  color: #fff;
+}
+
+.top strong {
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+
+/* Nav */
+
+.main-nav a,
+.lang-switch a {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.main-nav a:hover,
+.lang-switch a:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.15);
+}
+
+.lang-switch a.active {
+  background: rgba(255,255,255,0.3);
+}
+
+
+/* Headings */
+
+h1, h2 {
+  color: #c51616;
+}
+
+
+/* Coupon Cards */
+
+.coupon {
+  border: 2px solid #ffebe2;
+  background: linear-gradient(#ffffff, #fff9f6);
+}
+
+.coupon:hover {
+  border-color: var(--ae-orange);
+  transform: translateY(-2px);
+}
+
+
+/* Code Box */
+
+.coupon p strong {
+  color: #ff4747;
+}
+
+.coupon p {
+  background: #fff2eb;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+
+/* Buttons */
+
+.coupon a {
+  background: linear-gradient(135deg, #ff4747, #ff6a00);
+  box-shadow: 0 3px 0 #c54000;
+}
+
+.coupon a:hover {
+  filter: brightness(1.1);
+}
+
+
+/* Footer */
+
+.footer {
+  background: #c51616;
+  color: #fff;
+}
+
+.footer a {
+  color: #ffd200;
+}
+
+
+/* Highlight Badge (optional later) */
+
+.badge-hot {
+  background: #ffd200;
+  color: #c51616;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 700;
+}
 
