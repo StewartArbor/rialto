@@ -18,30 +18,35 @@
 <div class="top">
   <strong>Rialto</strong>
 
-  <nav class="lang">
+  <nav class="lang-switch">
 
-    <a href="/en/"
-       class="{% if page.lang == 'en' %}active{% endif %}">
-      EN
-    </a>
+  <a href="/en/"
+     class="{% if page.lang == 'en' %}active{% endif %}">
+    EN
+  </a>
 
-    <a href="/ru/"
-       class="{% if page.lang == 'ru' %}active{% endif %}">
-      RU
-    </a>
+  <a href="/ru/"
+     class="{% if page.lang == 'ru' %}active{% endif %}">
+    RU
+  </a>
 
-    <a href="/kz/"
-       class="{% if page.lang == 'kk' %}active{% endif %}">
-      KZ
-    </a>
+  <a href="/kz/"
+     class="{% if page.lang == 'kk' %}active{% endif %}">
+    KZ
+  </a>
 
-    <a href="/">Home</a>
-    <a href="/en/aliexpress.html">AliExpress</a>
-    <a href="/en/coupons.html">Coupons</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
+</nav>
 
-  </nav>
+<nav class="main-nav">
+
+  <a href="/">Home</a>
+  <a href="/en/aliexpress.html">AliExpress</a>
+  <a href="/en/coupons.html">Coupons</a>
+  <a href="/about.html">About</a>
+  <a href="/contact.html">Contact</a>
+
+</nav>
+
 
   <input type="checkbox" id="themeToggle">
   <label for="themeToggle" class="theme-btn">🌙</label>
