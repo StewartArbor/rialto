@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
 <head>
+  <meta charset="UTF-8">
+
   <title>{{ page.title }} | Rialto Coupons</title>
 
-<meta name="description"
- content="Latest AliExpress coupons, promo codes, and shopping deals. Updated daily.">
+  <meta name="description"
+    content="Latest AliExpress coupons, promo codes, and shopping deals. Updated daily.">
 
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="/style.css">
 </head>
-  <footer class="footer">
+
+<body>
+
+<div class="top">
+  <strong>Rialto</strong>
+
+  <nav class="lang">
+
+    <a href="/en/"
+       class="{% if page.lang == 'en' %}active{% endif %}">
+      EN
+    </a>
+
+    <a href="/ru/"
+       class="{% if page.lang == 'ru' %}active{% endif %}">
+      RU
+    </a>
+
+    <a href="/kz/"
+       class="{% if page.lang == 'kk' %}active{% endif %}">
+      KZ
+    </a>
+
+    <a href="/">Home</a>
+    <a href="/en/aliexpress.html">AliExpress</a>
+    <a href="/en/coupons.html">Coupons</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+
+  </nav>
+
+  <input type="checkbox" id="themeToggle">
+  <label for="themeToggle" class="theme-btn">🌙</label>
+
+</div>
+
+
+<main>
+  {{ content }}
+</main>
+
+
+<footer class="footer">
+
   <a href="https://t.me/rialtokz" target="_blank" rel="noopener">
-{% if page.lang == 'ru' %}
-  Присоединяйтесь к нашему Telegram
-{% elsif page.lang == 'kk' %}
-  Telegram чатына қосылыңыз
-{% else %}
-  Join our Telegram chat
-{% endif %}
+
+    {% if page.lang == 'ru' %}
+      Присоединяйтесь к нашему Telegram
+    {% elsif page.lang == 'kk' %}
+      Telegram чатына қосылыңыз
+    {% else %}
+      Join our Telegram chat
+    {% endif %}
+
   </a>
+
 </footer>
 
+
 <script>
+
 const toggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 
@@ -35,41 +84,8 @@ toggle.onclick = () => {
   root.dataset.theme = next;
   localStorage.setItem('theme', next);
 };
+
 </script>
-
-
-<body>
-
-<div class="top">
-  <strong>Rialto</strong>
-<nav class="lang">
-  <a href="/en/"
-     class="{% if page.lang == 'en' %}active{% endif %}">
-    EN
-  </a>
-
-  <a href="/ru/"
-     class="{% if page.lang == 'ru' %}active{% endif %}">
-    RU
-  </a>
-
-  <a href="/kz/"
-     class="{% if page.lang == 'kk' %}active{% endif %}">
-    KZ
-  </a>
-  <a href="/">Home</a>
-  <a href="/en/aliexpress.html">AliExpress</a>
-  <a href="/en/coupons.html">Coupons</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
-</nav>
-
-<input type="checkbox" id="theme-toggle">
-<label for="theme-toggle" class="theme-btn">🌙</label>
-
-</div>
-
-{{ content }}
 
 </body>
 </html>
