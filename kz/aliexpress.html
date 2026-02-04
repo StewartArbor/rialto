@@ -1,0 +1,19 @@
+---
+layout: default
+title: AliExpress Coupons
+---
+
+<h1>AliExpress Coupons & Promo Codes</h1>
+
+<p>Updated AliExpress promo codes, discounts, and deals.</p>
+
+{% for item in site.data.items %}
+  {% if item.store == "aliexpress" %}
+    <div class="coupon">
+      <h3>{{ item.title }}</h3>
+      <p>Code: {{ item.code }}</p>
+      <p>Expires: {{ item.expiry }}</p>
+      <a href="{{ item.link }}" target="_blank">Activate Deal</a>
+    </div>
+  {% endif %}
+{% endfor %}
