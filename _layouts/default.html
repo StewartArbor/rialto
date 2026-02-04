@@ -20,17 +20,19 @@
 
   <nav class="lang-switch">
 
-  <a href="/en/"
+  {% assign current = page.url | split:'/' | last %}
+
+  <a href="/en/{{ current }}"
      class="{% if page.lang == 'en' %}active{% endif %}">
     EN
   </a>
 
-  <a href="/ru/"
+  <a href="/ru/{{ current }}"
      class="{% if page.lang == 'ru' %}active{% endif %}">
     RU
   </a>
 
-  <a href="/kz/"
+  <a href="/kz/{{ current }}"
      class="{% if page.lang == 'kk' %}active{% endif %}">
     KZ
   </a>
