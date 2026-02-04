@@ -21,21 +21,14 @@
   <nav class="lang-switch">
 
   {% assign current = page.url | split:'/' | last %}
+<nav class="lang-switch">
 
-  <a href="/en/{{ current }}"
-     class="{% if page.lang == 'en' %}active{% endif %}">
-    EN
-  </a>
+  <a href="https://rialto.kz/en/">EN</a>
+  <a href="https://rialto.kz/ru/">RU</a>
+  <a href="https://rialto.kz/kz/">KZ</a>
 
-  <a href="/ru/{{ current }}"
-     class="{% if page.lang == 'ru' %}active{% endif %}">
-    RU
-  </a>
+</nav>
 
-  <a href="/kz/{{ current }}"
-     class="{% if page.lang == 'kk' %}active{% endif %}">
-    KZ
-  </a>
 
 </nav>
 
