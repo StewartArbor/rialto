@@ -33,16 +33,38 @@ body {
 }
 
 
-/* Navigation */
+/* Language Switcher */
 
-nav.lang {
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  margin-right: 20px;
+}
+
+.lang-switch a {
+  background: #222;
+  color: #aaa;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.lang-switch a.active {
+  background: #ff6a00;
+  color: #fff;
+}
+
+
+/* Main Navigation */
+
+.main-nav {
   display: flex;
   gap: 14px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-nav.lang a {
+.main-nav a {
   color: #ddd;
   text-decoration: none;
   font-size: 14px;
@@ -50,15 +72,11 @@ nav.lang a {
   border-radius: 4px;
 }
 
-nav.lang a:hover {
+.main-nav a:hover {
   background: #333;
   color: #fff;
 }
 
-nav.lang a.active {
-  background: #ff6a00;
-  color: #fff;
-}
 
 
 /* Main Content */
