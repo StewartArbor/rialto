@@ -37,3 +37,12 @@
   image: https://via.placeholder.com/300
   link: https://oy.kz/service
   hot: false
+  
+- id: ali 
+  store: aliexpress
+  name: AliExpress
+  title: 10% Off Orders
+  code: SALE10
+  expires: 2026-02-20
+  link: https://example.com/YOUR-AFFILIATE-LINK
+
