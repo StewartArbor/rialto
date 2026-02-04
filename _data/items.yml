@@ -1,48 +1,220 @@
-- id: headphones-01
-  lang: en
-  category: electronics
-  title: Wireless Headphones
-  desc: Bluetooth 5.3, noise cancelling
-  price: "₸ 12 990"
-  image: https://via.placeholder.com/300
-  link: https://example.com/affiliate
-  hot: true
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
 
-- id: headphones-01
-  lang: ru
-  category: electronics
-  title: Беспроводные наушники
-  desc: Bluetooth 5.3, шумоподавление
-  price: "₸ 12 990"
-  image: https://via.placeholder.com/300
-  link: https://example.com/affiliate
-  hot: true
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
 
-- id: phone-01
-  lang: en
-  category: phones
-  title: Smartphone X
-  desc: 6.5″ OLED, 128GB
-  price: "₸ 189 000"
-  image: https://via.placeholder.com/300
-  link: https://example.com/affiliate
-  hot: false
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
 
-- id: repair-01
-  lang: en
-  category: services
-  title: Phone Repair
-  desc: Screen and battery replacement
-  price: "from ₸ 5 000"
-  image: https://via.placeholder.com/300
-  link: https://oy.kz/service
-  hot: false
-  
-- id: ali 
-  store: aliexpress
-  name: AliExpress
-  title: 10% Off Orders
-  code: SALE10
-  expires: 2026-02-20
-  link: https://example.com/YOUR-AFFILIATE-LINK
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
 
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
+- store: aliexpress
+  title: "$5 OFF Orders Over $30"
+  code: "AE5OFF"
+  expiry: "2026-02-28"
+  link: "https://s.click.aliexpress.com/e/_xxxxx"
+
+- store: aliexpress
+  title: "10% OFF Electronics"
+  code: "AE10"
+  expiry: "2026-03-10"
+  link: "https://s.click.aliexpress.com/e/_yyyyy"
