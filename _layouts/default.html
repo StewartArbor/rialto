@@ -16,33 +16,31 @@
 <body>
 
 <div class="top">
+
   <strong>Rialto</strong>
 
+
+  <!-- Language Switch -->
   <nav class="lang-switch">
-
-  {% assign current = page.url | split:'/' | last %}
-<nav class="lang-switch">
-
-  <a href="https://rialto.kz/en/">EN</a>
-  <a href="https://rialto.kz/ru/">RU</a>
-  <a href="https://rialto.kz/kz/">KZ</a>
-
-</nav>
+    <a href="https://rialto.kz/en/">EN</a>
+    <a href="https://rialto.kz/ru/">RU</a>
+    <a href="https://rialto.kz/kz/">KZ</a>
+  </nav>
 
 
-</nav>
+  <!-- Main Navigation -->
+  <nav class="main-nav">
 
-<nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/en/aliexpress.html">AliExpress</a>
+    <a href="/en/coupons.html">Coupons</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
 
-  <a href="/">Home</a>
-  <a href="/en/aliexpress.html">AliExpress</a>
-  <a href="/en/coupons.html">Coupons</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
-
-</nav>
+  </nav>
 
 
+  <!-- Theme Toggle -->
   <input type="checkbox" id="themeToggle">
   <label for="themeToggle" class="theme-btn">🌙</label>
 
@@ -79,11 +77,13 @@ const root = document.documentElement;
 const saved = localStorage.getItem('theme');
 if (saved) root.dataset.theme = saved;
 
-toggle.onclick = () => {
-  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = next;
-  localStorage.setItem('theme', next);
-};
+if (toggle) {
+  toggle.onclick = () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  };
+}
 
 </script>
 
