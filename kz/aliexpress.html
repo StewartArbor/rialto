@@ -1,11 +1,14 @@
 ---
 layout: default
-title: AliExpress Coupons
+lang: kk
+title: AliExpress Купондары
 ---
 
-<h1>AliExpress Coupons & Promo Codes</h1>
+<h1>AliExpress Coupons</h1>
 
-<p>Updated AliExpress promo codes, discounts, and deals.</p>
+<p>Latest AliExpress promo codes.</p>
+
+<div class="coupon-list">
 
 {% for item in site.data.items %}
 {% if item.store == "aliexpress" %}
@@ -13,16 +16,13 @@ title: AliExpress Coupons
 <div class="coupon">
 
   <h3>{{ item.title }}</h3>
-
-  <p><strong>Code:</strong> {{ item.code }}</p>
-
-  <p><strong>Expires:</strong> {{ item.expiry }}</p>
-
-  <a href="{{ item.link }}" target="_blank">
-    Activate Deal
-  </a>
+  <p>Code: {{ item.code }}</p>
+  <p>Expires: {{ item.expiry }}</p>
+  <a href="{{ item.link }}">Activate</a>
 
 </div>
 
 {% endif %}
 {% endfor %}
+
+</div>
