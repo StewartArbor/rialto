@@ -8,12 +8,21 @@ title: AliExpress Coupons
 <p>Updated AliExpress promo codes, discounts, and deals.</p>
 
 {% for item in site.data.items %}
-  {% if item.store == "aliexpress" %}
-    <div class="coupon">
-      <h3>{{ item.title }}</h3>
-      <p>Code: {{ item.code }}</p>
-      <p>Expires: {{ item.expiry }}</p>
-      <a href="{{ item.link }}" target="_blank">Activate Deal</a>
-    </div>
-  {% endif %}
+{% if item.store == "aliexpress" %}
+
+<div class="coupon">
+
+  <h3>{{ item.title }}</h3>
+
+  <p><strong>Code:</strong> {{ item.code }}</p>
+
+  <p><strong>Expires:</strong> {{ item.expiry }}</p>
+
+  <a href="{{ item.link }}" target="_blank">
+    Activate Deal
+  </a>
+
+</div>
+
+{% endif %}
 {% endfor %}
