@@ -90,6 +90,52 @@ if (toggle) {
     localStorage.setItem('theme', next);
   };
 }
+  /* Fake Countdown */
+
+function startFakeTimers() {
+
+  const timers = document.querySelectorAll(".timer");
+
+  timers.forEach(timer => {
+
+    let seconds = 7200 + Math.floor(Math.random() * 4000);
+
+    setInterval(() => {
+
+      seconds--;
+
+      if (seconds < 0) {
+        seconds = 7200 + Math.floor(Math.random() * 4000);
+      }
+
+      const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
+      const m = String(Math.floor((seconds % 3600)/60)).padStart(2,'0');
+      const s = String(seconds % 60).padStart(2,'0');
+
+      timer.textContent = `${h}:${m}:${s}`;
+
+    }, 1000);
+
+  });
+
+}
+
+startFakeTimers();
+
+
+/* Fake Usage Counter */
+
+document.querySelectorAll(".usage-num").forEach(el => {
+
+  let base = 1000 + Math.floor(Math.random() * 800);
+
+  setInterval(() => {
+    base += Math.floor(Math.random() * 3);
+    el.textContent = base;
+  }, 4000);
+
+});
+
 
 </script>
 
