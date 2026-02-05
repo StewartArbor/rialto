@@ -414,27 +414,29 @@ h1, h2 {
 .logo:hover {
   text-decoration: underline;
 }
+/* ===== Strong Homepage ===== */
 
-/* ===== Homepage ===== */
 
-.hero {
+.home-hero {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 70px 20px 50px;
+  background: linear-gradient(#fff6f0, #ffffff);
+  border-bottom: 2px solid #ffebe2;
 }
 
-.hero h1 {
-  font-size: 36px;
+.home-hero h1 {
+  font-size: 40px;
   margin-bottom: 12px;
 }
 
-.hero-desc {
+.home-hero p {
   max-width: 600px;
   margin: 0 auto 24px;
   color: #555;
 }
 
 
-.hero-buttons {
+.home-cta {
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -442,30 +444,84 @@ h1, h2 {
 }
 
 
-.hero-btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
+/* Deals Section */
+
+.home-deals {
+  padding: 40px 20px;
+}
+
+.home-deals h2 {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 
-.hero-btn.primary {
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+
+.home-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+
+.home-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+
+.home-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+
+.home-card p {
+  font-size: 13px;
+  color: #555;
+  min-height: 40px;
+}
+
+
+.home-card a {
+  display: inline-block;
+  margin-top: 8px;
   background: linear-gradient(135deg, #ff4747, #ff6a00);
   color: #fff;
+  padding: 7px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
 }
 
 
-.hero-btn.secondary {
-  background: #222;
+/* Trust Strip */
+
+.home-trust {
+  background: #111;
   color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 10px;
+  padding: 24px 20px;
+  text-align: center;
 }
 
 
-.hero-btn:hover {
-  filter: brightness(1.1);
+.trust-box {
+  font-size: 13px;
+  opacity: 0.9;
 }
 
 
