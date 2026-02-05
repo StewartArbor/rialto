@@ -2,6 +2,10 @@
 layout: default
 title: AliExpress Coupons
 ---
+<div class="flash-banner">
+  🚨 Flash Sale! Extra Discounts End Today — Don’t Miss Out!
+</div>
+
 
 <h1>AliExpress Coupons & Promo Codes</h1>
 
@@ -10,7 +14,18 @@ title: AliExpress Coupons
 {% for item in site.data.items %}
 {% if item.store == "aliexpress" %}
 
-<div class="coupon">
+<div class="coupon hot-deal">
+
+  <div class="badge-hot">🔥 HOT</div>
+
+  <div class="fake-usage">
+    👥 Used today: <span class="usage-num">1234</span>
+  </div>
+
+  <div class="countdown">
+    ⏳ Ends in: <span class="timer">02:15:44</span>
+  </div>
+
 
   <h3>{{ item.title }}</h3>
 
