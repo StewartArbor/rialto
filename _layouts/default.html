@@ -136,6 +136,35 @@ document.querySelectorAll(".usage-num").forEach(el => {
 
 });
 
+  /* Fake Last Updated */
+
+const updateEl = document.getElementById("update-time");
+
+if (updateEl) {
+
+  let minutes = 2 + Math.floor(Math.random() * 5);
+
+  function refreshTime() {
+
+    if (minutes <= 1) {
+      updateEl.textContent = "just now";
+    } else {
+      updateEl.textContent = minutes + " minutes ago";
+    }
+
+    minutes = Math.max(1, minutes - 1);
+  }
+
+  refreshTime();
+
+  setInterval(() => {
+    minutes = 1 + Math.floor(Math.random() * 5);
+    refreshTime();
+  }, 60000);
+
+}
+
+
 
 </script>
 
