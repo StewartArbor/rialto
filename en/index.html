@@ -1,28 +1,27 @@
 ---
 layout: default
 lang: en
-title: AliExpress Coupons & Services
+title: AliExpress Deals & Online Earnings
 ---
 
 
-<section class="hero">
+<section class="home-hero">
 
-  <h1>Save Money & Earn Online with Rialto</h1>
+  <h1>🔥 Save Big & Earn Online with Rialto</h1>
 
-  <p class="hero-desc">
-    Discover verified AliExpress coupons, digital services,
-    and online earning opportunities.
+  <p>
+    Daily AliExpress discounts, trusted services,
+    and real online earning opportunities.
   </p>
 
-
-  <div class="hero-buttons">
+  <div class="home-cta">
 
     <a href="/en/aliexpress.html" class="hero-btn primary">
-      🔥 View AliExpress Coupons
+      View Deals
     </a>
 
     <a href="/en/services.html" class="hero-btn secondary">
-      💼 Explore Services
+      Earn Money
     </a>
 
   </div>
@@ -30,36 +29,55 @@ title: AliExpress Coupons & Services
 </section>
 
 
-<section class="features">
+<section class="home-deals">
 
-  <div class="feature-card">
-    <h3>💸 Best Deals</h3>
-    <p>Updated promo codes and discounts from AliExpress.</p>
-  </div>
+  <h2>🔥 Today’s Hot Deals</h2>
 
-  <div class="feature-card">
-    <h3>⚡ Fast Services</h3>
-    <p>Ready-made solutions for websites, traffic, and promotion.</p>
-  </div>
+  <div class="home-grid">
 
-  <div class="feature-card">
-    <h3>🌍 Multilingual</h3>
-    <p>Available in English, Russian, and Kazakh.</p>
+    {% assign count = 0 %}
+
+    {% for item in site.data.items %}
+      {% if item.lang == "en" and item.store == "aliexpress" and count < 6 %}
+
+        {% assign count = count | plus: 1 %}
+
+        <div class="home-card">
+
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.title }}">
+          {% endif %}
+
+          <h3>{{ item.title }}</h3>
+
+          <p>{{ item.desc }}</p>
+
+          <a href="{{ item.link }}" target="_blank">
+            Activate Deal
+          </a>
+
+        </div>
+
+      {% endif %}
+    {% endfor %}
+
   </div>
 
 </section>
 
 
-<section class="cta">
+<section class="home-trust">
 
-  <h2>Start Saving Today</h2>
+  <div class="trust-box">
+    ✅ Verified Affiliate Platform
+  </div>
 
-  <p>
-    Join thousands of users who save money and earn online with Rialto.
-  </p>
+  <div class="trust-box">
+    🌍 Serving Users in Kazakhstan
+  </div>
 
-  <a href="/en/aliexpress.html" class="hero-btn primary">
-    Get Latest Deals
-  </a>
+  <div class="trust-box">
+    💬 Telegram Support Available
+  </div>
 
 </section>
