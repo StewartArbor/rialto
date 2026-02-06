@@ -15,41 +15,11 @@
 
 <body>
 
+
+<!-- Top Logo Only -->
+
 <div class="top">
-
   <a href="/" class="logo">Rialto</a>
-
-  <!-- Language Switch -->
-<nav class="main-nav">
-
-  <a href="/en/aliexpress.html">AliExpress Coupons</a>
-
-  <a href="/en/services.html">Services</a>
-
-  <a href="/about.html">About</a>
-
-  <a href="/contact.html">Contact</a>
-
-</nav>
-
-
-
-  <!-- Main Navigation -->
-  <nav class="main-nav">
-
-    <a href="/">Home</a>
-    <a href="/en/aliexpress.html">AliExpress</a>
-    <a href="/en/coupons.html">Coupons</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-
-  </nav>
-
-
-  <!-- Theme Toggle -->
-  <input type="checkbox" id="themeToggle">
-  <label for="themeToggle" class="theme-btn">🌙</label>
-
 </div>
 
 
@@ -58,7 +28,28 @@
 </main>
 
 
+<!-- Footer Navigation + Telegram -->
+
 <footer class="footer">
+
+
+  <div class="footer-nav">
+
+    <div class="footer-lang">
+      <a href="/en/">EN</a>
+      <a href="/ru/">RU</a>
+      <a href="/kz/">KZ</a>
+    </div>
+
+    <div class="footer-menu">
+      <a href="/en/aliexpress.html">AliExpress Coupons</a>
+      <a href="/en/services.html">Services</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+
+  </div>
+
 
   <a href="https://t.me/rialtokz" target="_blank" rel="noopener">
 
@@ -77,6 +68,8 @@
 
 <script>
 
+/* Theme Toggle */
+
 const toggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 
@@ -90,13 +83,13 @@ if (toggle) {
     localStorage.setItem('theme', next);
   };
 }
-  /* Fake Countdown */
+
+
+/* Fake Countdown */
 
 function startFakeTimers() {
 
-  const timers = document.querySelectorAll(".timer");
-
-  timers.forEach(timer => {
+  document.querySelectorAll(".timer").forEach(timer => {
 
     let seconds = 7200 + Math.floor(Math.random() * 4000);
 
@@ -136,7 +129,8 @@ document.querySelectorAll(".usage-num").forEach(el => {
 
 });
 
-  /* Fake Last Updated */
+
+/* Fake Last Updated */
 
 const updateEl = document.getElementById("update-time");
 
@@ -163,8 +157,6 @@ if (updateEl) {
   }, 60000);
 
 }
-
-
 
 </script>
 
