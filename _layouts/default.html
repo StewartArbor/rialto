@@ -16,40 +16,53 @@
 <body>
 
 
-<!-- Top Logo Only -->
+<!-- ===== TOP BAR ===== -->
 
-<div class="top">
+<header class="top-bar">
+
+  <!-- Logo -->
   <a href="/" class="logo">Rialto</a>
-</div>
 
+
+  <!-- Folder Tabs -->
+  <nav class="folder-nav">
+
+    <a href="/en/aliexpress.html">AliExpress Coupons</a>
+    <a href="/en/services.html">Services</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+
+  </nav>
+
+
+  <!-- Right Side -->
+  <div class="top-right">
+
+    <!-- Language -->
+    <div class="lang-tabs">
+      <a href="/en/">EN</a>
+      <a href="/ru/">RU</a>
+      <a href="/kz/">KZ</a>
+    </div>
+
+    <!-- Theme -->
+    <button id="themeToggle" class="theme-btn">🌙</button>
+
+  </div>
+
+</header>
+
+
+<!-- ===== CONTENT ===== -->
 
 <main>
   {{ content }}
 </main>
 
 
-<!-- Footer Navigation + Telegram -->
+<!-- ===== FOOTER ===== -->
 
 <footer class="footer">
-
-
-  <div class="footer-nav">
-
-    <div class="footer-lang">
-      <a href="/en/">EN</a>
-      <a href="/ru/">RU</a>
-      <a href="/kz/">KZ</a>
-    </div>
-
-    <div class="footer-menu">
-      <a href="/en/aliexpress.html">AliExpress Coupons</a>
-      <a href="/en/services.html">Services</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-
-  </div>
-
 
   <a href="https://t.me/rialtokz" target="_blank" rel="noopener">
 
@@ -66,57 +79,58 @@
 </footer>
 
 
+<!-- ===== SCRIPTS ===== -->
+
 <script>
 
 /* Theme Toggle */
 
-const toggle = document.getElementById('themeToggle');
+const toggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
-const saved = localStorage.getItem('theme');
+const saved = localStorage.getItem("theme");
 if (saved) root.dataset.theme = saved;
 
 if (toggle) {
   toggle.onclick = () => {
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+
+    const next =
+      root.dataset.theme === "dark"
+      ? "light"
+      : "dark";
+
     root.dataset.theme = next;
-    localStorage.setItem('theme', next);
+    localStorage.setItem("theme", next);
   };
 }
 
 
 /* Fake Countdown */
 
-function startFakeTimers() {
+document.querySelectorAll(".timer").forEach(timer => {
 
-  document.querySelectorAll(".timer").forEach(timer => {
+  let seconds = 7200 + Math.floor(Math.random() * 4000);
 
-    let seconds = 7200 + Math.floor(Math.random() * 4000);
+  setInterval(() => {
 
-    setInterval(() => {
+    seconds--;
 
-      seconds--;
+    if (seconds < 0) {
+      seconds = 7200 + Math.floor(Math.random() * 4000);
+    }
 
-      if (seconds < 0) {
-        seconds = 7200 + Math.floor(Math.random() * 4000);
-      }
+    const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
+    const m = String(Math.floor((seconds % 3600)/60)).padStart(2,'0');
+    const s = String(seconds % 60).padStart(2,'0');
 
-      const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
-      const m = String(Math.floor((seconds % 3600)/60)).padStart(2,'0');
-      const s = String(seconds % 60).padStart(2,'0');
+    timer.textContent = `${h}:${m}:${s}`;
 
-      timer.textContent = `${h}:${m}:${s}`;
+  }, 1000);
 
-    }, 1000);
-
-  });
-
-}
-
-startFakeTimers();
+});
 
 
-/* Fake Usage Counter */
+/* Fake Usage */
 
 document.querySelectorAll(".usage-num").forEach(el => {
 
