@@ -191,6 +191,57 @@ if (updateEl) {
 
 }
 
+/* Tab Slider Animation */
+
+function moveTabSlider() {
+
+  const nav = document.querySelector(".folder-nav");
+  const slider = document.querySelector(".tab-slider");
+  const active = document.querySelector(".folder-nav a.active");
+
+  if (!nav || !slider || !active) return;
+
+  const navRect = nav.getBoundingClientRect();
+  const tabRect = active.getBoundingClientRect();
+
+  slider.style.left = (tabRect.left - navRect.left) + "px";
+  slider.style.width = tabRect.width + "px";
+}
+
+
+/* On load */
+window.addEventListener("load", moveTabSlider);
+
+/* On resize */
+window.addEventListener("resize", moveTabSlider);
+
+
+/* Hover preview */
+
+document.querySelectorAll(".folder-nav a").forEach(tab => {
+
+  tab.addEventListener("mouseenter", () => {
+
+    const nav = document.querySelector(".folder-nav");
+    const slider = document.querySelector(".tab-slider");
+
+    const navRect = nav.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+
+    slider.style.left = (tabRect.left - navRect.left) + "px";
+    slider.style.width = tabRect.width + "px";
+  });
+
+});
+
+
+/* Restore active on leave */
+
+document.querySelector(".folder-nav")?.addEventListener("mouseleave", () => {
+  moveTabSlider();
+});
+
+
 </script>
 
 </body>
