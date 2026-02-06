@@ -27,12 +27,28 @@
   <!-- Folder Tabs -->
   <nav class="folder-nav">
 
-    <a href="/en/aliexpress.html">AliExpress Coupons</a>
-    <a href="/en/services.html">Services</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
+  <a href="/en/aliexpress.html"
+     class="{% if page.url contains 'aliexpress' %}active ali{% endif %}">
+     AliExpress Coupons
+  </a>
 
-  </nav>
+  <a href="/en/services.html"
+     class="{% if page.url contains 'services' %}active srv{% endif %}">
+     Services
+  </a>
+
+  <a href="/about.html"
+     class="{% if page.url contains 'about' %}active abt{% endif %}">
+     About
+  </a>
+
+  <a href="/contact.html"
+     class="{% if page.url contains 'contact' %}active cnt{% endif %}">
+     Contact
+  </a>
+
+</nav>
+
 
 
   <!-- Right Side -->
