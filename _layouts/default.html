@@ -91,11 +91,17 @@
 <div class="top-right">
 
   <!-- Language -->
-  <div class="lang-tabs">
-    <a href="/en/">EN</a>
-    <a href="/ru/">RU</a>
-    <a href="/kz/">KZ</a>
-  </div>
+<div class="lang-tabs">
+
+  {% assign parts = page.url | split:'/' %}
+  {% assign page_name = parts | last %}
+
+  <a href="/en/{{ page_name }}">EN</a>
+  <a href="/ru/{{ page_name }}">RU</a>
+  <a href="/kz/{{ page_name }}">KZ</a>
+
+</div>
+
 
   <!-- Theme -->
   <button id="themeToggle" class="theme-btn">🌙</button>
