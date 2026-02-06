@@ -1,5 +1,6 @@
 - store: aliexpress
   lang: en
+  category: electronics
 
   title: "$5 OFF Orders Over $30"
 
@@ -15,6 +16,7 @@
   link: "https://s.click.aliexpress.com/e/_REALCODE"
 - store: aliexpress
   lang: ru
+  category: phones
 
   title: "Скидка $5 от $30"
 
