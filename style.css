@@ -631,4 +631,137 @@ h1, h2 {
   margin: 10px 0 20px;
 }
 
+/* ===== Top Bar ===== */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #111;
+  color: #fff;
+
+  padding: 10px 16px;
+  gap: 14px;
+}
+
+
+/* Logo */
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Folder Tabs */
+
+.folder-nav {
+  display: flex;
+  gap: 6px;
+}
+
+
+.folder-nav a {
+  background: #222;
+  color: #fff;
+
+  padding: 6px 14px;
+
+  border-radius: 6px 6px 0 0;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  border-bottom: 2px solid transparent;
+}
+
+
+.folder-nav a:hover {
+  background: #333;
+}
+
+
+.folder-nav a.active {
+  background: #fff;
+  color: #111;
+  border-bottom: 2px solid #fff;
+}
+
+
+/* Right Side */
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* Language Tabs */
+
+.lang-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+
+.lang-tabs a {
+  background: #333;
+  color: #fff;
+
+  padding: 4px 8px;
+
+  font-size: 12px;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+}
+
+
+.lang-tabs a:hover {
+  background: #444;
+}
+
+
+/* Theme Button */
+
+.theme-btn {
+  background: #222;
+  border: none;
+
+  color: #fff;
+
+  padding: 5px 8px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+/* ===== Dark Mode ===== */
+
+:root[data-theme="dark"] {
+  background: #0e0e0e;
+  color: #eee;
+}
+
+:root[data-theme="dark"] body {
+  background: #0e0e0e;
+  color: #eee;
+}
+
+:root[data-theme="dark"] .home-card,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .item-card {
+  background: #1a1a1a;
+  color: #eee;
+  border-color: #333;
+}
 
