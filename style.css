@@ -656,112 +656,86 @@ h1, h2 {
 }
 
 
-/* Folder Tabs */
+/* ===== Folder Tabs (Physical Style) ===== */
 
 .folder-nav {
   display: flex;
-  gap: 6px;
+  margin-left: 20px;
 }
 
 
 .folder-nav a {
+  position: relative;
+
   background: #222;
   color: #fff;
 
-  padding: 6px 14px;
+  padding: 8px 18px;
 
-  border-radius: 6px 6px 0 0;
-
-  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
 
-  border-bottom: 2px solid transparent;
+  text-decoration: none;
+
+  border-radius: 8px 8px 0 0;
+
+  border: 1px solid #333;
+  border-bottom: none;
+
+  margin-left: -6px; /* overlap */
+
+  z-index: 1;
 }
 
+
+/* Hover */
 
 .folder-nav a:hover {
-  background: #333;
+  filter: brightness(1.1);
 }
 
+
+/* Active Tab */
 
 .folder-nav a.active {
-  background: #fff;
-  color: #111;
-  border-bottom: 2px solid #fff;
+  z-index: 10;
+  font-weight: 600;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 }
 
 
-/* Right Side */
+/* Section Colors */
 
-.top-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-
-/* Language Tabs */
-
-.lang-tabs {
-  display: flex;
-  gap: 4px;
-}
-
-
-.lang-tabs a {
-  background: #333;
+.folder-nav a.ali.active {
+  background: linear-gradient(135deg, #ff4747, #ff6a00);
   color: #fff;
-
-  padding: 4px 8px;
-
-  font-size: 12px;
-
-  border-radius: 4px;
-
-  text-decoration: none;
+  border-color: #ff6a00;
 }
 
 
-.lang-tabs a:hover {
-  background: #444;
-}
-
-
-/* Theme Button */
-
-.theme-btn {
-  background: #222;
-  border: none;
-
+.folder-nav a.srv.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
-
-  padding: 5px 8px;
-
-  border-radius: 4px;
-
-  cursor: pointer;
-  font-size: 14px;
+  border-color: #2563eb;
 }
 
 
-/* ===== Dark Mode ===== */
-
-:root[data-theme="dark"] {
-  background: #0e0e0e;
-  color: #eee;
+.folder-nav a.abt.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  border-color: #16a34a;
 }
 
-:root[data-theme="dark"] body {
-  background: #0e0e0e;
-  color: #eee;
+
+.folder-nav a.cnt.active {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  color: #fff;
+  border-color: #7c3aed;
 }
 
-:root[data-theme="dark"] .home-card,
-:root[data-theme="dark"] .service-card,
-:root[data-theme="dark"] .item-card {
-  background: #1a1a1a;
-  color: #eee;
-  border-color: #333;
-}
 
+/* Dark Mode Support */
+
+:root[data-theme="dark"] .folder-nav a {
+  border-color: #444;
+}
