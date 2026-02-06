@@ -739,3 +739,52 @@ h1, h2 {
 :root[data-theme="dark"] .folder-nav a {
   border-color: #444;
 }
+
+/* ===== Tab Slider ===== */
+
+.folder-nav {
+  position: relative;
+}
+
+
+/* Moving Bar */
+
+.tab-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 3px;
+  width: 0;
+
+  background: linear-gradient(135deg, #ff4747, #ff6a00);
+
+  border-radius: 2px;
+
+  transition:
+    left 0.35s ease,
+    width 0.35s ease,
+    background 0.35s ease;
+
+  z-index: 20;
+}
+
+
+/* Active Colors */
+
+.folder-nav a.ali.active ~ .tab-slider {
+  background: linear-gradient(135deg, #ff4747, #ff6a00);
+}
+
+.folder-nav a.srv.active ~ .tab-slider {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.folder-nav a.abt.active ~ .tab-slider {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.folder-nav a.cnt.active ~ .tab-slider {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
