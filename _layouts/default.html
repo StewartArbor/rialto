@@ -17,7 +17,40 @@
 
 
 <!-- ===== TOP BAR ===== -->
+{% if page.url contains 'aliexpress' %}
 
+<nav class="sub-tabs">
+
+  <a href="/en/aliexpress.html"
+     class="{% if page.url == '/en/aliexpress.html' %}active{% endif %}">
+     All Deals
+  </a>
+
+  <a href="/en/aliexpress-phones.html"
+     class="{% if page.url contains 'phones' %}active{% endif %}">
+     📱 Phones
+  </a>
+
+  <a href="/en/aliexpress-fashion.html"
+     class="{% if page.url contains 'fashion' %}active{% endif %}">
+     👕 Fashion
+  </a>
+
+  <a href="/en/aliexpress-home.html"
+     class="{% if page.url contains 'home' %}active{% endif %}">
+     🏠 Home
+  </a>
+
+  <a href="/en/aliexpress-electronics.html"
+     class="{% if page.url contains 'electronics' %}active{% endif %}">
+     💻 Electronics
+  </a>
+
+</nav>
+
+{% endif %}
+
+  
 <header class="top-bar">
 
   <!-- Logo -->
