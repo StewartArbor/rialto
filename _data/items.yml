@@ -58,4 +58,34 @@
 
   link: "Phttps://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005007311524739.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000040204044244%26spm%3Da2g2w.productlist.search_results.6.31bd5613OeYEsW"
 
+- store: aliexpress
+  lang: ru
+  category: electronics
+
+  title: "Baseus GaN зарядное устройство 65W (EU, белый)"
+
+  desc: "Мощное и надёжное зарядное устройство с поддержкой PD и QC. Подходит для ноутбуков, iPhone и Samsung. Быстрая зарядка и компактный дизайн. Доверяют более 15 000 покупателей."
+
+  price: "16 854 ₸"
+  old_price: "23 143 ₸"
+  discount: "-27%"
+
+  image: "/assets/products/4-baseus-65w-gan-white.jpg"
+
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005008879280641.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000047061416058%26spm%3Da2g2w.productlist.search_results.8.31bd5613OeYEsW"
+- store: aliexpress
+  lang: en
+  category: electronics
+
+  title: "Baseus 65W GaN Fast Charger (EU Plug, White)"
+
+  desc: "Powerful and compact GaN charger with PD and QC support. Works with laptops, iPhone and Samsung devices. Trusted by over 15,000 buyers."
+
+  price: "₸16,854"
+  old_price: "₸23,143"
+  discount: "-27%"
+
+  image: "/assets/products/4-baseus-65w-gan-white.jpg"
+
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005008879280641.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000047061416058%26spm%3Da2g2w.productlist.search_results.8.31bd5613OeYEsW"
 
