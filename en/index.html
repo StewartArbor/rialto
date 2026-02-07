@@ -48,13 +48,31 @@ title: AliExpress Deals & Online Earnings
             <img src="{{ item.image }}" alt="{{ item.title }}">
           {% endif %}
 
-          <h3>{{ item.title }}</h3>
+         <h3>{{ item.title }}</h3>
 
-          <p>{{ item.desc }}</p>
+<p>{{ item.desc }}</p>
 
-          <a href="{{ item.link }}" target="_blank">
-            Activate Deal
-          </a>
+<!-- PRICE BLOCK -->
+<div class="price-box">
+
+  {% if item.discount %}
+    <span class="badge-discount">{{ item.discount }}</span>
+  {% endif %}
+
+  {% if item.old_price %}
+    <span class="old-price">{{ item.old_price }}</span>
+  {% endif %}
+
+  {% if item.price %}
+    <span class="new-price">{{ item.price }}</span>
+  {% endif %}
+
+</div>
+
+<a href="{{ item.link }}" target="_blank">
+  Activate Deal
+</a>
+
 
         </div>
 
