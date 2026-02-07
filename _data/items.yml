@@ -2,31 +2,10 @@
   lang: en
   category: electronics
 
-  title: "$5 OFF Orders Over $30"
+  title: "UGREEN 65W GaN Fast Charger (EU Plug)"
+  desc: "Fast charger for laptop, phone and tablet. Includes 2m 100W cable."
+  price: "From $29.99"
 
-  desc: "Save $5 on orders above $30. Limited time AliExpress promotion."
+  image: "/assets/products/1-ugreen-65w-gan.jpg"
 
-  price: "From $25"
-
-  image: "https://via.placeholder.com/300x200?text=AliExpress+Deal"
-
-  code: "AE5OFF"
-  expiry: "2026-02-28"
-
-  link: "https://s.click.aliexpress.com/e/_REALCODE"
-- store: aliexpress
-  lang: ru
-  category: phones
-
-  title: "Скидка $5 от $30"
-
-  desc: "Экономьте $5 при заказе от $30 на AliExpress."
-
-  price: "От $25"
-
-  image: "https://via.placeholder.com/300x200?text=AliExpress+RU"
-
-  code: "AE5OFF"
-  expiry: "2026-02-28"
-
-  link: "https://s.click.aliexpress.com/e/_REALCODE"
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005003416182958.html%3FshpMethod%3DCAINIAO_STANDARD%26sku_id%3D12000052883287308%26spm%3Da2g2w.productlist.search_results.0.31bd5613OeYEsW"
