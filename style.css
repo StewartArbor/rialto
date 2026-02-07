@@ -515,3 +515,44 @@ p {
   }
 
 }
+/* Price Box */
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+
+/* Old Price */
+
+.old-price {
+  color: #999;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+
+/* New Price */
+
+.new-price {
+  color: #c51616;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* Discount Badge */
+
+.badge-discount {
+  background: #ff4747;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
