@@ -275,45 +275,100 @@ main {
 
 }
 /* =====================
-   DARK MODE
+   DARK MODE (REFINED)
 ===================== */
 
 body.dark {
-  background: #0f0f0f;
-  color: #eee;
+  background: #121212;
+  color: #e6e6e6;
 }
+
+
+/* Top bar */
 
 body.dark .topbar {
-  background: #141414;
-  border-bottom-color: #222;
+  background: #181818;
+  border-bottom-color: #242424;
 }
 
+body.dark .logo a {
+  color: #f0f0f0;
+}
+
+body.dark .lang a {
+  color: #aaa;
+}
+
+
+/* Cards */
+
 body.dark .deal {
-  background: #1a1a1a;
-  box-shadow: none;
+  background: #1b1b1b;
+  box-shadow: 0 0 0 1px #242424;
+}
+
+body.dark .deal-title {
+  color: #f0f0f0;
 }
 
 body.dark .deal-desc {
-  color: #aaa;
+  color: #b0b0b0;
+}
+
+
+/* Prices */
+
+body.dark .price-now {
+  color: #ff9a3c;
 }
 
 body.dark .price-old {
   color: #777;
 }
 
-body.dark .site-footer {
-  color: #666;
+body.dark .price-discount {
+  background: #ff8a1d;
+  color: #111;
 }
 
-body.dark .bottom-nav {
-  background: #141414;
-  border-top-color: #222;
-}
 
-body.dark .bottom-nav a {
-  color: #ddd;
-}
+/* Button */
 
 body.dark .btn {
   background: #ff8a1d;
+  color: #111;
+}
+
+body.dark .btn:hover {
+  filter: brightness(1.1);
+}
+
+
+/* Footer */
+
+body.dark .site-footer {
+  color: #777;
+}
+
+
+/* Bottom nav */
+
+body.dark .bottom-nav {
+  background: #181818;
+  border-top-color: #242424;
+}
+
+body.dark .bottom-nav a {
+  color: #ccc;
+}
+
+body.dark .bottom-nav a:hover {
+  background: #202020;
+}
+
+
+/* About page */
+
+body.dark .about {
+  color: #ddd;
 }
