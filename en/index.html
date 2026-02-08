@@ -38,12 +38,12 @@ lang: en
         <div class="deal-price">
 
           <span class="price-now">
-            {{ item.price }}
+            {{ item.price_fmt }}
           </span>
 
           {% if item.old_price %}
           <span class="price-old">
-            {{ item.old_price }}
+            {{ item.old_price_fmt }}
           </span>
           {% endif %}
 
