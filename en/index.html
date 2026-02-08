@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Best AliExpress Deals - Rialto
+title: Best AliExpress Deals — Rialto
 lang: en
 ---
 
@@ -10,59 +10,64 @@ lang: en
 
   {% for item in items %}
 
-  <article class="deal">
+    <article class="deal">
 
-    <div class="deal-image">
-  <img
-    src="{{ item.image }}"
-    loading="lazy"
-    alt="{{ item.title }}"
-  >
-</div>
+      <!-- Image -->
+      <div class="deal-image">
+        <img
+          src="{{ item.image }}"
+          alt="{{ item.title }}"
+          loading="lazy"
+        >
+      </div>
 
+      <!-- Content -->
+      <div class="deal-body">
 
-    <div class="deal-body">
+        <h3 class="deal-title">
+          {{ item.title }}
+        </h3>
 
-      <h3 class="deal-title">
-        {{ item.title }}
-      </h3>
-
-      <p class="deal-desc">
-        {{ item.desc }}
-      </p>
-
-      <div class="deal-price">
-
-        <span class="price-now">
-          ₸{{ item.price }}
-        </span>
-
-        {% if item.old_price %}
-        <span class="price-old">
-          ₸{{ item.old_price }}
-        </span>
+        {% if item.desc %}
+        <p class="deal-desc">
+          {{ item.desc }}
+        </p>
         {% endif %}
 
-        {% if item.discount %}
-        <span class="price-discount">
-          -{{ item.discount }}%
-        </span>
-        {% endif %}
+        <!-- Price -->
+        <div class="deal-price">
+
+          <span class="price-now">
+            {{ item.price }}
+          </span>
+
+          {% if item.old_price %}
+          <span class="price-old">
+            {{ item.old_price }}
+          </span>
+          {% endif %}
+
+          {% if item.discount %}
+          <span class="price-discount">
+            {{ item.discount }}
+          </span>
+          {% endif %}
+
+        </div>
+
+        <!-- Button -->
+        <a
+          class="btn"
+          href="{{ item.link }}"
+          target="_blank"
+          rel="nofollow noopener"
+        >
+          Open on AliExpress
+        </a>
 
       </div>
 
-      <a
-        class="btn"
-        href="{{ item.link }}"
-        target="_blank"
-        rel="nofollow noopener"
-      >
-        Open on AliExpress
-      </a>
-
-    </div>
-
-  </article>
+    </article>
 
   {% endfor %}
 
