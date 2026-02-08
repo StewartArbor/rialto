@@ -1,101 +1,28 @@
 ---
 layout: default
-lang: en
-title: AliExpress Deals & Online Earnings
+title: Deals
 ---
 
+<div class="feed">
 
-<section class="home-hero">
+{% for item in site.data.items %}
+<div class="deal">
 
-  <h1>🔥 Save Big & Earn Online with Rialto</h1>
+  <img src="{{ item.image }}" alt="{{ item.title }}">
 
-  <p>
-    Daily AliExpress discounts, trusted services,
-    and real online earning opportunities.
-  </p>
+  <div>
+    <h3>{{ item.title }}</h3>
 
-  <div class="home-cta">
+    <div class="price">
+      ₸{{ item.price }}
+    </div>
 
-    <a href="/en/aliexpress.html" class="hero-btn primary">
-      View Deals
+    <a class="btn" href="{{ item.link }}">
+      Open Deal
     </a>
-
-    <a href="/en/services.html" class="hero-btn secondary">
-      Earn Money
-    </a>
-
   </div>
-
-</section>
-
-
-<section class="home-deals">
-
-  <h2>🔥 Today’s Hot Deals</h2>
-
-  <div class="home-grid">
-
-    {% assign count = 0 %}
-
-    {% for item in site.data.items %}
-      {% if item.lang == "en" and item.store == "aliexpress" and count < 6 %}
-
-        {% assign count = count | plus: 1 %}
-
-        <div class="home-card">
-
-          {% if item.image %}
-            <img src="{{ item.image }}" alt="{{ item.title }}">
-          {% endif %}
-
-         <h3>{{ item.title }}</h3>
-
-<p>{{ item.desc }}</p>
-
-<!-- PRICE BLOCK -->
-<div class="price-box">
-
-  {% if item.discount %}
-    <span class="badge-discount">{{ item.discount }}</span>
-  {% endif %}
-
-  {% if item.old_price %}
-    <span class="old-price">{{ item.old_price }}</span>
-  {% endif %}
-
-  {% if item.price %}
-    <span class="new-price">{{ item.price }}</span>
-  {% endif %}
 
 </div>
+{% endfor %}
 
-<a href="{{ item.link }}" target="_blank">
-  Activate Deal
-</a>
-
-
-        </div>
-
-      {% endif %}
-    {% endfor %}
-
-  </div>
-
-</section>
-
-
-<section class="home-trust">
-
-  <div class="trust-box">
-    ✅ Verified Affiliate Platform
-  </div>
-
-  <div class="trust-box">
-    🌍 Serving Users in Kazakhstan
-  </div>
-
-  <div class="trust-box">
-    💬 Telegram Support Available
-  </div>
-
-</section>
+</div>
