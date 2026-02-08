@@ -25,10 +25,17 @@
     <button id="themeToggle" class="theme-btn">🌙</button>
     
     <nav class="lang">
+      
+<div class="lang">
 
-      <a href="{{ '/en/' | relative_url }}">EN</a>
-      <a href="{{ '/ru/' | relative_url }}">RU</a>
-      <a href="{{ '/kz/' | relative_url }}">KZ</a>
+  {% assign path = page.url | split: "/" | last %}
+
+  <a href="/en/{{ path }}">EN</a>
+  <a href="/ru/{{ path }}">RU</a>
+  <a href="/kz/{{ path }}">KZ</a>
+
+</div>
+
 
     </nav>
 
