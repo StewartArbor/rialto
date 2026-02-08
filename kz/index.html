@@ -1,65 +1,77 @@
 ---
 layout: default
-lang: kk
-title: AliExpress Купондары және Қызметтер
+title: AliExpress жеңілдіктері
+lang: kz
 ---
 
+<header class="kz-hero">
 
-<section class="hero">
+  <h1>Үздік жеңілдіктер мен пайдалы тауарлар</h1>
 
-  <h1>Rialto арқылы үнемдеңіз және табыс табыңыз</h1>
-
-  <p class="hero-desc">
-    AliExpress купондары, цифрлық қызметтер
-    және онлайн табыс мүмкіндіктері.
+  <p class="kz-hero-desc">
+    AliExpress-тегі тексерілген ұсыныстар. Артық сөзсіз.
   </p>
 
-
-  <div class="hero-buttons">
-
-    <a href="/kz/aliexpress.html" class="hero-btn primary">
-      🔥 AliExpress Купондары
-    </a>
-
-    <a href="/kz/services.html" class="hero-btn secondary">
-      💼 Қызметтер
-    </a>
-
-  </div>
-
-</section>
+</header>
 
 
-<section class="features">
+<div class="feed">
 
-  <div class="feature-card">
-    <h3>💸 Ең жақсы жеңілдіктер</h3>
-    <p>AliExpress үшін жаңа промокодтар мен акциялар.</p>
-  </div>
+  {% assign items = site.data.items | where: "lang", "kz" %}
 
-  <div class="feature-card">
-    <h3>⚡ Жылдам қызметтер</h3>
-    <p>Сайттар мен жарнамаға дайын шешімдер.</p>
-  </div>
+  {% for item in items %}
 
-  <div class="feature-card">
-    <h3>🌍 Көптілді платформа</h3>
-    <p>Ағылшын, орыс және қазақ тілдерінде.</p>
-  </div>
+  <article class="deal">
 
-</section>
+    <img
+      src="{{ item.image }}"
+      loading="lazy"
+      alt="{{ item.title }}"
+    >
 
+    <div class="deal-body">
 
-<section class="cta">
+      <h3 class="deal-title">
+        {{ item.title }}
+      </h3>
 
-  <h2>Бүгіннен бастап үнемдеңіз</h2>
+      <p class="deal-desc">
+        {{ item.desc }}
+      </p>
 
-  <p>
-    Мыңдаған қолданушы Rialto арқылы табыс табуда.
-  </p>
+      <div class="deal-price">
 
-  <a href="/kz/aliexpress.html" class="hero-btn primary">
-    Ұсыныстарды көру
-  </a>
+        <span class="price-now">
+          ₸{{ item.price }}
+        </span>
 
-</section>
+        {% if item.old_price %}
+        <span class="price-old">
+          ₸{{ item.old_price }}
+        </span>
+        {% endif %}
+
+        {% if item.discount %}
+        <span class="price-discount">
+          -{{ item.discount }}%
+        </span>
+        {% endif %}
+
+      </div>
+
+      <a
+        class="btn"
+        href="{{ item.link }}"
+        target="_blank"
+        rel="nofollow noopener"
+      >
+        AliExpress-те ашу
+      </a>
+
+    </div>
+
+  </article>
+
+  {% endfor %}
+
+</div>
