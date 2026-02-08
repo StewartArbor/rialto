@@ -133,9 +133,12 @@ main {
 }
 
 .deal-title {
-  font-size: 16px;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.35;
   margin-bottom: 4px;
 }
+
 
 .deal-desc {
   font-size: 14px;
@@ -193,8 +196,10 @@ main {
   padding: 10px;
   border-radius: 8px;
 
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13.5px;
+   font-weight: 600;
+   letter-spacing: 0.01em;
+
 }
 
 .btn:hover {
@@ -430,3 +435,12 @@ p {
   margin-bottom: 10px;
 }
 
+body.dark {
+  font-weight: 400;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  font-weight: 500;
+}
