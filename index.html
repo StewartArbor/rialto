@@ -1,46 +1,28 @@
 ---
 layout: default
-lang: en
-title: Rialto
+title: Deals
 ---
 
-<div class="wrap">
-  <h1>Rialto</h1>
-  <h2>🔥 Latest AliExpress Deals</h2>
-<a href="/en/aliexpress.html">View All AliExpress Coupons</a>
+<div class="feed">
 
+{% for item in site.data.items %}
+<div class="deal">
 
-  <p class="desc">
-    Independent index of goods and services.
-  </p>
+  <img src="{{ item.image }}" alt="{{ item.title }}">
 
-  <div class="grid">
-    <div class="card">
-      <a href="/en/items/">Items</a>
+  <div>
+    <h3>{{ item.title }}</h3>
+
+    <div class="price">
+      ₸{{ item.price }}
     </div>
-    <div class="coupon" style="border:2px solid #ffd200;">
 
-  <h3>🔥 Earn Money Online</h3>
-
-  <p>
-    Get paid for answering surveys.
-    Free registration.
-  </p>
-
-  <a href="https://panel.oy.kz/?ref=s76338a4g7f43hxbsh14cvppy4"
-     target="_blank">
-    Start Now
-  </a>
+    <a class="btn" href="{{ item.link }}">
+      Open Deal
+    </a>
+  </div>
 
 </div>
+{% endfor %}
 
-
-    <div class="card">
-      <a href="/en/services/">Services</a>
-    </div>
-
-    <div class="card">
-      <a href="/en/disclaimer.html">Disclaimer</a>
-    </div>
-  </div>
 </div>
