@@ -612,3 +612,18 @@ body {
   border-radius: 6px;
 }
 
+.ru-hero {
+  padding: 20px 12px 10px;
+  text-align: center;
+}
+
+.ru-hero h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.ru-hero-desc {
+  font-size: 14px;
+  color: #666;
+}
+
