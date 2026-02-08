@@ -484,6 +484,10 @@ p {
   background: #000;
 }
 
+body {
+  padding-bottom: 60px;
+}
+
 
 /* =====================
    MOBILE
