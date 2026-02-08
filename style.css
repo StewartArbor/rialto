@@ -627,3 +627,18 @@ body {
   color: #666;
 }
 
+.kz-hero {
+  padding: 20px 12px 10px;
+  text-align: center;
+}
+
+.kz-hero h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.kz-hero-desc {
+  font-size: 14px;
+  color: #666;
+}
+
