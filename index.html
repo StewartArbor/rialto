@@ -8,7 +8,11 @@ title: Deals
 {% for item in site.data.items %}
 <div class="deal">
 
-  <img src="{{ item.image }}" alt="{{ item.title }}">
+  <img
+  src="{{ item.image }}"
+  loading="lazy"
+  alt="{{ item.title }}"
+>
 
   <div>
     <h3>{{ item.title }}</h3>
