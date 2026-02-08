@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+
+/* =====================
+   BASE
+===================== */
+
 body {
   font-family:
     -apple-system,
@@ -22,14 +27,12 @@ body {
   background: #f7f7f7;
   color: #111;
 
+  font-size: 15px;
   line-height: 1.55;
   letter-spacing: -0.01em;
 
   padding-bottom: 60px;
-
-  font-size: 15px;
 }
-
 
 
 /* =====================
@@ -52,7 +55,7 @@ main {
   justify-content: space-between;
   align-items: center;
 
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid #ddd;
 
   padding: 12px 16px;
@@ -68,17 +71,28 @@ main {
 .lang a {
   margin-left: 8px;
   font-size: 13px;
-  text-decoration: none;
   color: #555;
+  text-decoration: none;
 }
 
 .lang a:hover {
   text-decoration: underline;
 }
 
+.theme-btn {
+  background: none;
+  border: none;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  color: #666;
+  margin-right: 8px;
+}
+
 
 /* =====================
-   HERO (RU / KZ)
+   HERO
 ===================== */
 
 .ru-hero,
@@ -114,8 +128,9 @@ main {
 ===================== */
 
 .deal {
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
+
   margin-bottom: 14px;
   padding: 12px;
 
@@ -127,18 +142,12 @@ main {
   height: 180px;
 
   object-fit: cover;
-  object-position: center;
 
   border-radius: 10px;
   margin-bottom: 8px;
-}
 
-@media (min-width: 768px) {
-  .deal img {
-    height: 140px;
-  }
+  display: block;
 }
-
 
 .deal-body {
   padding-top: 4px;
@@ -150,7 +159,6 @@ main {
   line-height: 1.35;
   margin-bottom: 4px;
 }
-
 
 .deal-desc {
   font-size: 14px;
@@ -185,6 +193,7 @@ main {
   font-size: 12px;
   background: #ff7a00;
   color: #fff;
+
   padding: 2px 6px;
   border-radius: 6px;
 }
@@ -197,10 +206,11 @@ main {
 .btn {
   display: block;
   width: 100%;
+
   margin-top: 6px;
 
   background: #ff7a00;
-  color: #ffffff;
+  color: #fff;
 
   text-align: center;
   text-decoration: none;
@@ -209,9 +219,8 @@ main {
   border-radius: 8px;
 
   font-size: 13.5px;
-   font-weight: 600;
-   letter-spacing: 0.01em;
-
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .btn:hover {
@@ -220,12 +229,13 @@ main {
 
 
 /* =====================
-   ABOUT PAGE
+   ABOUT
 ===================== */
 
 .about {
   max-width: 700px;
   margin: auto;
+
   padding: 20px 12px;
 
   font-size: 15px;
@@ -245,6 +255,7 @@ main {
 .site-footer {
   text-align: center;
   font-size: 12px;
+
   color: #777;
   padding: 20px 10px;
 }
@@ -262,23 +273,42 @@ main {
 
   display: flex;
 
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid #ddd;
 }
 
 .bottom-nav a {
   flex: 1;
-  text-align: center;
 
+  text-align: center;
   padding: 10px;
 
-  text-decoration: none;
   font-size: 13px;
   color: #333;
+
+  text-decoration: none;
 }
 
 .bottom-nav a:hover {
   background: #f0f0f0;
+}
+
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+
+p {
+  margin-bottom: 10px;
 }
 
 
@@ -295,8 +325,7 @@ main {
   }
 
   .deal img {
-    height: 120px;
-    object-fit: cover;
+    height: 140px;
   }
 
   .btn {
@@ -306,13 +335,17 @@ main {
   }
 
 }
+
+
 /* =====================
-   DARK MODE (REFINED)
+   DARK MODE
 ===================== */
 
 body.dark {
   background: #121212;
   color: #e6e6e6;
+
+  font-weight: 400;
 }
 
 
@@ -329,6 +362,10 @@ body.dark .logo a {
 
 body.dark .lang a {
   color: #aaa;
+}
+
+body.dark .theme-btn {
+  color: #ccc;
 }
 
 
@@ -371,10 +408,6 @@ body.dark .btn {
   color: #111;
 }
 
-body.dark .btn:hover {
-  filter: brightness(1.1);
-}
-
 
 /* Footer */
 
@@ -399,60 +432,17 @@ body.dark .bottom-nav a:hover {
 }
 
 
-/* About page */
-
-body.dark .about {
-  color: #ddd;
-}
-
-/* Theme toggle */
-
-.theme-btn {
-  background: none;
-  border: none;
-
-  font-size: 16px;
-  cursor: pointer;
-
-  color: #666;
-  margin-right: 8px;
-}
-
-body.dark .theme-btn {
-  color: #ccc;
-}
-
-/* =====================
-   TYPOGRAPHY
-===================== */
-
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 16px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-body.dark {
-  font-weight: 400;
-}
+/* Headings */
 
 body.dark h1,
 body.dark h2,
 body.dark h3 {
   font-weight: 500;
+}
+
+
+/* About */
+
+body.dark .about {
+  color: #ddd;
 }
