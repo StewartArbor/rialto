@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en' }}">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>{{ page.title }}</title>
 
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/mobile.css">
-  <link rel="stylesheet" href="/assets/css/desktop.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+
 </head>
+
 
 <body>
 
-<header class="topbar">
-  <div class="logo">Rialto</div>
-  <div class="lang">
-    <a href="/en/">EN</a>
-    <a href="/ru/">RU</a>
-    <a href="/kz/">KZ</a>
-  </div>
-</header>
+  <!-- Top bar -->
+  <header class="topbar">
 
-<main>
-  {{ content }}
-</main>
+    <div class="logo">
+      <a href="{{ '/' | relative_url }}">Rialto</a>
+    </div>
 
-<footer>
-  © {{ site.time | date: "%Y" }} Rialto
-</footer>
+    <nav class="lang">
 
-<nav class="bottom-nav">
-  <a href="/about.html">ℹ️ About</a>
-  <a href="/contact.html">✉️</a>
-</nav>
+      <a href="{{ '/en/' | relative_url }}">EN</a>
+      <a href="{{ '/ru/' | relative_url }}">RU</a>
+      <a href="{{ '/kz/' | relative_url }}">KZ</a>
 
-  
+    </nav>
+
+  </header>
+
+
+  <!-- Main content -->
+  <main>
+
+    {{ content }}
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    © {{ site.time | date: "%Y" }} Rialto
+
+  </footer>
+
+
+  <!-- Bottom navigation -->
+  <nav class="bottom-nav">
+
+    <a href="{{ '/about.html' | relative_url }}">ℹ️ About</a>
+    <a href="{{ '/contact.html' | relative_url }}">✉️ Contact</a>
+
+  </nav>
+
+
 </body>
 </html>
