@@ -59,6 +59,23 @@
 
   </nav>
 
+  <script>
+  const btn = document.getElementById('themeToggle');
+  const body = document.body;
+
+  if (localStorage.theme === 'dark') {
+    body.classList.add('dark');
+  }
+
+  btn.addEventListener('click', () => {
+    body.classList.toggle('dark');
+
+    localStorage.theme = body.classList.contains('dark')
+      ? 'dark'
+      : 'light';
+  });
+</script>
+
 
 </body>
 </html>
