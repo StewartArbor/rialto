@@ -1,28 +1,66 @@
 ---
 layout: default
 title: Deals
+lang: en
 ---
 
 <div class="feed">
 
-{% for item in site.data.items %}
-<div class="deal">
+  {% assign items = site.data.items | where: "lang", "en" %}
 
-  <img src="{{ item.image }}" alt="{{ item.title }}">
+  {% for item in items %}
 
-  <div>
-    <h3>{{ item.title }}</h3>
+  <article class="deal">
 
-    <div class="price">
-      ₸{{ item.price }}
+    <img
+      src="{{ item.image }}"
+      loading="lazy"
+      alt="{{ item.title }}"
+    >
+
+    <div class="deal-body">
+
+      <h3 class="deal-title">
+        {{ item.title }}
+      </h3>
+
+      <p class="deal-desc">
+        {{ item.desc }}
+      </p>
+
+      <div class="deal-price">
+
+        <span class="price-now">
+          ₸{{ item.price }}
+        </span>
+
+        {% if item.old_price %}
+        <span class="price-old">
+          ₸{{ item.old_price }}
+        </span>
+        {% endif %}
+
+        {% if item.discount %}
+        <span class="price-discount">
+          -{{ item.discount }}%
+        </span>
+        {% endif %}
+
+      </div>
+
+      <a
+        class="btn"
+        href="{{ item.link }}"
+        target="_blank"
+        rel="nofollow noopener"
+      >
+        Open on AliExpress
+      </a>
+
     </div>
 
-    <a class="btn" href="{{ item.link }}">
-      Open Deal
-    </a>
-  </div>
+  </article>
 
-</div>
-{% endfor %}
+  {% endfor %}
 
 </div>
