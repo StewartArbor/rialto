@@ -10,7 +10,23 @@
   old_price: 31316
   discount: 58
 
-  image: "/assets/products/1-ugreen-65w-gan.jpg"
+  image: "https://ae04.alicdn.com/kf/S511004823ef645cb8354dda0b089e396S.jpg_800x800.jpg"
+
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005003416182958.html%3FshpMethod%3DCAINIAO_STANDARD%26sku_id%3D12000052883287308%26spm%3Da2g2w.productlist.search_results.0.31bd5613OeYEsW"
+
+- id: ugreen-65w-ru
+  store: aliexpress
+  lang: ru
+  category: electronics
+
+  title: "UGREEN GaN зарядка 65W (EU)"
+  desc: "Для ноутбука и телефона. Длинный кабель. Не греется."
+
+  price: 13150
+  old_price: 31316
+  discount: 58
+
+  image: "https://ae04.alicdn.com/kf/S511004823ef645cb8354dda0b089e396S.jpg_800x800.jpg"
 
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005003416182958.html%3FshpMethod%3DCAINIAO_STANDARD%26sku_id%3D12000052883287308%26spm%3Da2g2w.productlist.search_results.0.31bd5613OeYEsW"
 
@@ -27,7 +43,22 @@
   old_price: 14737
   discount: 28
 
-  image: "/assets/products/2-asometech-65w-gan.jpg"
+  image: "https://ae04.alicdn.com/kf/S41e52213122d467caf778c0524a8e68aQ.jpg_800x800.jpg"
+
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005009397566884.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000048977964486%26spm%3Da2g2w.productlist.search_results.3.31bd5613OeYEsW"
+- id: asometech-65w-en
+  store: aliexpress
+  lang: en
+  category: electronics
+
+  title: "ASOMETECH GaN 65W (EU + Cable)"
+  desc: "Charges laptop + phone. Compact. Stays cool."
+
+  price: 10611
+  old_price: 14737
+  discount: 28
+
+  image: "https://ae04.alicdn.com/kf/S41e52213122d467caf778c0524a8e68aQ.jpg_800x800.jpg"
 
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005009397566884.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000048977964486%26spm%3Da2g2w.productlist.search_results.3.31bd5613OeYEsW"
 
@@ -44,7 +75,7 @@
   old_price: 23359
   discount: 28
 
-  image: "/assets/products/baseus-65w-gan.jpg"
+  image: "https://ae04.alicdn.com/kf/S99ab89f1261045b2a299eed5077cdeccJ.jpg_800x800.jpg"
 
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005007311524739.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000040204044244%26spm%3Da2g2w.productlist.search_results.6.31bd5613OeYEsW"
 
@@ -61,7 +92,7 @@
   old_price: 23359
   discount: 28
 
-  image: "/assets/products/baseus-65w-gan.jpg"
+  image: "https://ae04.alicdn.com/kf/S99ab89f1261045b2a299eed5077cdeccJ.jpg_800x800.jpg"
 
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005007311524739.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000040204044244%26spm%3Da2g2w.productlist.search_results.6.31bd5613OeYEsW"
 
@@ -78,7 +109,7 @@
   old_price: 23143
   discount: 27
 
-  image: "/assets/products/4-baseus-65w-gan-white.jpg"
+  image: "https://ae04.alicdn.com/kf/Se44e1ad5791d4b2d84a92ba18e0adacfI.jpg_800x800.jpg"
 
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005008879280641.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000047061416058%26spm%3Da2g2w.productlist.search_results.8.31bd5613OeYEsW"
 
@@ -95,6 +126,5 @@
   old_price: 23143
   discount: 27
 
-  image: "/assets/products/4-baseus-65w-gan-white.jpg"
-
+  image: "https://ae04.alicdn.com/kf/Se44e1ad5791d4b2d84a92ba18e0adacfI.jpg_800x800.jpg"
   link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005008879280641.html%3FshpMethod%3DCAINIAO_FULFILLMENT_STD%26sku_id%3D12000047061416058%26spm%3Da2g2w.productlist.search_results.8.31bd5613OeYEsW"
