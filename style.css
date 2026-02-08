@@ -31,7 +31,7 @@ body {
   line-height: 1.55;
   letter-spacing: -0.01em;
 
-  padding-bottom: 60px;
+  padding-bottom: 64px;
 }
 
 
@@ -82,10 +82,8 @@ main {
 .theme-btn {
   background: none;
   border: none;
-
   font-size: 16px;
   cursor: pointer;
-
   color: #666;
   margin-right: 8px;
 }
@@ -129,28 +127,44 @@ main {
 
 .deal {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 14px;
 
   margin-bottom: 14px;
-  padding: 12px;
+
+  border: 1px solid #eee;
+
+  overflow: hidden;
 
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-.deal img {
+
+/* Image container */
+
+.deal-image {
   width: 100%;
-  height: 180px;
+  height: 160px;
+
+  overflow: hidden;
+
+  background: #f0f0f0;
+}
+
+.deal-image img {
+  width: 100%;
+  height: 100%;
 
   object-fit: cover;
-
-  border-radius: 10px;
-  margin-bottom: 8px;
+  object-position: center 25%;
 
   display: block;
 }
 
+
+/* Body */
+
 .deal-body {
-  padding-top: 4px;
+  padding: 10px 12px;
 }
 
 .deal-title {
@@ -220,7 +234,6 @@ main {
 
   font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.01em;
 }
 
 .btn:hover {
@@ -235,7 +248,6 @@ main {
 .about {
   max-width: 700px;
   margin: auto;
-
   padding: 20px 12px;
 
   font-size: 15px;
@@ -321,11 +333,10 @@ p {
   .deal {
     display: grid;
     grid-template-columns: 160px 1fr;
-    gap: 14px;
   }
 
-  .deal img {
-    height: 140px;
+  .deal-image {
+    height: 120px;
   }
 
   .btn {
@@ -344,7 +355,6 @@ p {
 body.dark {
   background: #121212;
   color: #e6e6e6;
-
   font-weight: 400;
 }
 
@@ -373,11 +383,7 @@ body.dark .theme-btn {
 
 body.dark .deal {
   background: #1b1b1b;
-  box-shadow: 0 0 0 1px #242424;
-}
-
-body.dark .deal-title {
-  color: #f0f0f0;
+  border-color: #242424;
 }
 
 body.dark .deal-desc {
