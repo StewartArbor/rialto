@@ -1,16 +1,15 @@
 ---
 layout: default
-title: Лучшие скидки AliExpress
+title: Скидки AliExpress — Rialto
 lang: ru
 ---
 
 <header class="ru-hero">
 
-  <h1>Лучшие товары со скидками</h1>
+  <h1>Практичные товары по разумной цене</h1>
 
   <p class="ru-hero-desc">
-    Подборка товаров с AliExpress с нормальным соотношением цены и качества.
-
+    Подборка товаров с AliExpress с адекватным соотношением цены и качества.
   </p>
 
 </header>
@@ -22,59 +21,64 @@ lang: ru
 
   {% for item in items %}
 
-  <article class="deal">
+    <article class="deal">
 
-    <div class="deal-image">
-  <img
-    src="{{ item.image }}"
-    loading="lazy"
-    alt="{{ item.title }}"
-  >
-</div>
+      <!-- Image -->
+      <div class="deal-image">
+        <img
+          src="{{ item.image }}"
+          alt="{{ item.title }}"
+          loading="lazy"
+        >
+      </div>
 
+      <!-- Content -->
+      <div class="deal-body">
 
-    <div class="deal-body">
+        <h3 class="deal-title">
+          {{ item.title }}
+        </h3>
 
-      <h3 class="deal-title">
-        {{ item.title }}
-      </h3>
-
-      <p class="deal-desc">
-        {{ item.desc }}
-      </p>
-
-      <div class="deal-price">
-
-        <span class="price-now">
-          ₸{{ item.price }}
-        </span>
-
-        {% if item.old_price %}
-        <span class="price-old">
-          ₸{{ item.old_price }}
-        </span>
+        {% if item.desc %}
+        <p class="deal-desc">
+          {{ item.desc }}
+        </p>
         {% endif %}
 
-        {% if item.discount %}
-        <span class="price-discount">
-          -{{ item.discount }}%
-        </span>
-        {% endif %}
+        <!-- Price -->
+        <div class="deal-price">
+
+          <span class="price-now">
+            {{ item.price }}
+          </span>
+
+          {% if item.old_price %}
+          <span class="price-old">
+            {{ item.old_price }}
+          </span>
+          {% endif %}
+
+          {% if item.discount %}
+          <span class="price-discount">
+            {{ item.discount }}
+          </span>
+          {% endif %}
+
+        </div>
+
+        <!-- Button -->
+        <a
+          class="btn"
+          href="{{ item.link }}"
+          target="_blank"
+          rel="nofollow noopener"
+        >
+          Открыть в AliExpress
+        </a>
 
       </div>
 
-      <a
-        class="btn"
-        href="{{ item.link }}"
-        target="_blank"
-        rel="nofollow noopener"
-      >
-        Открыть в AliExpress
-      </a>
-
-    </div>
-
-  </article>
+    </article>
 
   {% endfor %}
 
