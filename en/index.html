@@ -6,68 +6,67 @@ lang: en
 
 <div class="feed">
 
-  {% assign items = site.data.items | where: "lang", "en" %}
+  {% assign lang = page.lang | default: "en" %}
+{% assign items = site.data.items %}
 
-  {% for item in items %}
+{% for item in items %}
 
-    <article class="deal">
+{% assign title = item.title[lang] | default: item.title["en"] %}
+{% assign desc  = item.desc[lang]  | default: item.desc["en"] %}
 
-      <!-- Image -->
-      <div class="deal-image">
-        <img
-          src="{{ item.image }}"
-          alt="{{ item.title }}"
-          loading="lazy"
-        >
-      </div>
 
-      <!-- Content -->
-      <div class="deal-body">
+<article class="deal">
 
-        <h3 class="deal-title">
-          {{ item.title }}
-        </h3>
+  <div class="deal-image">
+    <img
+      src="{{ item.image }}"
+      loading="lazy"
+      alt="{{ title }}"
+    >
+  </div>
 
-        {% if item.desc %}
-        <p class="deal-desc">
-          {{ item.desc }}
-        </p>
-        {% endif %}
+  <div class="deal-body">
 
-        <!-- Price -->
-        <div class="deal-price">
+    <h3 class="deal-title">
+      {{ title }}
+    </h3>
 
-          <span class="price-now">
-            {{ item.price_fmt }}
-          </span>
+    <p class="deal-desc">
+      {{ desc }}
+    </p>
 
-          {% if item.old_price %}
-          <span class="price-old">
-            {{ item.old_price_fmt }}
-          </span>
-          {% endif %}
+    <div class="deal-price">
 
-          {% if item.discount %}
-          <span class="price-discount">
-            {{ item.discount }}
-          </span>
-          {% endif %}
+      <span class="price-now">
+        ₸{{ item.price }}
+      </span>
 
-        </div>
+      {% if item.old_price %}
+      <span class="price-old">
+        ₸{{ item.old_price }}
+      </span>
+      {% endif %}
 
-        <!-- Button -->
-        <a
-          class="btn"
-          href="{{ item.link }}"
-          target="_blank"
-          rel="nofollow noopener"
-        >
-          Open on AliExpress
-        </a>
+      {% if item.discount %}
+      <span class="price-discount">
+        -{{ item.discount }}%
+      </span>
+      {% endif %}
 
-      </div>
+    </div>
 
-    </article>
+    <a
+      class="btn"
+      href="{{ item.link }}"
+      target="_blank"
+      rel="nofollow noopener"
+    >
+      {% if lang == "ru" %}Открыть{% elsif lang == "kz" %}Ашу{% else %}Open{% endif %}
+    </a>
+
+  </div>
+
+</article>
 
   {% endfor %}
 
