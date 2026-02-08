@@ -17,69 +17,75 @@ lang: kz
 
 <div class="feed">
 
-  {% assign items = site.data.items | where: "lang", "kz" %}
+{% assign lang = page.lang | default: "kz" %}
+{% assign items = site.data.items %}
 
-  {% for item in items %}
+{% for item in items %}
 
-    <article class="deal">
+{% assign title = item.title[lang] | default: item.title.en %}
+{% assign desc  = item.desc[lang]  | default: item.desc.en %}
+{% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
+{% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.en %}
 
-      <!-- Image -->
-      <div class="deal-image">
-        <img
-          src="{{ item.image }}"
-          alt="{{ item.title }}"
-          loading="lazy"
-        >
-      </div>
+<article class="deal">
 
-      <!-- Content -->
-      <div class="deal-body">
+  <!-- Image -->
+  <div class="deal-image">
+    <img
+      src="{{ item.image }}"
+      alt="{{ title }}"
+      loading="lazy"
+    >
+  </div>
 
-        <h3 class="deal-title">
-          {{ item.title }}
-        </h3>
+  <!-- Content -->
+  <div class="deal-body">
 
-        {% if item.desc %}
-        <p class="deal-desc">
-          {{ item.desc }}
-        </p>
-        {% endif %}
+    <h3 class="deal-title">
+      {{ title }}
+    </h3>
 
-        <!-- Price -->
-        <div class="deal-price">
+    {% if desc %}
+    <p class="deal-desc">
+      {{ desc }}
+    </p>
+    {% endif %}
 
-          <span class="price-now">
-            {{ item.price }}
-          </span>
+    <!-- Price -->
+    <div class="deal-price">
 
-          {% if item.old_price %}
-          <span class="price-old">
-            {{ item.old_price }}
-          </span>
-          {% endif %}
+      <span class="price-now">
+        {{ price }}
+      </span>
 
-          {% if item.discount %}
-          <span class="price-discount">
-            {{ item.discount }}
-          </span>
-          {% endif %}
+      {% if item.old_price %}
+      <span class="price-old">
+        {{ oldp }}
+      </span>
+      {% endif %}
 
-        </div>
+      {% if item.discount %}
+      <span class="price-discount">
+        -{{ item.discount }}%
+      </span>
+      {% endif %}
 
-        <!-- Button -->
-        <a
-          class="btn"
-          href="{{ item.link }}"
-          target="_blank"
-          rel="nofollow noopener"
-        >
-          AliExpress-те ашу
-        </a>
+    </div>
 
-      </div>
+    <!-- Button -->
+    <a
+      class="btn"
+      href="{{ item.link }}"
+      target="_blank"
+      rel="nofollow noopener"
+    >
+      AliExpress-те ашу
+    </a>
 
-    </article>
+  </div>
 
-  {% endfor %}
+</article>
+
+{% endfor %}
 
 </div>
