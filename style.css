@@ -576,4 +576,39 @@ body {
   text-decoration: none;
   color: #333;
 }
+.deal-body {
+  padding-top: 8px;
+}
+
+.deal-desc {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0 8px;
+}
+
+.deal-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.price-now {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.price-old {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-discount {
+  font-size: 12px;
+  background: #ff7a00;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
 
