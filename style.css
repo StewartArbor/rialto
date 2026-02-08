@@ -124,9 +124,21 @@ main {
 
 .deal img {
   width: 100%;
+  height: 180px;
+
+  object-fit: cover;
+  object-position: center;
+
   border-radius: 10px;
   margin-bottom: 8px;
 }
+
+@media (min-width: 768px) {
+  .deal img {
+    height: 140px;
+  }
+}
+
 
 .deal-body {
   padding-top: 4px;
