@@ -1,292 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="UTF-8">
-
-  <title>{{ page.title }} | Rialto Coupons</title>
-
-  <meta name="description"
-    content="Latest AliExpress coupons, promo codes, and shopping deals. Updated daily.">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
 
-  <link rel="stylesheet" href="/style.css">
-  <meta name="verify-admitad" content="8ff2a8495f" />
-  <meta name="takprodam-verification" content="8b29dc23-b060-41cc-8433-efdb5c07e3e9">
- 
-  
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/mobile.css">
+  <link rel="stylesheet" href="/assets/css/desktop.css">
 </head>
 
 <body>
 
-
-<!-- ===== TOP BAR ===== -->
-{% if page.url contains 'aliexpress' %}
-
-<nav class="sub-tabs">
-
-  <a href="/en/aliexpress.html"
-     class="{% if page.url == '/en/aliexpress.html' %}active{% endif %}">
-     All Deals
-  </a>
-
-  <a href="/en/aliexpress-phones.html"
-     class="{% if page.url contains 'phones' %}active{% endif %}">
-     📱 Phones
-  </a>
-
-  <a href="/en/aliexpress-fashion.html"
-     class="{% if page.url contains 'fashion' %}active{% endif %}">
-     👕 Fashion
-  </a>
-
-  <a href="/en/aliexpress-home.html"
-     class="{% if page.url contains 'home' %}active{% endif %}">
-     🏠 Home
-  </a>
-
-  <a href="/en/aliexpress-electronics.html"
-     class="{% if page.url contains 'electronics' %}active{% endif %}">
-     💻 Electronics
-  </a>
-
-</nav>
-
-{% endif %}
-
-  
-<header class="top-bar">
-
-  <!-- Logo -->
-  <a href="/" class="logo">Rialto</a>
-
-
-  <!-- Folder Tabs -->
-  <nav class="folder-nav">
-
-  <div class="tab-slider"></div>
-
-
-  <a href="/en/aliexpress.html"
-     class="{% if page.url contains 'aliexpress' %}active ali{% endif %}">
-     AliExpress Coupons
-  </a>
-
-  <a href="/en/services.html"
-     class="{% if page.url contains 'services' %}active srv{% endif %}">
-     Services
-  </a>
-
-  <a href="/about.html"
-     class="{% if page.url contains 'about' %}active abt{% endif %}">
-     About
-  </a>
-
-  <a href="/contact.html"
-     class="{% if page.url contains 'contact' %}active cnt{% endif %}">
-     Contact
-  </a>
-
-</nav>
-
-
-
-  <!-- Right Side -->
-<div class="top-right">
-
-  <!-- Language -->
-<div class="lang-tabs">
-
-  {% assign parts = page.url | split:'/' %}
-  {% assign page_name = parts | last %}
-
-  <a href="/en/{{ page_name }}">EN</a>
-  <a href="/ru/{{ page_name }}">RU</a>
-  <a href="/kz/{{ page_name }}">KZ</a>
-
-</div>
-
-
-  <!-- Theme -->
-  <button id="themeToggle" class="theme-btn">🌙</button>
-
-</div>
-
-
+<header class="topbar">
+  <div class="logo">Rialto</div>
+  <div class="lang">
+    <a href="/en/">EN</a>
+    <a href="/ru/">RU</a>
+    <a href="/kz/">KZ</a>
+  </div>
 </header>
-
-
-<!-- ===== CONTENT ===== -->
 
 <main>
   {{ content }}
 </main>
 
-
-<!-- ===== FOOTER ===== -->
-
-<footer class="footer">
-
-  <a href="https://t.me/rialtokz" target="_blank" rel="noopener">
-
-    {% if page.lang == 'ru' %}
-      Присоединяйтесь к нашему Telegram
-    {% elsif page.lang == 'kk' %}
-      Telegram чатына қосылыңыз
-    {% else %}
-      Join our Telegram chat
-    {% endif %}
-
-  </a>
-
+<footer>
+  © {{ site.time | date: "%Y" }} Rialto
 </footer>
-
-
-<!-- ===== SCRIPTS ===== -->
-
-<script>
-
-/* Theme Toggle */
-
-const toggle = document.getElementById("themeToggle");
-const root = document.documentElement;
-
-const saved = localStorage.getItem("theme");
-if (saved) root.dataset.theme = saved;
-
-if (toggle) {
-  toggle.onclick = () => {
-
-    const next =
-      root.dataset.theme === "dark"
-      ? "light"
-      : "dark";
-
-    root.dataset.theme = next;
-    localStorage.setItem("theme", next);
-  };
-}
-
-
-/* Fake Countdown */
-
-document.querySelectorAll(".timer").forEach(timer => {
-
-  let seconds = 7200 + Math.floor(Math.random() * 4000);
-
-  setInterval(() => {
-
-    seconds--;
-
-    if (seconds < 0) {
-      seconds = 7200 + Math.floor(Math.random() * 4000);
-    }
-
-    const h = String(Math.floor(seconds / 3600)).padStart(2,'0');
-    const m = String(Math.floor((seconds % 3600)/60)).padStart(2,'0');
-    const s = String(seconds % 60).padStart(2,'0');
-
-    timer.textContent = `${h}:${m}:${s}`;
-
-  }, 1000);
-
-});
-
-
-/* Fake Usage */
-
-document.querySelectorAll(".usage-num").forEach(el => {
-
-  let base = 1000 + Math.floor(Math.random() * 800);
-
-  setInterval(() => {
-    base += Math.floor(Math.random() * 3);
-    el.textContent = base;
-  }, 4000);
-
-});
-
-
-/* Fake Last Updated */
-
-const updateEl = document.getElementById("update-time");
-
-if (updateEl) {
-
-  let minutes = 2 + Math.floor(Math.random() * 5);
-
-  function refreshTime() {
-
-    if (minutes <= 1) {
-      updateEl.textContent = "just now";
-    } else {
-      updateEl.textContent = minutes + " minutes ago";
-    }
-
-    minutes = Math.max(1, minutes - 1);
-  }
-
-  refreshTime();
-
-  setInterval(() => {
-    minutes = 1 + Math.floor(Math.random() * 5);
-    refreshTime();
-  }, 60000);
-
-}
-
-/* Tab Slider Animation */
-
-function moveTabSlider() {
-
-  const nav = document.querySelector(".folder-nav");
-  const slider = document.querySelector(".tab-slider");
-  const active = document.querySelector(".folder-nav a.active");
-
-  if (!nav || !slider || !active) return;
-
-  const navRect = nav.getBoundingClientRect();
-  const tabRect = active.getBoundingClientRect();
-
-  slider.style.left = (tabRect.left - navRect.left) + "px";
-  slider.style.width = tabRect.width + "px";
-}
-
-
-/* On load */
-window.addEventListener("load", moveTabSlider);
-
-/* On resize */
-window.addEventListener("resize", moveTabSlider);
-
-
-/* Hover preview */
-
-document.querySelectorAll(".folder-nav a").forEach(tab => {
-
-  tab.addEventListener("mouseenter", () => {
-
-    const nav = document.querySelector(".folder-nav");
-    const slider = document.querySelector(".tab-slider");
-
-    const navRect = nav.getBoundingClientRect();
-    const tabRect = tab.getBoundingClientRect();
-
-    slider.style.left = (tabRect.left - navRect.left) + "px";
-    slider.style.width = tabRect.width + "px";
-  });
-
-});
-
-
-/* Restore active on leave */
-
-document.querySelector(".folder-nav")?.addEventListener("mouseleave", () => {
-  moveTabSlider();
-});
-
-
-</script>
 
 </body>
 </html>
