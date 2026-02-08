@@ -372,3 +372,20 @@ body.dark .bottom-nav a:hover {
 body.dark .about {
   color: #ddd;
 }
+
+/* Theme toggle */
+
+.theme-btn {
+  background: none;
+  border: none;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  color: #666;
+  margin-right: 8px;
+}
+
+body.dark .theme-btn {
+  color: #ccc;
+}
