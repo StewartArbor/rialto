@@ -1,57 +1,77 @@
 ---
 layout: default
+title: Лучшие скидки AliExpress
 lang: ru
-title: Купоны AliExpress и Услуги
 ---
 
+<header class="ru-hero">
 
-<section class="hero">
+  <h1>Лучшие товары со скидками</h1>
 
-  <h1>Экономьте деньги и зарабатывайте с Rialto</h1>
-
-  <p class="hero-desc">
-    Проверенные купоны AliExpress, цифровые услуги
-    и возможности заработка онлайн.
+  <p class="ru-hero-desc">
+    Отборные предложения AliExpress. Без хлама и фейковых акций.
   </p>
 
-
-  <div class="hero-buttons">
-
-    <a href="/ru/aliexpress.html" class="hero-btn primary">
-      🔥 Купоны AliExpress
-    </a>
-
-    <a href="/ru/services.html" class="hero-btn secondary">
-      💼 Услуги
-    </a>
-
-  </div>
-
-</section>
+</header>
 
 
-<section class="features">
+<div class="feed">
 
-  <div class="feature-card">
-    <h3>💸 Лучшие скидки</h3>
-    <p>Актуальные промокоды и акции AliExpress.</p>
-  </div>
+  {% assign items = site.data.items | where: "lang", "ru" %}
 
-  <div class="feature-card">
-    <h3>⚡ Быстрые услуги</h3>
-    <p>Готовые решения для сайтов и продвижения.</p>
-  </div>
+  {% for item in items %}
 
-  <div class="feature-card">
-    <h3>🌍 Мультиязычность</h3>
-    <p>Доступно на английском, русском и казахском.</p>
-  </div>
+  <article class="deal">
 
-</section>
+    <img
+      src="{{ item.image }}"
+      loading="lazy"
+      alt="{{ item.title }}"
+    >
 
+    <div class="deal-body">
 
-<section class="cta">
+      <h3 class="deal-title">
+        {{ item.title }}
+      </h3>
 
-  <h2>Начните экономить уже сегодня</h2>
+      <p class="deal-desc">
+        {{ item.desc }}
+      </p>
 
-  <p>
+      <div class="deal-price">
+
+        <span class="price-now">
+          ₸{{ item.price }}
+        </span>
+
+        {% if item.old_price %}
+        <span class="price-old">
+          ₸{{ item.old_price }}
+        </span>
+        {% endif %}
+
+        {% if item.discount %}
+        <span class="price-discount">
+          -{{ item.discount }}%
+        </span>
+        {% endif %}
+
+      </div>
+
+      <a
+        class="btn"
+        href="{{ item.link }}"
+        target="_blank"
+        rel="nofollow noopener"
+      >
+        Открыть в AliExpress
+      </a>
+
+    </div>
+
+  </article>
+
+  {% endfor %}
+
+</div>
