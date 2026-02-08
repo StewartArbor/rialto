@@ -1,32 +1,48 @@
 ---
 layout: default
-title: title: Скидки AliExpress — Rialto
+title: Скидки AliExpress — Rialto
+lang: ru
 ---
 
 <div class="feed">
 
-{% for item in site.data.items %}
+{% assign lang = page.lang | default: "ru" %}
+{% assign items = site.data.items %}
+
+{% for item in items %}
+
+{% assign title = item.title[lang] | default: item.title.ru | default: item.title.en %}
+{% assign price = item.price_fmt[lang] | default: item.price_fmt.ru | default: item.price_fmt.en %}
+
 <div class="deal">
 
   <img
-  src="{{ item.image }}"
-  loading="lazy"
-  alt="{{ item.title }}"
->
+    src="{{ item.image }}"
+    loading="lazy"
+    alt="{{ title }}"
+  >
 
   <div>
-    <h3>{{ item.title }}</h3>
+
+    <h3>{{ title }}</h3>
 
     <div class="price">
-      ₸{{ item.price }}
+      {{ price }}
     </div>
 
-    <a class="btn" href="{{ item.link }}">
-      Open Deal
+    <a
+      class="btn"
+      href="{{ item.link }}"
+      target="_blank"
+      rel="nofollow noopener"
+    >
+      Купить в Aliexpress
     </a>
+
   </div>
 
 </div>
+
 {% endfor %}
 
 </div>
