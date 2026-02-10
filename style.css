@@ -118,6 +118,25 @@ main {
   color: #666;
 }
 
+.site-hero{
+  text-align:center;
+  padding:18px 12px 8px;
+}
+
+.site-hero h1{
+  font-size:22px;
+  margin-bottom:6px;
+}
+
+.site-hero p{
+  font-size:14px;
+  color:#666;
+  margin:0;
+}
+
+body.dark .site-hero p{ color:#aaa; }
+
+
 
 /* =====================
    FEED
