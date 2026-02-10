@@ -18,18 +18,22 @@ lang: kz
 <div class="feed">
 
 {% assign lang = page.lang | default: "kz" %}
-{% assign items = site.data.items %}
+
+{% assign items = site.data.items_electronics
+  | concat: site.data.items_home
+  | concat: site.data.items_tools %}
+
+{% assign items = items | where: "active", true %}
 
 {% for item in items %}
 
-{% assign title = item.title[lang] | default: item.title.en %}
-{% assign desc  = item.desc[lang]  | default: item.desc.en %}
-{% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
-{% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.en %}
+{% assign title = item.title[lang] | default: item.title.kz | default: item.title.en %}
+{% assign desc  = item.desc[lang]  | default: item.desc.kz  | default: item.desc.en %}
+{% assign price = item.price_fmt[lang] | default: item.price_fmt.kz | default: item.price_fmt.en %}
+{% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.kz | default: item.old_price_fmt.en %}
 
 <article class="deal">
 
-  <!-- Image -->
   <div class="deal-image">
     <img
       src="{{ item.image }}"
@@ -38,7 +42,6 @@ lang: kz
     >
   </div>
 
-  <!-- Content -->
   <div class="deal-body">
 
     <h3 class="deal-title">
@@ -51,7 +54,6 @@ lang: kz
     </p>
     {% endif %}
 
-    <!-- Price -->
     <div class="deal-price">
 
       <span class="price-now">
@@ -72,7 +74,6 @@ lang: kz
 
     </div>
 
-    <!-- Button -->
     <a
       class="btn"
       href="{{ item.link }}"
