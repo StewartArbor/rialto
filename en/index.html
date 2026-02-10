@@ -7,7 +7,12 @@ lang: en
 <div class="feed">
 
 {% assign lang = page.lang | default: "en" %}
-{% assign items = site.data.items %}
+
+{% assign items = site.data.items_electronics
+  | concat: site.data.items_home
+  | concat: site.data.items_tools %}
+
+{% assign items = items | where: "active", true %}
 
 {% for item in items %}
 
