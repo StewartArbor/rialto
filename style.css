@@ -37,7 +37,8 @@ body {
   line-height: 1.55;
   letter-spacing: -0.01em;
 
-  padding-bottom: 64px;
+  /* bottom nav is no longer fixed */
+  padding-bottom: 24px;
 }
 
 
@@ -144,11 +145,11 @@ main {
 }
 
 
-/* Image container (FIXED) */
+/* Image container */
 
 .deal-image {
   width: 100%;
-  height: 140px;          /* smaller on mobile */
+  height: 140px;
   overflow: hidden;
   background: #f0f0f0;
 }
@@ -156,7 +157,7 @@ main {
 .deal-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* key fix: stop banner-cropping */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -197,6 +198,7 @@ main {
   font-size: 18px;
   font-weight: 700;
 }
+
 
 .price-old {
   font-size: 13px;
@@ -268,42 +270,46 @@ main {
 .site-footer {
   text-align: center;
   font-size: 12px;
-
   color: #777;
-  padding: 20px 10px;
+  padding: 20px 10px 6px;
 }
 
 
 /* =====================
-   BOTTOM NAV
+   BOTTOM NAV (humble footnotes)
 ===================== */
 
 .bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
+  position: static;
   display: flex;
+  justify-content: center;
+  gap: 14px;
 
-  background: #fff;
-  border-top: 1px solid #ddd;
+  background: transparent;
+  border: 0;
+
+  padding: 0 0 18px;
+  margin: 0 auto;
+
+  opacity: 0.85;
 }
 
 .bottom-nav a {
-  flex: 1;
-
+  flex: 0;
   text-align: center;
-  padding: 10px;
+  padding: 0;
 
-  font-size: 13px;
-  color: #333;
+  font-size: 12px;
+  color: #777;
 
   text-decoration: none;
+  background: transparent;
+  border: 0;
 }
 
 .bottom-nav a:hover {
-  background: #f0f0f0;
+  text-decoration: underline;
+  background: transparent;
 }
 
 
@@ -333,7 +339,7 @@ p {
 
   .deal {
     display: grid;
-    grid-template-columns: 140px 1fr; /* smaller thumbnail */
+    grid-template-columns: 140px 1fr;
     gap: 12px;
     align-items: center;
   }
@@ -433,17 +439,8 @@ body.dark .site-footer {
 
 /* Bottom nav */
 
-body.dark .bottom-nav {
-  background: #181818;
-  border-top-color: #242424;
-}
-
 body.dark .bottom-nav a {
-  color: #ccc;
-}
-
-body.dark .bottom-nav a:hover {
-  background: #202020;
+  color: #888;
 }
 
 
