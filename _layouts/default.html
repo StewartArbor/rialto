@@ -41,6 +41,23 @@
 
   </header>
 
+  {% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
+<section class="site-hero">
+  {% case page.lang %}
+    {% when "ru" %}
+      <h1>Скидки AliExpress в Казахстане</h1>
+      <p>Подборка полезных товаров с актуальными ценами. Обновляется регулярно.</p>
+    {% when "kz" %}
+      <h1>AliExpress: баға-сапасы жақсы тауарлар</h1>
+      <p>Қысқа сипаттама, түсінікті баға, тікелей сілтеме.</p>
+    {% else %}
+      <h1>Best AliExpress deals</h1>
+      <p>Practical picks, clear pricing, quick descriptions.</p>
+  {% endcase %}
+</section>
+{% endif %}
+
+
 
   <!-- Main content -->
   <main>
