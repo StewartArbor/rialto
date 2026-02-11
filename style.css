@@ -463,3 +463,24 @@ body.dark h3 {
 body.dark .about {
   color: #ddd;
 }
+
+.cat-nav{
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+  margin: 16px auto 18px;
+}
+.cat-nav a{
+  font-size:12px; color:#777; text-decoration:none;
+  padding:6px 10px; border:1px solid #222; border-radius:999px;
+}
+.cat-nav a.active{ color:#ddd; border-color:#444; }
+
+.pager{
+  display:flex; gap:10px; justify-content:center; align-items:center;
+  margin: 18px auto 40px;
+  color:#777; font-size:12px;
+}
+.pager button{
+  background:#111; border:1px solid #222; color:#ccc;
+  padding:6px 10px; border-radius:8px; cursor:pointer;
+}
+.pager button:disabled{ opacity:0.4; cursor:default; }

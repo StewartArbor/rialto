@@ -10,6 +10,31 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 
+  {% if page.url contains "/en/" or page.url contains "/ru/" or page.url contains "/kz/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{ page.title | escape }}",
+  "itemListElement": [
+    {% assign items = site.data.items | where: "active", true %}
+    {% if page.cat %}{% assign items = items | where: "category", page.cat %}{% endif %}
+    {% assign items = items | sort: "added" | reverse %}
+    {% for item in items limit: 20 %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "url": "{{ item.link }}",
+      "name": "{{ item.title[page.lang] | default: item.title.en | escape }}",
+      "image": "{{ item.image }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+
 </head>
 
 

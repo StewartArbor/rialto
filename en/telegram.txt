@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /en/telegram.txt
+---
+{% assign items = site.data.items | where: "active", true | sort: "added" | reverse %}
+{% assign lang = "en" %}
+{% for item in items limit: 20 %}
+{% assign title = item.title[lang] | default: item.title.en %}
+{% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
+{{ title }} — {{ price }}
+{{ item.link }}
+
+{% endfor %}

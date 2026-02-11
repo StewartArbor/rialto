@@ -1,7 +1,14 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign items = site.data.items | where: "active", true %}
 
-<div class="feed">
+{% if page.cat %}
+  {% assign items = items | where: "category", page.cat %}
+{% endif %}
+
+{% assign items = items | sort: "added" | reverse %}
+
+
+<div class="feed" id="dealFeed">
 
 {% for item in items %}
 
@@ -56,5 +63,49 @@
   </article>
 
 {% endfor %}
+
+</div>
+
+<div class="pager" id="pager"></div>
+
+<script>
+(function(){
+  const PAGE_SIZE = 12;
+  const feed = document.getElementById('dealFeed');
+  const pager = document.getElementById('pager');
+  if(!feed || !pager) return;
+
+  const cards = Array.from(feed.querySelectorAll('article.deal'));
+  if(cards.length <= PAGE_SIZE) return;
+
+  let page = 1;
+  const pages = Math.ceil(cards.length / PAGE_SIZE);
+
+  function render(){
+    const start = (page-1)*PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    cards.forEach((c,i)=> c.style.display = (i>=start && i<end) ? '' : 'none');
+
+    pager.innerHTML = '';
+    const prev = document.createElement('button');
+    prev.textContent = '←';
+    prev.disabled = page===1;
+    prev.onclick = ()=>{ page--; render(); };
+
+    const next = document.createElement('button');
+    next.textContent = '→';
+    next.disabled = page===pages;
+    next.onclick = ()=>{ page++; render(); };
+
+    const label = document.createElement('span');
+    label.textContent = `Page ${page} / ${pages}`;
+
+    pager.append(prev,label,next);
+  }
+
+  render();
+})();
+</script>
+
 
 </div>

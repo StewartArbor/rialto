@@ -1,0 +1,7 @@
+{% assign lang = page.lang | default: "en" %}
+<nav class="cat-nav">
+  <a href="/{{ lang }}/" class="{% if page.cat == nil %}active{% endif %}">All</a>
+  <a href="/{{ lang }}/cat/electronics/" class="{% if page.cat == 'electronics' %}active{% endif %}">Electronics</a>
+  <a href="/{{ lang }}/cat/home/" class="{% if page.cat == 'home' %}active{% endif %}">Home</a>
+  <a href="/{{ lang }}/cat/tools/" class="{% if page.cat == 'tools' %}active{% endif %}">Tools</a>
+</nav>
