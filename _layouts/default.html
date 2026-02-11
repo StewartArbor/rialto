@@ -69,20 +69,19 @@
 
 
   <!-- Footer -->
-  <footer class="site-footer">
+<footer class="site-footer">
 
-    © {{ site.time | date: "%Y" }} Rialto
+  <div class="footer-inner">
+    <span>© {{ site.time | date: "%Y" }} Rialto</span>
 
-  </footer>
+    <div class="footer-links">
+      <a href="{{ '/about.html' | relative_url }}">About</a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+    </div>
+  </div>
 
+</footer>
 
-  <!-- Bottom navigation -->
-  <nav class="bottom-nav">
-
-    <a href="{{ '/about.html' | relative_url }}">ℹ️ About</a>
-    <a href="{{ '/contact.html' | relative_url }}">✉️ Contact</a>
-
-  </nav>
 
   <script>
   const btn = document.getElementById('themeToggle');
