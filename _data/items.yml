@@ -1,6 +1,6 @@
 - id: ugreen-65w
   active: true
-  added: 2026-02-10
+  added: "2026-02-10"
   store: aliexpress
   category: electronics
 
@@ -34,7 +34,7 @@
 
 - id: asometech-65w
   active: true
-  added: 2026-02-10
+  added: "2026-02-10"
   store: aliexpress
   category: electronics
 
@@ -68,7 +68,7 @@
 
 - id: baseus-65w-black
   active: true
-  added: 2026-02-10
+  added: "2026-02-10"
   store: aliexpress
   category: electronics
 
