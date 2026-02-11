@@ -1,2 +1,101 @@
-- id: test
+- id: ugreen-65w
   active: true
+  added: 2026-02-10
+  store: aliexpress
+  category: electronics
+
+  title:
+    en: "UGREEN 65W GaN Fast Charger (EU)"
+    ru: "UGREEN GaN зарядка 65W (EU)"
+    kz: "UGREEN GaN 65W (EU)"
+
+  desc:
+    en: "Charges laptop + phone. Long cable. Stays cool."
+    ru: "Для ноутбука и телефона. Длинный кабель. Не греется."
+    kz: "Ноутбук пен телефонға. Ұзын кабель. Қызбайды."
+
+  price: 13150
+  old_price: 31316
+  discount: 58
+
+  price_fmt:
+    en: "₸13,150"
+    ru: "₸13 150"
+    kz: "₸13 150"
+
+  old_price_fmt:
+    en: "₸31,316"
+    ru: "₸31 316"
+    kz: "₸31 316"
+
+  image: "https://ae04.alicdn.com/kf/S511004823ef645cb8354dda0b089e396S.jpg_800x800.jpg"
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005003416182958.html"
+
+
+- id: asometech-65w
+  active: true
+  added: 2026-02-10
+  store: aliexpress
+  category: electronics
+
+  title:
+    en: "ASOMETECH GaN 65W (EU + Cable)"
+    ru: "ASOMETECH GaN 65W (EU + кабель)"
+    kz: "ASOMETECH GaN 65W (EU + кабель)"
+
+  desc:
+    en: "Charges laptop + phone. Compact. Stays cool."
+    ru: "Для ноутбука и телефона. Компактный. Не греется."
+    kz: "Ноутбук пен телефонға. Шағын. Қызбайды."
+
+  price: 10611
+  old_price: 14737
+  discount: 28
+
+  price_fmt:
+    en: "₸10,611"
+    ru: "₸10 611"
+    kz: "₸10 611"
+
+  old_price_fmt:
+    en: "₸14,737"
+    ru: "₸14 737"
+    kz: "₸14 737"
+
+  image: "https://ae04.alicdn.com/kf/S41e52213122d467caf778c0524a8e68aQ.jpg_800x800.jpg"
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005009397566884.html"
+
+
+- id: baseus-65w-black
+  active: true
+  added: 2026-02-10
+  store: aliexpress
+  category: electronics
+
+  title:
+    en: "Baseus 65W GaN Charger (EU, Black)"
+    ru: "Baseus GaN 65W (чёрный, EU)"
+    kz: "Baseus GaN 65W (қара, EU)"
+
+  desc:
+    en: "Charges laptop + phone. Small. Stable."
+    ru: "Для ноутбука и телефона. Маленький. Быстро."
+    kz: "Ноутбук пен телефонға. Кішкентай. Тұрақты."
+
+  price: 16819
+  old_price: 23359
+  discount: 28
+
+  price_fmt:
+    en: "₸16,819"
+    ru: "₸16 819"
+    kz: "₸16 819"
+
+  old_price_fmt:
+    en: "₸23,359"
+    ru: "₸23 359"
+    kz: "₸23 359"
+
+  image: "https://ae04.alicdn.com/kf/S99ab89f1261045b2a299eed5077cdeccJ.jpg_800x800.jpg"
+  link: "https://rzekl.com/g/1e8d1144948ff2a8495f16525dc3e8/?ulp=https%3A%2F%2Faliexpress.ru%2Fitem%2F1005007311524739.html"
+

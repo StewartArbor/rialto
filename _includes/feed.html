@@ -1,0 +1,60 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign items = site.data.items | where: "active", true %}
+
+<div class="feed">
+
+{% for item in items %}
+
+  {% assign title = item.title[lang] | default: item.title.en %}
+  {% assign desc  = item.desc[lang]  | default: item.desc.en %}
+  {% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
+  {% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.en %}
+
+  <article class="deal">
+
+    <div class="deal-image">
+      <img src="{{ item.image }}" loading="lazy" alt="{{ title }}">
+    </div>
+
+    <div class="deal-body">
+
+      <h3 class="deal-title">{{ title }}</h3>
+
+      <p class="deal-desc">{{ desc }}</p>
+
+      <div class="deal-price">
+
+        <span class="price-now">{{ price }}</span>
+
+        {% if item.old_price %}
+        <span class="price-old">{{ oldp }}</span>
+        {% endif %}
+
+        {% if item.discount %}
+        <span class="price-discount">-{{ item.discount }}%</span>
+        {% endif %}
+
+      </div>
+
+      <a class="btn"
+         href="{{ item.link }}"
+         target="_blank"
+         rel="nofollow noopener">
+
+        {% if lang == "ru" %}
+          Открыть
+        {% elsif lang == "kz" %}
+          Ашу
+        {% else %}
+          Open
+        {% endif %}
+
+      </a>
+
+    </div>
+
+  </article>
+
+{% endfor %}
+
+</div>
