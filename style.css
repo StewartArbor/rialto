@@ -461,3 +461,41 @@ body.dark .about {
   padding:6px 10px; border-radius:8px; cursor:pointer;
 }
 .pager button:disabled{ opacity:0.4; cursor:default; }
+
+/* =====================
+   INLINE HERO
+===================== */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+}
+
+.hero-inline {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.hero-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.hero-desc {
+  font-size: 11px;
+  color: #888;
+}

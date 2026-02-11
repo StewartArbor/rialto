@@ -41,47 +41,50 @@
 <body>
 
   <!-- Top bar -->
-  <header class="topbar">
+   <header class="topbar">
+
+  <div class="top-left">
 
     <div class="logo">
       <a href="{{ '/' | relative_url }}">Rialto</a>
     </div>
-    
+
+    {% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
+    <div class="hero-inline">
+
+      {% case page.lang %}
+        {% when "ru" %}
+          <div class="hero-title">Скидки AliExpress</div>
+          <div class="hero-desc">Подборка полезных товаров</div>
+
+        {% when "kz" %}
+          <div class="hero-title">AliExpress тауарлары</div>
+          <div class="hero-desc">Тиімді ұсыныстар</div>
+
+        {% else %}
+          <div class="hero-title">Best AliExpress deals</div>
+          <div class="hero-desc">Practical picks, clear pricing</div>
+      {% endcase %}
+
+    </div>
+    {% endif %}
+
+  </div>
+
+  <div class="top-right">
+
     <button id="themeToggle" class="theme-btn">🌙</button>
-    
-<nav class="lang">
-  {% assign segments = page.url | split: "/" %}
-  {% assign first = segments[1] %}
 
-  {% if first == "en" or first == "ru" or first == "kz" %}
-    {% assign rest = page.url | remove_first: "/" | remove_first: first | remove_first: "/" %}
-  {% else %}
-    {% assign rest = page.url | remove_first: "/" %}
-  {% endif %}
+    <nav class="lang">
+      <a href="/en/">EN</a>
+      <a href="/ru/">RU</a>
+      <a href="/kz/">KZ</a>
+    </nav>
 
-  <a href="{% if rest == "" %}/en/{% else %}/en/{{ rest }}{% endif %}">EN</a>
-  <a href="{% if rest == "" %}/ru/{% else %}/ru/{{ rest }}{% endif %}">RU</a>
-  <a href="{% if rest == "" %}/kz/{% else %}/kz/{{ rest }}{% endif %}">KZ</a>
-</nav>
+  </div>
 
+</header>
 
-  </header>
-
-  {% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
-<section class="site-hero">
-  {% case page.lang %}
-    {% when "ru" %}
-      <h1>Скидки AliExpress в Казахстане</h1>
-      <p>Подборка полезных товаров с актуальными ценами. Обновляется регулярно.</p>
-    {% when "kz" %}
-      <h1>AliExpress: баға-сапасы жақсы тауарлар</h1>
-      <p>Қысқа сипаттама, түсінікті баға, тікелей сілтеме.</p>
-    {% else %}
-      <h1>Best AliExpress deals</h1>
-      <p>Practical picks, clear pricing, quick descriptions.</p>
-  {% endcase %}
-</section>
-{% endif %}
 
 
 
