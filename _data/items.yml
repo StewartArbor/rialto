@@ -1,19 +1,2 @@
-- id: ugreen-65w
+- id: test
   active: true
-  added: "2026-02-10"
-  store: aliexpress
-  category: electronics
-
-  title:
-    en: "UGREEN 65W GaN Fast Charger (EU)"
-    ru: "UGREEN GaN зарядка 65W (EU)"
-    kz: "UGREEN GaN 65W (EU)"
-
-  desc:
-    en: "Charges laptop + phone. Long cable. Stays cool."
-    ru: "Для ноутбука и телефона. Длинный кабель. Не греется."
-    kz: "Ноутбук пен телефонға. Ұзын кабель. Қызбайды."
-
-  price: 13150
-  old_price: 31316
-  discount: 58
