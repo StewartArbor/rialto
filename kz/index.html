@@ -19,9 +19,7 @@ lang: kz
 
 {% assign lang = page.lang | default: "kz" %}
 
-{% assign items = site.data.items_electronics
-  | concat: site.data.items_home
-  | concat: site.data.items_tools %}
+{% assign items = site.data.items %}
 
 {% assign items = items | where: "active", true %}
 
