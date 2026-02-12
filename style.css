@@ -68,17 +68,27 @@ body {
 }
 
 
-/* =====================
-   LAYOUT
-===================== */
+/* Header layout */
 
-main,
-.header-inner,
-.hero-inner,
-.front-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 var(--s4);
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  gap: var(--s3);
 }
 
 main {
@@ -109,7 +119,7 @@ p {
    HEADER / LOGO
 ===================== */
 
-.logo a {
+.brand a {
   font-size: 20px;
   font-weight: 800;
 
@@ -119,7 +129,6 @@ p {
   text-decoration: none;
   color: var(--ink);
 }
-
 
 /* =====================
    HERO
@@ -395,7 +404,7 @@ body.dark {
   --accent: #ff8a1d;
 }
 
-body.dark .logo a {
+body.dark .brand a {
   color: #f0f0f0;
 }
 
@@ -409,6 +418,12 @@ body.dark .deal:hover {
 
 body.dark .btn:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
 }
 
 
