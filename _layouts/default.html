@@ -4,130 +4,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{{ page.title }}</title>
 
-  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 
   {% if page.url contains "/en/" or page.url contains "/ru/" or page.url contains "/kz/" %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "{{ page.title | escape }}",
-  "itemListElement": [
-    {% assign items = site.data.items | where: "active", true %}
-    {% if page.cat %}{% assign items = items | where: "category", page.cat %}{% endif %}
-    {% assign items = items | sort: "added" | reverse %}
-    {% for item in items limit: 20 %}
-    {
-      "@type": "ListItem",
-      "position": {{ forloop.index }},
-      "url": "{{ item.link }}",
-      "name": "{{ item.title[page.lang] | default: item.title.en | escape }}",
-      "image": "{{ item.image }}"
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
-</script>
-{% endif %}
-
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "{{ page.title | escape }}",
+    "itemListElement": [
+      {% assign items = site.data.items | where: "active", true %}
+      {% if page.cat %}{% assign items = items | where: "category", page.cat %}{% endif %}
+      {% assign items = items | sort: "added" | reverse %}
+      {% for item in items limit: 20 %}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "url": "{{ item.link }}",
+        "name": "{{ item.title[page.lang] | default: item.title.en | escape }}",
+        "image": "{{ item.image }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 </head>
-
 
 <body>
 
-  <!-- Top bar -->
-   <header class="topbar">
+<header class="site-header">
+  <div class="header-inner">
 
-  <div class="top-left">
-
-    <div class="logo">
-      <a href="{{ '/' | relative_url }}">Rialto</a>
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}">RIALTO</a>
     </div>
 
-    {% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
-    <div class="hero-inline">
+    <div class="controls">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-label">Dark</span>
+      </button>
 
-      {% case page.lang %}
-        {% when "ru" %}
-          <div class="hero-title">Скидки AliExpress</div>
-          <div class="hero-desc">Подборка полезных товаров</div>
-
-        {% when "kz" %}
-          <div class="hero-title">AliExpress тауарлары</div>
-          <div class="hero-desc">Тиімді ұсыныстар</div>
-
-        {% else %}
-          <div class="hero-title">Best AliExpress deals</div>
-          <div class="hero-desc">Practical picks, clear pricing</div>
-      {% endcase %}
-
+      <nav class="lang-switch">
+        <a href="/en/" class="{% if page.lang == 'en' %}active{% endif %}">EN</a>
+        <a href="/ru/" class="{% if page.lang == 'ru' %}active{% endif %}">RU</a>
+        <a href="/kz/" class="{% if page.lang == 'kz' %}active{% endif %}">KZ</a>
+      </nav>
     </div>
-    {% endif %}
 
   </div>
-
-  <div class="top-right">
-
-    <button id="themeToggle" class="theme-btn">🌙</button>
-
-    <nav class="lang">
-      <a href="/en/">EN</a>
-      <a href="/ru/">RU</a>
-      <a href="/kz/">KZ</a>
-    </nav>
-
-  </div>
-
 </header>
 
 
+{% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
+<section class="hero">
+  <div class="hero-inner">
+
+    {% case page.lang %}
+      {% when "ru" %}
+        <h1>Скидки AliExpress</h1>
+        <p>Подборка полезных товаров с прозрачной ценой</p>
+
+      {% when "kz" %}
+        <h1>AliExpress тиімді ұсыныстары</h1>
+        <p>Пайдалы тауарлар, нақты бағамен</p>
+
+      {% else %}
+        <h1>Best AliExpress Deals</h1>
+        <p>Practical picks. Clear pricing. No clutter.</p>
+    {% endcase %}
+
+  </div>
+</section>
+{% endif %}
 
 
-  <!-- Main content -->
-  <main>
-
-    {{ content }}
-
-  </main>
+<main class="content">
+  {{ content }}
+</main>
 
 
-  <!-- Footer -->
 <footer class="site-footer">
-
   <div class="footer-inner">
     <span>© {{ site.time | date: "%Y" }} Rialto</span>
-
     <div class="footer-links">
       <a href="{{ '/about.html' | relative_url }}">About</a>
       <a href="{{ '/contact.html' | relative_url }}">Contact</a>
     </div>
   </div>
-
 </footer>
 
 
-  <script>
+<script>
   const btn = document.getElementById('themeToggle');
   const body = document.body;
+  const label = document.querySelector('.theme-label');
 
   if (localStorage.theme === 'dark') {
     body.classList.add('dark');
+    label.textContent = 'Light';
   }
 
   btn.addEventListener('click', () => {
     body.classList.toggle('dark');
-
-    localStorage.theme = body.classList.contains('dark')
-      ? 'dark'
-      : 'light';
+    const isDark = body.classList.contains('dark');
+    localStorage.theme = isDark ? 'dark' : 'light';
+    label.textContent = isDark ? 'Light' : 'Dark';
   });
 </script>
-
 
 </body>
 </html>

@@ -499,3 +499,387 @@ body.dark .about {
   font-size: 11px;
   color: #888;
 }
+
+/* =====================
+   NEW HEADER + HERO
+   (Rialto Authority Layer)
+===================== */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand a {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #111;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Theme toggle */
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.theme-toggle:hover {
+  background: #f2f2f2;
+}
+
+/* Language switch */
+
+.lang-switch {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-switch a {
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 6px 10px;
+  text-decoration: none;
+
+  color: #666;
+  background: #fff;
+}
+
+.lang-switch a:hover {
+  background: #f5f5f5;
+}
+
+.lang-switch a.active {
+  background: #111;
+  color: #fff;
+}
+
+
+/* =====================
+   HERO SECTION
+===================== */
+
+.hero {
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #f7f7f7
+  );
+
+  border-bottom: 1px solid #eaeaea;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 28px 16px 22px;
+
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 700;
+
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 14px;
+  color: #666;
+
+  max-width: 520px;
+}
+
+
+/* =====================
+   CONTENT AREA
+===================== */
+
+.content {
+  padding-top: 10px;
+}
+
+
+/* =====================
+   DARK MODE OVERRIDES
+===================== */
+
+body.dark .site-header {
+  background: #151515;
+  border-bottom-color: #222;
+}
+
+body.dark .brand a {
+  color: #f0f0f0;
+}
+
+body.dark .theme-toggle {
+  border-color: #333;
+  color: #ccc;
+}
+
+body.dark .theme-toggle:hover {
+  background: #222;
+}
+
+body.dark .lang-switch {
+  border-color: #333;
+}
+
+body.dark .lang-switch a {
+  background: #151515;
+  color: #aaa;
+}
+
+body.dark .lang-switch a.active {
+  background: #f0f0f0;
+  color: #111;
+}
+
+body.dark .hero {
+  background: linear-gradient(
+    to bottom,
+    #151515,
+    #121212
+  );
+  border-bottom-color: #222;
+}
+
+body.dark .hero p {
+  color: #aaa;
+}
+
+/* =====================
+   DEAL CARD UPGRADE
+   (Conversion Layer)
+===================== */
+
+/* Make whole image area feel clickable */
+.deal-media {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* Image container upgrade */
+.deal-image {
+  position: relative;
+  background: #fafafa;
+}
+
+/* Discount badge */
+.deal-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  background: #ff7a00;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  padding: 3px 7px;
+  border-radius: 999px;
+
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Title link */
+.deal-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.deal-title a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom row: price + CTA */
+.deal-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 6px;
+  gap: 10px;
+}
+
+/* Emphasize price */
+.deal-price {
+  flex-wrap: wrap;
+}
+
+.price-now {
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+/* Button upgrade */
+.btn {
+  transition: transform 0.08s ease,
+              box-shadow 0.08s ease,
+              filter 0.08s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Card hover = alive */
+.deal {
+  transition: box-shadow 0.15s ease,
+              transform 0.15s ease;
+}
+
+.deal:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+
+/* =====================
+   DESKTOP REFINEMENT
+===================== */
+
+@media (min-width: 768px) {
+
+  .deal {
+    grid-template-columns: 160px 1fr;
+  }
+
+  .deal-image {
+    height: 150px;
+  }
+
+  .price-now {
+    font-size: 20px;
+  }
+
+}
+
+
+/* =====================
+   DARK MODE PATCH
+===================== */
+
+body.dark .deal-image {
+  background: #161616;
+}
+
+body.dark .deal-badge {
+  background: #ff8a1d;
+  color: #111;
+}
+
+body.dark .deal:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+body.dark .btn:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* =====================
+   FRONT PAGE META
+===================== */
+
+.front-meta {
+  margin-top: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.front-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 16px 18px;
+}
+
+.front-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.front-status .dot {
+  width: 6px;
+  height: 6px;
+  background: #2ecc71;
+  border-radius: 50%;
+}
+
+.front-title {
+  margin-top: 6px;
+
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.front-desc {
+  margin-top: 4px;
+
+  font-size: 14px;
+  color: #666;
+
+  max-width: 520px;
+}
+
+
+/* Dark */
+
+body.dark .front-meta {
+  border-bottom-color: #222;
+}
+
+body.dark .front-status {
+  color: #aaa;
+}
+
+body.dark .front-desc {
+  color: #999;
+}
+
+body.dark .front-status .dot {
+  background: #27ae60;
+}

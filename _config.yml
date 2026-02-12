@@ -1,1 +1,29 @@
-theme: null
+title: Rialto
+description: Curated AliExpress tech deals. Clean pricing. No clutter.
+url: https://rialto.kz   # change if different
+baseurl: ""
+
+lang: en
+
+markdown: kramdown
+
+permalink: pretty
+
+timezone: Asia/Almaty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock

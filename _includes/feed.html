@@ -5,7 +5,26 @@
   {% assign items = items | where: "category", page.cat %}
 {% endif %}
 
-{% assign items = items | sort: "added" | reverse %}
+{% assign scored = "" | split: "" %}
+
+{% for item in items %}
+
+  {% assign discount_score = item.discount | times: 3 %}
+
+  {% assign days_old = site.time | date: "%s" | minus: item.added | date: "%s" | divided_by: 86400 %}
+
+  {% assign freshness = 60 | minus: days_old %}
+
+  {% assign score = discount_score | plus: freshness %}
+
+  {% assign item = item | merge: {"score": score} %}
+
+  {% assign scored = scored | push: item %}
+
+{% endfor %}
+
+{% assign items = scored | sort: "score" | reverse %}
+
 
 
 <div class="feed" id="dealFeed">
@@ -19,44 +38,73 @@
 
   <article class="deal">
 
-    <div class="deal-image">
-      <img src="{{ item.image }}" loading="lazy" alt="{{ title }}">
-    </div>
+    <!-- Visual anchor -->
+    <a href="{{ item.link }}"
+       class="deal-media"
+       target="_blank"
+       rel="nofollow noopener">
+
+      <div class="deal-image">
+
+        {% if item.discount %}
+        <span class="deal-badge">-{{ item.discount }}%</span>
+        {% endif %}
+
+        <img src="{{ item.image }}"
+             loading="lazy"
+             alt="{{ title }}">
+
+      </div>
+    </a>
+
 
     <div class="deal-body">
 
-      <h3 class="deal-title">{{ title }}</h3>
+      <h3 class="deal-title">
+        <a href="{{ item.link }}"
+           target="_blank"
+           rel="nofollow noopener">
+          {{ title }}
+        </a>
+      </h3>
 
+
+      {% if desc %}
       <p class="deal-desc">{{ desc }}</p>
+      {% endif %}
 
-      <div class="deal-price">
 
-        <span class="price-now">{{ price }}</span>
+      <div class="deal-bottom">
 
-        {% if item.old_price %}
-        <span class="price-old">{{ oldp }}</span>
-        {% endif %}
+        <!-- Price dominance -->
+        <div class="deal-price">
 
-        {% if item.discount %}
-        <span class="price-discount">-{{ item.discount }}%</span>
-        {% endif %}
+          <span class="price-now">{{ price }}</span>
+
+          {% if item.old_price %}
+          <span class="price-old">{{ oldp }}</span>
+          {% endif %}
+
+        </div>
+
+
+        <!-- Action -->
+        <a class="btn"
+           href="{{ item.link }}"
+           target="_blank"
+           rel="nofollow noopener">
+
+          {% if lang == "ru" %}
+            Смотреть
+          {% elsif lang == "kz" %}
+            Көру
+          {% else %}
+            View
+          {% endif %}
+
+        </a>
 
       </div>
-
-      <a class="btn"
-         href="{{ item.link }}"
-         target="_blank"
-         rel="nofollow noopener">
-
-        {% if lang == "ru" %}
-          Открыть
-        {% elsif lang == "kz" %}
-          Ашу
-        {% else %}
-          Open
-        {% endif %}
-
-      </a>
 
     </div>
 
@@ -66,7 +114,9 @@
 
 </div>
 
+
 <div class="pager" id="pager"></div>
+
 
 <script>
 (function(){
@@ -87,6 +137,7 @@
     cards.forEach((c,i)=> c.style.display = (i>=start && i<end) ? '' : 'none');
 
     pager.innerHTML = '';
+
     const prev = document.createElement('button');
     prev.textContent = '←';
     prev.disabled = page===1;
@@ -106,6 +157,3 @@
   render();
 })();
 </script>
-
-
-</div>
