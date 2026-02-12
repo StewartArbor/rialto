@@ -68,7 +68,27 @@ body {
 }
 
 
-/* Header layout */
+/* =====================
+   CONTAINERS
+===================== */
+
+.header-inner,
+.hero-inner,
+.content,
+.feed {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--s4);
+}
+
+main {
+  padding-top: var(--s3);
+}
+
+
+/* =====================
+   HEADER
+===================== */
 
 .site-header {
   background: var(--card);
@@ -79,63 +99,65 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header-left,
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.header-right {
-  gap: var(--s3);
-}
-
-main {
   padding-top: var(--s3);
+  padding-bottom: var(--s3);
 }
-
-
-/* =====================
-   TYPOGRAPHY
-===================== */
-
-h1, h2, h3 {
-  color: var(--ink);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-h1 { font-size: 24px; }
-h2 { font-size: 20px; }
-h3 { font-size: 16px; }
-
-p {
-  margin-bottom: var(--s3);
-}
-
-
-/* =====================
-   HEADER / LOGO
-===================== */
 
 .brand a {
   font-size: 20px;
   font-weight: 800;
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   text-decoration: none;
   color: var(--ink);
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.lang-switch {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-switch a {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.lang-switch a.active {
+  background: var(--ink);
+  color: #fff;
+}
+
 
 /* =====================
    HERO
 ===================== */
 
-.hero-inner {
-  padding: var(--s6) var(--s4) var(--s5);
+.hero {
+  border-bottom: 1px solid var(--border);
+  padding-top: var(--s6);
+  padding-bottom: var(--s5);
 }
 
 .hero h1 {
@@ -156,7 +178,7 @@ p {
 ===================== */
 
 .feed {
-  margin-top: var(--s3);
+  margin-top: var(--s4);
 }
 
 
@@ -167,16 +189,11 @@ p {
 .deal {
   background: var(--card);
   border-radius: 14px;
-
   margin-bottom: var(--s4);
   border: 1px solid var(--border);
-
   overflow: hidden;
-
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-
-  transition: box-shadow .15s ease,
-              transform .15s ease;
+  transition: box-shadow .15s ease, transform .15s ease;
 }
 
 .deal:hover {
@@ -190,19 +207,15 @@ p {
 .deal-image {
   width: 100%;
   height: 140px;
-
   background: #f0f0f0;
   overflow: hidden;
-
   position: relative;
 }
 
 .deal-image img {
   width: 100%;
   height: 100%;
-
   object-fit: contain;
-  object-position: center;
 }
 
 
@@ -212,13 +225,10 @@ p {
   position: absolute;
   top: var(--s2);
   left: var(--s2);
-
   background: var(--accent);
   color: #fff;
-
   font-size: 11px;
   font-weight: 700;
-
   padding: 3px 7px;
   border-radius: 999px;
 }
@@ -231,32 +241,26 @@ p {
 }
 
 .deal-title {
-  font-feature-settings: "kern" 1, "liga" 1;
-
-  max-width: 52ch;
-
   font-size: 15.5px;
   font-weight: 600;
   line-height: 1.35;
-
   margin-bottom: var(--s1);
+  max-width: 52ch;
 }
 
 .deal-desc {
   font-size: 14px;
   color: var(--ink-soft);
-
   margin-bottom: var(--s2);
 }
 
 
-/* Bottom row */
+/* Bottom Row */
 
 .deal-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   gap: var(--s3);
 }
 
@@ -267,7 +271,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
   gap: var(--s2);
 }
 
@@ -288,23 +291,14 @@ p {
 
 .btn {
   display: inline-block;
-
   padding: var(--s2) var(--s4);
-
   background: var(--accent);
   color: #fff;
-
   text-decoration: none;
-  text-align: center;
-
   border-radius: 8px;
-
   font-size: 13.5px;
   font-weight: 600;
-
-  transition: transform .08s ease,
-              box-shadow .08s ease,
-              filter .08s ease;
+  transition: transform .08s ease, box-shadow .08s ease, filter .08s ease;
 }
 
 .btn:hover {
@@ -341,54 +335,6 @@ p {
 
 
 /* =====================
-   FRONT META
-===================== */
-
-.front-meta {
-  margin-top: var(--s2);
-  border-bottom: 1px solid var(--border);
-}
-
-.front-status {
-  display: flex;
-  align-items: center;
-  gap: var(--s1);
-
-  font-size: 11px;
-  font-weight: 600;
-
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.front-status .dot {
-  width: 6px;
-  height: 6px;
-
-  background: #2ecc71;
-  border-radius: 50%;
-}
-
-.front-title {
-  margin-top: var(--s2);
-
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.front-desc {
-  margin-top: var(--s1);
-
-  font-size: 14px;
-  color: var(--ink-soft);
-
-  max-width: 520px;
-}
-
-
-/* =====================
    DARK MODE
 ===================== */
 
@@ -420,19 +366,12 @@ body.dark .btn:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
-.controls {
-  display: flex;
-  align-items: center;
-  gap: var(--s3);
-}
-
 
 /* =====================
    MOBILE CLAMP
 ===================== */
 
 @media (max-width: 600px) {
-
   .deal-desc {
     display: -webkit-box;
     display: box;
@@ -445,5 +384,5 @@ body.dark .btn:hover {
 
     overflow: hidden;
   }
-
 }
+
