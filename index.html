@@ -24,7 +24,16 @@ lang: ru
 
   <div>
 
-    <h3>{{ title }}</h3>
+    <h3 class="deal-title">{{ title }}</h3>
+
+{% assign desc = item.desc[lang]
+   | default: item.desc.ru
+   | default: item.desc.en %}
+
+{% if desc %}
+  <p class="deal-desc">{{ desc }}</p>
+{% endif %}
+
 
     <div class="price">
       {{ price }}
