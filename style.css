@@ -248,6 +248,20 @@ main {
   max-width: 52ch;
 }
 
+.deal-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+body.dark .deal-title a {
+  color: var(--ink);
+}
+
+.deal-title a:hover {
+  text-decoration: underline;
+}
+
+
 .deal-desc {
   font-size: 14px;
   color: var(--ink-soft);
