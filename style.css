@@ -14,6 +14,15 @@ img {
   display: block;
 }
 
+:root {
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+}
+
 
 /* =====================
    BASE
@@ -37,8 +46,7 @@ body {
   line-height: 1.55;
   letter-spacing: -0.01em;
 
-  /* bottom nav is no longer fixed */
-  padding-bottom: 24px;
+  padding-bottom: var(--s-5);
 }
 
 
@@ -46,252 +54,17 @@ body {
    LAYOUT
 ===================== */
 
-main {
+main,
+.header-inner,
+.hero-inner,
+.front-inner {
   max-width: 900px;
-  margin: auto;
-  padding: 12px;
-}
-
-
-/* =====================
-   LAYOUT WIDTH
-===================== */
-
-.topbar,
-.site-hero,
-.ru-hero,
-.kz-hero {
-  max-width: 1100px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 var(--s-4);
 }
 
-
-/* =====================
-   HERO
-===================== */
-
-.site-hero,
-.ru-hero,
-.kz-hero {
-
-  max-width: 1100px;
-  margin: 0 auto;
-
-  padding-top: 14px;
-  padding-bottom: 10px;
-
-
-  text-align: left;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.site-hero h1,
-.ru-hero h1,
-.kz-hero h1 {
-
-  font-size: 22px;
-  margin: 0 0 4px;
-}
-
-.site-hero p,
-.ru-hero-desc,
-.kz-hero-desc {
-
-  font-size: 13px;
-  margin: 0;
-  color: #666;
-}
-
-body.dark .site-hero p,
-body.dark .ru-hero-desc,
-body.dark .kz-hero-desc {
-  color: #aaa;
-}
-
-
-
-/* =====================
-   FEED
-===================== */
-
-.feed {
-  margin-top: 10px;
-}
-
-
-/* =====================
-   DEAL CARD
-===================== */
-
-.deal {
-  background: #fff;
-  border-radius: 14px;
-
-  margin-bottom: 14px;
-  border: 1px solid #eee;
-
-  overflow: hidden;
-
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-
-
-/* Image container */
-
-.deal-image {
-  width: 100%;
-  height: 140px;
-  overflow: hidden;
-  background: #f0f0f0;
-}
-
-.deal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-}
-
-
-/* Body */
-
-.deal-body {
-  padding: 10px 12px;
-}
-
-.deal-title {
-  font-size: 15.5px;
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 4px;
-}
-
-.deal-desc {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 6px;
-}
-
-
-/* =====================
-   PRICE
-===================== */
-
-.deal-price {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 6px 0;
-}
-
-.price-now {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-
-.price-old {
-  font-size: 13px;
-  color: #999;
-  text-decoration: line-through;
-}
-
-.price-discount {
-  font-size: 12px;
-  background: #ff7a00;
-  color: #fff;
-
-  padding: 2px 6px;
-  border-radius: 6px;
-}
-
-
-/* =====================
-   BUTTON
-===================== */
-
-.btn {
-  display: block;
-  width: 100%;
-
-  margin-top: 6px;
-
-  background: #ff7a00;
-  color: #fff;
-
-  text-align: center;
-  text-decoration: none;
-
-  padding: 10px;
-  border-radius: 8px;
-
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
-.btn:hover {
-  filter: brightness(1.05);
-}
-
-
-/* =====================
-   ABOUT
-===================== */
-
-.about {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px 12px;
-
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.about h1 {
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-
-/* =====================
-   FOOTER
-===================== */
-
-.site-footer {
-  margin-top: 80px;
-  padding: 25px 10px;
-
-  border-top: 1px solid #222;
-
-  font-size: 13px;
-  color: #777;
-
-  text-align: center;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #777;
-  text-decoration: none;
-  margin: 0 6px;
-  font-size: 12px;
-}
-
-.footer-links a:hover {
-  color: #aaa;
+main {
+  padding-top: var(--s-3);
 }
 
 
@@ -309,400 +82,92 @@ h2 { font-size: 20px; }
 h3 { font-size: 16px; }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: var(--s-3);
 }
 
 
 /* =====================
-   DESKTOP
+   HERO
 ===================== */
-
-@media (min-width: 768px) {
-
-  .deal {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .deal-image {
-    height: 140px;
-    border-radius: 12px;
-    margin: 12px 0 12px 12px;
-  }
-
-  .deal-body {
-    padding: 12px 14px 12px 0;
-  }
-
-  .btn {
-    width: auto;
-    display: inline-block;
-    padding: 8px 14px;
-  }
-
-}
-
-
-/* =====================
-   DARK MODE
-===================== */
-
-body.dark {
-  background: #121212;
-  color: #e6e6e6;
-  font-weight: 400;
-}
-
-
-/* Top bar */
-
-body.dark .topbar {
-  background: #181818;
-  border-bottom-color: #242424;
-}
-
-body.dark .logo a {
-  color: #f0f0f0;
-}
-
-body.dark .lang a {
-  color: #aaa;
-}
-
-body.dark .theme-btn {
-  color: #ccc;
-}
-
-
-/* Cards */
-
-body.dark .deal {
-  background: #1b1b1b;
-  border-color: #242424;
-}
-
-body.dark .deal-desc {
-  color: #b0b0b0;
-}
-
-
-/* Prices */
-
-body.dark .price-now {
-  color: #ff9a3c;
-}
-
-body.dark .price-old {
-  color: #777;
-}
-
-body.dark .price-discount {
-  background: #ff8a1d;
-  color: #111;
-}
-
-
-/* Button */
-
-body.dark .btn {
-  background: #ff8a1d;
-  color: #111;
-}
-
-
-/* Footer */
-
-body.dark .site-footer {
-  color: #777;
-}
-
-
-/* Bottom nav */
-
-body.dark .bottom-nav a {
-  color: #888;
-}
-
-
-/* Headings */
-
-body.dark h1,
-body.dark h2,
-body.dark h3 {
-  font-weight: 500;
-}
-
-
-/* About */
-
-body.dark .about {
-  color: #ddd;
-}
-
-.cat-nav{
-  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
-  margin: 16px auto 18px;
-}
-.cat-nav a{
-  font-size:12px; color:#777; text-decoration:none;
-  padding:6px 10px; border:1px solid #222; border-radius:999px;
-}
-.cat-nav a.active{ color:#ddd; border-color:#444; }
-
-.pager{
-  display:flex; gap:10px; justify-content:center; align-items:center;
-  margin: 18px auto 40px;
-  color:#777; font-size:12px;
-}
-.pager button{
-  background:#111; border:1px solid #222; color:#ccc;
-  padding:6px 10px; border-radius:8px; cursor:pointer;
-}
-.pager button:disabled{ opacity:0.4; cursor:default; }
-
-/* =====================
-   INLINE HERO
-===================== */
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.top-right {
-  display: flex;
-  align-items: center;
-}
-
-.hero-inline {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.hero-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #ddd;
-}
-
-.hero-desc {
-  font-size: 11px;
-  color: #888;
-}
-
-/* =====================
-   NEW HEADER + HERO
-   (Rialto Authority Layer)
-===================== */
-
-.site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 16px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand a {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  color: #111;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-/* Theme toggle */
-
-.theme-toggle {
-  background: transparent;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  padding: 6px 12px;
-  cursor: pointer;
-
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
-}
-
-.theme-toggle:hover {
-  background: #f2f2f2;
-}
-
-/* Language switch */
-
-.lang-switch {
-  display: flex;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.lang-switch a {
-  font-size: 12px;
-  font-weight: 600;
-
-  padding: 6px 10px;
-  text-decoration: none;
-
-  color: #666;
-  background: #fff;
-}
-
-.lang-switch a:hover {
-  background: #f5f5f5;
-}
-
-.lang-switch a.active {
-  background: #111;
-  color: #fff;
-}
-
-
-/* =====================
-   HERO SECTION
-===================== */
-
-.hero {
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    #f7f7f7
-  );
-
-  border-bottom: 1px solid #eaeaea;
-}
 
 .hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-
-  padding: 28px 16px 22px;
-
-  text-align: left;
+  padding: var(--s-6) var(--s-4) var(--s-5);
 }
 
 .hero h1 {
   font-size: 28px;
   font-weight: 700;
-
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
+  margin-bottom: var(--s-2);
 }
 
 .hero p {
   font-size: 14px;
   color: #666;
-
   max-width: 520px;
 }
 
 
 /* =====================
-   CONTENT AREA
+   FEED
 ===================== */
 
-.content {
-  padding-top: 10px;
+.feed {
+  margin-top: var(--s-3);
 }
 
 
 /* =====================
-   DARK MODE OVERRIDES
+   DEAL CARD (MOBILE)
 ===================== */
 
-body.dark .site-header {
-  background: #151515;
-  border-bottom-color: #222;
+.deal {
+  background: #fff;
+  border-radius: 14px;
+
+  margin-bottom: var(--s-4);
+  border: 1px solid #eee;
+
+  overflow: hidden;
+
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+
+  transition: box-shadow .15s ease,
+              transform .15s ease;
 }
 
-body.dark .brand a {
-  color: #f0f0f0;
+.deal:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
 }
 
-body.dark .theme-toggle {
-  border-color: #333;
-  color: #ccc;
-}
 
-body.dark .theme-toggle:hover {
-  background: #222;
-}
+/* Image */
 
-body.dark .lang-switch {
-  border-color: #333;
-}
-
-body.dark .lang-switch a {
-  background: #151515;
-  color: #aaa;
-}
-
-body.dark .lang-switch a.active {
-  background: #f0f0f0;
-  color: #111;
-}
-
-body.dark .hero {
-  background: linear-gradient(
-    to bottom,
-    #151515,
-    #121212
-  );
-  border-bottom-color: #222;
-}
-
-body.dark .hero p {
-  color: #aaa;
-}
-
-/* =====================
-   DEAL CARD UPGRADE
-   (Conversion Layer)
-===================== */
-
-/* Make whole image area feel clickable */
-.deal-media {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
-
-/* Image container upgrade */
 .deal-image {
+  width: 100%;
+  height: 140px;
+
+  background: #f0f0f0;
+  overflow: hidden;
+
   position: relative;
-  background: #fafafa;
 }
 
-/* Discount badge */
+.deal-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* Badge */
+
 .deal-badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: var(--s-2);
+  left: var(--s-2);
 
   background: #ff7a00;
   color: #fff;
@@ -712,94 +177,116 @@ body.dark .hero p {
 
   padding: 3px 7px;
   border-radius: 999px;
-
-  z-index: 2;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Title link */
-.deal-title a {
-  color: inherit;
-  text-decoration: none;
+
+/* Body */
+
+.deal-body {
+  padding: var(--s-3) var(--s-4);
 }
 
-.deal-title a:hover {
-  text-decoration: underline;
+.deal-title {
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  margin-bottom: var(--s-1);
 }
 
-/* Bottom row: price + CTA */
+.deal-desc {
+  font-size: 14px;
+  color: #555;
+
+  margin-bottom: var(--s-2);
+}
+
+
+/* Bottom row */
+
 .deal-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 6px;
-  gap: 10px;
+  gap: var(--s-3);
 }
 
-/* Emphasize price */
+
+/* Price */
+
 .deal-price {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
 }
 
 .price-now {
   font-size: 19px;
-  letter-spacing: -0.01em;
+  font-weight: 800;
 }
 
-/* Button upgrade */
+.price-old {
+  font-size: 13px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+
+/* Button */
+
 .btn {
-  transition: transform 0.08s ease,
-              box-shadow 0.08s ease,
-              filter 0.08s ease;
+  display: inline-block;
+
+  padding: var(--s-2) var(--s-4);
+
+  background: #ff7a00;
+  color: #fff;
+
+  text-decoration: none;
+  text-align: center;
+
+  border-radius: 8px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+
+  transition: transform .08s ease,
+              box-shadow .08s ease,
+              filter .08s ease;
 }
 
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-}
-
-/* Card hover = alive */
-.deal {
-  transition: box-shadow 0.15s ease,
-              transform 0.15s ease;
-}
-
-.deal:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 
 /* =====================
-   DESKTOP REFINEMENT
+   DESKTOP ENHANCEMENT
 ===================== */
 
 @media (min-width: 768px) {
 
   .deal {
+    display: grid;
     grid-template-columns: 160px 1fr;
+    gap: var(--s-3);
+    align-items: center;
   }
 
   .deal-image {
     height: 150px;
+    border-radius: 12px;
+    margin: var(--s-3) 0 var(--s-3) var(--s-3);
   }
 
-  .price-now {
-    font-size: 20px;
+  .deal-body {
+    padding: var(--s-3) var(--s-4) var(--s-3) 0;
   }
 
-}
-
-.deal-desc {
-  margin: 6px 0 10px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: rgba(255,255,255,0.75);
-}
-
-body:not(.dark) .deal-desc {
-  color: rgba(0,0,0,0.7);
 }
 
 
@@ -910,3 +397,4 @@ body.dark .front-status .dot {
     overflow: hidden;
   }
 }
+

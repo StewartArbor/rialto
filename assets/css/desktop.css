@@ -85,4 +85,20 @@
     filter: brightness(1.1);
   }
 
+/* Reduce card puff */
+.deal {
+  padding: 14px;
+}
+
+/* Button spacing */
+.btn {
+  margin-top: 6px;
+}
+
+/* Hover emphasis */
+.deal:hover h3 {
+  color: #ff8a00;
+}
+
+
 }
