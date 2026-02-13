@@ -58,27 +58,31 @@
 </header>
 
 
+
 {% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
 <section class="hero">
   <div class="hero-inner">
 
     {% case page.lang %}
+
       {% when "ru" %}
-        <h1>Скидки AliExpress</h1>
-        <p>Подборка полезных товаров с прозрачной ценой</p>
+        <h1>Тех-скидки AliExpress</h1>
+        <p>Реальные скидки. Без накрутки.</p>
 
       {% when "kz" %}
-        <h1>AliExpress тиімді ұсыныстары</h1>
-        <p>Пайдалы тауарлар, нақты бағамен</p>
+        <h1>AliExpress Tech ұсыныстары</h1>
+        <p>Нақты жеңілдіктер. Артық баға жоқ.</p>
 
       {% else %}
-        <h1>Best AliExpress Deals</h1>
-        <p>Practical picks. Clear pricing. No clutter.</p>
+        <h1>AliExpress Tech Deals</h1>
+        <p>Real discounts. No inflated pricing.</p>
+
     {% endcase %}
 
   </div>
 </section>
 {% endif %}
+
 
 
 <main class="content">
@@ -95,25 +99,6 @@
     </div>
   </div>
 </footer>
-
-
-<script>
-  const btn = document.getElementById('themeToggle');
-  const body = document.body;
-  const label = document.querySelector('.theme-label');
-
-  if (localStorage.theme === 'dark') {
-    body.classList.add('dark');
-    label.textContent = 'Light';
-  }
-
-  btn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    localStorage.theme = isDark ? 'dark' : 'light';
-    label.textContent = isDark ? 'Light' : 'Dark';
-  });
-</script>
 
 </body>
 </html>
