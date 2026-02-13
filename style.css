@@ -185,6 +185,8 @@ main {
 ===================== */
 
 .deal {
+  position: relative;
+
   background: var(--card);
 
   border: 1px solid var(--border);
@@ -195,6 +197,7 @@ main {
   border-radius: 0;
   box-shadow: none;
 }
+
 
 
 /* Media */
@@ -335,14 +338,15 @@ main {
 /* =====================
    DEAL RANK
 ===================== */
-
 .deal-rank {
   position: absolute;
-  left: -26px;
-  top: 12px;
+  left: 8px;
+  top: 8px;
 
-  width: 22px;
+  min-width: 22px;
   height: 22px;
+
+  padding: 0 6px;
 
   border: 1px solid var(--border);
   background: #000;
@@ -356,6 +360,7 @@ main {
 
   color: var(--ink-soft);
 }
+
 
 
 /* =====================
