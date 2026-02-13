@@ -1,57 +1,58 @@
 ---
 layout: default
-title: Скидки AliExpress — Rialto
-lang: ru
 ---
 
-<div class="feed">
+<section class="grid">
 
 {% assign lang = page.lang | default: "ru" %}
-{% assign items = site.data.items %}
 
-{% for item in items %}
+{% for item in site.data.items %}
+  {% if item.active %}
 
-{% assign title = item.title[lang] | default: item.title.ru | default: item.title.en %}
-{% assign price = item.price_fmt[lang] | default: item.price_fmt.ru | default: item.price_fmt.en %}
+  <article class="card">
 
-<div class="deal">
+    <img src="{{ item.image }}"
+         alt="{{ item.title[lang] }}"
+         loading="lazy">
 
-  <img
-    src="{{ item.image }}"
-    loading="lazy"
-    alt="{{ title }}"
-  >
+    <div class="card-body">
 
-  <div>
+      <h2>{{ item.title[lang] }}</h2>
 
-    <h3 class="deal-title">{{ title }}</h3>
+      <p class="meta">
+        {{ item.category }} · {{ item.store }}
+      </p>
 
-{% assign desc = item.desc[lang]
-   | default: item.desc.ru
-   | default: item.desc.en %}
+      <p class="desc">
+        {{ item.desc[lang] }}
+      </p>
 
-{% if desc %}
-  <p class="deal-desc">{{ desc }}</p>
-{% endif %}
+      <div class="price-row">
 
+        <span class="price">
+          {{ item.price_fmt[lang] }}
+        </span>
 
-    <div class="price">
-      {{ price }}
+        {% if item.old_price %}
+        <span class="old">
+          {{ item.old_price_fmt[lang] }}
+        </span>
+        {% endif %}
+
+      </div>
+
+      <a class="btn"
+         href="{{ item.link }}"
+         target="_blank"
+         rel="nofollow noopener">
+        Buy →
+      </a>
+
     </div>
 
-    <a
-      class="btn"
-      href="{{ item.link }}"
-      target="_blank"
-      rel="nofollow noopener"
-    >
-      Купить в Aliexpress
-    </a>
+  </article>
 
-  </div>
-
-</div>
-
+  {% endif %}
 {% endfor %}
 
-</div>
+</section>
