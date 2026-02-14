@@ -108,34 +108,41 @@
 {% endif %}
 
 
+
 <!-- FEATURED CAROUSEL -->
 <section class="carousel">
 
   <div class="carousel-track">
 
-    <div class="carousel-slide">
-      <img src="/assets/slide1.jpg" alt="Top Chargers">
-      <div class="carousel-text">
-        <h2>65W Fast Chargers</h2>
-        <p>Curated power for laptops and phones</p>
-      </div>
-    </div>
+    {% assign featured = site.data.items
+      | where: "active", true
+      | sort: "added"
+      | reverse
+      | limit: 3 %}
+
+    {% for item in featured %}
 
     <div class="carousel-slide">
-      <img src="/assets/slide2.jpg" alt="USB-C Hubs">
+
+      <img
+        src="{{ item.image }}"
+        alt="{{ item.title[page.lang] | default: item.title.en }}">
+
       <div class="carousel-text">
-        <h2>USB-C Hubs</h2>
-        <p>One cable. Full workstation.</p>
+
+        <h2>
+          {{ item.title[page.lang] | default: item.title.en }}
+        </h2>
+
+        <p>
+          {{ item.desc[page.lang] | default: item.desc.en }}
+        </p>
+
       </div>
+
     </div>
 
-    <div class="carousel-slide">
-      <img src="/assets/slide3.jpg" alt="Travel Gear">
-      <div class="carousel-text">
-        <h2>Travel Essentials</h2>
-        <p>Compact. Reliable. No nonsense.</p>
-      </div>
-    </div>
+    {% endfor %}
 
   </div>
 
