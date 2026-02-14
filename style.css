@@ -729,3 +729,36 @@ main {
   flex: 0 0 100%;
   position: relative;
 }
+/* Fix carousel arrows */
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: var(--ink);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+  background: var(--accent);
+  color: #FAF9F7;
+}
+
+.carousel-btn span {
+  line-height: 1;
+}
