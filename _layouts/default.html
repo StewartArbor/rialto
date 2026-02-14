@@ -40,7 +40,7 @@
   <div class="header-inner">
 
     <div class="brand">
-      <a href="{{ '/' | relative_url }}">RIALTO</a>
+      <a href="/{{ page.lang }}/">RIALTO</a>
     </div>
 
     <div class="controls">
@@ -49,10 +49,27 @@
       </button>
 
       <nav class="lang-switch">
-        <a href="/en/" class="{% if page.lang == 'en' %}active{% endif %}">EN</a>
-        <a href="/ru/" class="{% if page.lang == 'ru' %}active{% endif %}">RU</a>
-        <a href="/kz/" class="{% if page.lang == 'kz' %}active{% endif %}">KZ</a>
-      </nav>
+
+  {% assign parts = page.url | split: '/' %}
+  {% assign path = parts | slice: 2, parts.size | join: '/' %}
+
+  <a href="/en/{{ path }}"
+     class="{% if page.lang == 'en' %}active{% endif %}">
+    EN
+  </a>
+
+  <a href="/ru/{{ path }}"
+     class="{% if page.lang == 'ru' %}active{% endif %}">
+    RU
+  </a>
+
+  <a href="/kz/{{ path }}"
+     class="{% if page.lang == 'kz' %}active{% endif %}">
+    KZ
+  </a>
+
+</nav>
+
     </div>
 
   </div>
@@ -95,8 +112,8 @@
   <div class="footer-inner">
     <span>© {{ site.time | date: "%Y" }} Rialto</span>
     <div class="footer-links">
-      <a href="{{ '/about.html' | relative_url }}">About</a>
-      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+      <a href="/{{ page.lang }}/about/">About</a>
+      <a href="/{{ page.lang }}/contact/">Contact</a>
     </div>
   </div>
 </footer>
