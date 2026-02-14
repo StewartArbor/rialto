@@ -5,14 +5,12 @@
   {% assign raw = raw | where: "category", page.cat %}
 {% endif %}
 
-{% assign scored = "" | split: "" %}
-
 {% assign now = site.time | date: "%s" %}
+{% assign scored = "" | split: "" %}
 
 {% for item in raw %}
 
   {% assign discount = item.discount | default: 0 | times: 3 %}
-
   {% assign added = item.added | date: "%s" %}
   {% assign days = now | minus: added | divided_by: 86400 %}
 
@@ -27,10 +25,11 @@
 {{ score }}||{{ forloop.index0 }}
   {% endcapture %}
 
-  {% assign scored = scored | push: pack | sort %}
+  {% assign scored = scored | push: pack %}
 
 {% endfor %}
 
+{% assign scored = scored | sort %}
 {% assign sorted = "" | split: "" %}
 
 {% for pack in scored reversed %}
@@ -48,11 +47,12 @@
 {% assign title = item.title[lang] | default: item.title.en %}
 {% assign desc  = item.desc[lang]  | default: item.desc.en %}
 {% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
-{% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.en %}
+
 
 <article class="deal">
 
   <div class="deal-rank">{{ rank }}</div>
+
 
   <a href="{{ item.link }}"
      class="deal-media"
@@ -79,28 +79,30 @@
       </a>
     </h3>
 
+
     {% if desc %}
       <p class="deal-desc">{{ desc }}</p>
     {% endif %}
+
 
     <div class="deal-bottom">
 
       <div class="deal-price">
         <span class="price-now">{{ price }}</span>
-
-        {% if item.old_price %}
-          <span class="price-old">{{ oldp }}</span>
-        {% endif %}
       </div>
+
 
       <a class="btn"
          href="{{ item.link }}"
          target="_blank"
          rel="nofollow noopener">
 
-        {% if lang == "ru" %}Смотреть
-        {% elsif lang == "kz" %}Көру
-        {% else %}View
+        {% if lang == "ru" %}
+          Смотреть
+        {% elsif lang == "kz" %}
+          Көру
+        {% else %}
+          View
         {% endif %}
 
       </a>
