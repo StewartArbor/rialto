@@ -492,3 +492,55 @@ main {
   }
 
 }
+
+/* =====================
+   MOBILE TYPOGRAPHY
+===================== */
+
+@media (max-width: 600px) {
+
+  /* Bigger, calmer titles */
+  .deal-title {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+
+    margin-bottom: 6px;
+  }
+
+  /* Description = curator note */
+  .deal-desc {
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+  }
+
+  /* Price = authority stamp */
+  .price-now {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* CTA = subtle */
+  .btn {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .deal-title {
+    font-family:
+      "Inter",
+      "SF Pro Display",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+  }
+
+}
