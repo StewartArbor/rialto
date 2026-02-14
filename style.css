@@ -697,3 +697,113 @@ main {
   }
 
 }
+/* =====================
+   CAROUSEL
+===================== */
+
+.carousel {
+  position: relative;
+
+  max-width: 900px;
+  margin: var(--s5) auto;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+
+/* Track */
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+
+/* Slides */
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+}
+
+
+/* Text overlay */
+
+.carousel-text {
+  position: absolute;
+  left: var(--s5);
+  bottom: var(--s5);
+
+  background: rgba(255,255,255,0.9);
+  padding: var(--s3) var(--s4);
+
+  border-radius: 8px;
+
+  max-width: 70%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .carousel-text {
+    background: rgba(20,20,20,0.9);
+  }
+}
+
+.carousel-text h2 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.carousel-text p {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+
+/* Buttons */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: 1px solid var(--border);
+
+  background: var(--card);
+  color: var(--ink);
+
+  font-size: 22px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.9;
+}
+
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}

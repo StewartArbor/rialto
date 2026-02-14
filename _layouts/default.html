@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
-  
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -108,6 +108,41 @@
 {% endif %}
 
 
+<!-- FEATURED CAROUSEL -->
+<section class="carousel">
+
+  <div class="carousel-track">
+
+    <div class="carousel-slide">
+      <img src="/assets/slide1.jpg" alt="Top Chargers">
+      <div class="carousel-text">
+        <h2>65W Fast Chargers</h2>
+        <p>Curated power for laptops and phones</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide">
+      <img src="/assets/slide2.jpg" alt="USB-C Hubs">
+      <div class="carousel-text">
+        <h2>USB-C Hubs</h2>
+        <p>One cable. Full workstation.</p>
+      </div>
+    </div>
+
+    <div class="carousel-slide">
+      <img src="/assets/slide3.jpg" alt="Travel Gear">
+      <div class="carousel-text">
+        <h2>Travel Essentials</h2>
+        <p>Compact. Reliable. No nonsense.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-btn prev">‹</button>
+  <button class="carousel-btn next">›</button>
+
+</section>
 
 <main class="content">
   {{ content }}
