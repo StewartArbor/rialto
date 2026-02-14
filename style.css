@@ -762,3 +762,11 @@ main {
 .carousel-btn span {
   line-height: 1;
 }
+
+@media (prefers-color-scheme: dark) {
+  .carousel-btn {
+    background: #1E1E1E;
+    border-color: #333;
+    color: #E6E6E6;
+  }
+}
