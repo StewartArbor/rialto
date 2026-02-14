@@ -201,16 +201,21 @@ main {
 
 
 
-/* Media */
+/* Deal Image — Mobile First, Stronger Presence */
 
 .deal-image {
   width: 100%;
-  height: 140px;
+
+  height: 180px; /* bigger visual weight */
 
   background: #050505;
 
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .deal-image img {
@@ -218,6 +223,8 @@ main {
   height: 100%;
 
   object-fit: contain;
+
+  padding: 6px; /* prevents edge kissing */
 }
 
 
@@ -412,26 +419,23 @@ main {
 
 }
 
-
-
 /* =====================
-   MOBILE CLAMP
+   MOBILE TEXT CLAMP
 ===================== */
 
 @media (max-width: 600px) {
 
   .deal-desc {
     display: -webkit-box;
-    display: box;
-
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-
     -webkit-box-orient: vertical;
-    box-orient: vertical;
+    -webkit-line-clamp: 2;
 
     overflow: hidden;
+
+    line-clamp: 2; /* future standard */
   }
 
 }
+
+
 
