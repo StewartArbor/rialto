@@ -29,15 +29,16 @@ img {
   --s5: 24px;
   --s6: 32px;
 
-  /* Colors */
-  --accent: #00ff88;
+  /* Colors — Quiet Luxury */
 
-  --ink: #f2f2f2;
-  --ink-soft: #888888;
+  --bg: #F7F6F3;          /* Ivory */
+  --card: #FFFFFF;       /* White */
+  --border: #E6E4E0;      /* Mist */
 
-  --bg: #000000;
-  --card: #0a0a0a;
-  --border: #111111;
+  --ink: #1F1F1F;         /* Charcoal */
+  --ink-soft: #7A7A7A;    /* Ash */
+
+  --accent: #1C2B3A;      /* Navy */
 }
 
 
@@ -60,10 +61,10 @@ body {
   color: var(--ink);
 
   font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
 
-  padding-bottom: var(--s5);
+  padding-bottom: var(--s6);
 }
 
 
@@ -77,11 +78,11 @@ body {
 .feed {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 var(--s4);
+  padding: 0 var(--s5);
 }
 
 main {
-  padding-top: var(--s3);
+  padding-top: var(--s4);
 }
 
 
@@ -90,7 +91,7 @@ main {
 ===================== */
 
 .site-header {
-  background: #000;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -99,14 +100,14 @@ main {
   justify-content: space-between;
   align-items: center;
 
-  padding-top: var(--s3);
-  padding-bottom: var(--s3);
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
 }
 
 .brand a {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 
   text-decoration: none;
@@ -126,14 +127,16 @@ main {
 .lang-switch {
   display: flex;
   border: 1px solid var(--border);
+  border-radius: 6px;
   overflow: hidden;
+  background: #fff;
 }
 
 .lang-switch a {
   font-size: 11px;
   font-weight: 600;
 
-  padding: 6px 10px;
+  padding: 6px 12px;
 
   text-decoration: none;
   color: var(--ink-soft);
@@ -141,7 +144,7 @@ main {
 
 .lang-switch a.active {
   background: var(--accent);
-  color: #000;
+  color: #FAF9F7;
 }
 
 
@@ -153,18 +156,18 @@ main {
   border-bottom: 1px solid var(--border);
 
   padding-top: var(--s6);
-  padding-bottom: var(--s5);
+  padding-bottom: var(--s6);
 }
 
 .hero h1 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
 
   margin-bottom: var(--s2);
 }
 
 .hero p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-soft);
 
   max-width: 520px;
@@ -176,31 +179,40 @@ main {
 ===================== */
 
 .feed {
-  margin-top: var(--s4);
+  margin-top: var(--s5);
 }
 
 
 /* =====================
-   DEAL CARD (MOBILE FIRST)
+   DEAL CARD
 ===================== */
 
 .deal {
-  position: relative; /* THIS LINE */
+  position: relative;
+
   background: var(--card);
+
   border: 1px solid var(--border);
-  margin-bottom: var(--s4);
+  border-radius: 12px;
+
+  margin-bottom: var(--s5);
+
   overflow: hidden;
+
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.04);
 }
 
 
-/* Deal Image — Mobile First, Stronger Presence */
+/* =====================
+   DEAL IMAGE
+===================== */
 
 .deal-image {
   width: 100%;
+  height: 190px;
 
-  height: 180px; /* bigger visual weight */
-
-  background: #050505;
+  background: #F2F1EE;
 
   position: relative;
   overflow: hidden;
@@ -216,44 +228,50 @@ main {
 
   object-fit: contain;
 
-  padding: 6px; /* prevents edge kissing */
+  padding: 10px;
 }
 
 
-/* Badge */
+/* =====================
+   BADGE
+===================== */
 
 .deal-badge {
   position: absolute;
-  top: var(--s2);
-  left: var(--s2);
+  top: var(--s3);
+  left: var(--s3);
 
-  background: #000;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  background: #fff;
+
+  border: 1px solid var(--border);
+
+  color: var(--ink-soft);
 
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
 
-  padding: 3px 7px;
+  padding: 4px 8px;
 
-  border-radius: 0;
+  border-radius: 6px;
 }
 
 
-/* Body */
+/* =====================
+   BODY
+===================== */
 
 .deal-body {
-  padding: var(--s3) var(--s4);
+  padding: var(--s4) var(--s5);
 }
 
 .deal-title {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
 
   margin-bottom: var(--s1);
 
-  max-width: 52ch;
+  max-width: 54ch;
 }
 
 .deal-title a {
@@ -270,22 +288,26 @@ main {
   font-size: 13px;
   color: var(--ink-soft);
 
-  margin-bottom: var(--s2);
+  margin-bottom: var(--s3);
 }
 
 
-/* Bottom Row */
+/* =====================
+   BOTTOM ROW
+===================== */
 
 .deal-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  gap: var(--s3);
+  gap: var(--s4);
 }
 
 
-/* Price */
+/* =====================
+   PRICE
+===================== */
 
 .deal-price {
   display: flex;
@@ -297,18 +319,22 @@ main {
 
 .price-now {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 600;
 
-  color: var(--accent);
+  color: var(--ink);
 }
 
 
-/* CTA */
+/* =====================
+   CTA
+===================== */
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 
-  padding: var(--s2) var(--s4);
+  padding: 8px 14px;
 
   background: transparent;
 
@@ -316,92 +342,104 @@ main {
 
   text-decoration: none;
 
-  border: 1px solid var(--accent);
-  border-radius: 0;
+  border: none;
 
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
+
+  position: relative;
 }
 
-.btn:hover {
-  background: var(--accent);
-  color: #000;
+.btn::after {
+  content: "→";
+  font-size: 13px;
+  transition: transform .15s ease;
 }
+
+.btn:hover::after {
+  transform: translateX(3px);
+}
+
 
 /* =====================
-   DEAL RANK (BRUTALIST)
+   DEAL RANK
 ===================== */
 
 .deal-rank {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 10px;
+  right: 10px;
 
   min-width: 28px;
   height: 28px;
 
-  padding: 0 6px;
+  background: #fff;
 
-  background: #000;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--border);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 1;
+  font-size: 13px;
+  font-weight: 700;
 
-  color: var(--accent);
+  color: var(--ink-soft);
+
+  border-radius: 50%;
 
   z-index: 20;
-
-  box-shadow: 0 0 0 1px #000;
-}
-
-
-/* Crown / medals glow */
-
-.deal:nth-of-type(1) .deal-rank {
-  border-color: gold;
-  box-shadow: 0 0 6px rgba(255,215,0,0.6);
-}
-
-.deal:nth-of-type(2) .deal-rank {
-  border-color: silver;
-  box-shadow: 0 0 6px rgba(192,192,192,0.5);
-}
-
-.deal:nth-of-type(3) .deal-rank {
-  border-color: #cd7f32;
-  box-shadow: 0 0 6px rgba(205,127,50,0.5);
 }
 
 
 /* =====================
-   DESKTOP ENHANCEMENT
+   TOP RANK ACCENTS
+===================== */
+
+.deal:nth-of-type(1) .deal-rank {
+  color: #9E7A19;
+  border-color: #E5D08A;
+  background: #FFF9E3;
+}
+
+.deal:nth-of-type(2) .deal-rank {
+  color: #6B6B6B;
+  border-color: #D5D5D5;
+  background: #F6F6F6;
+}
+
+.deal:nth-of-type(3) .deal-rank {
+  color: #8A5A2E;
+  border-color: #D8B190;
+  background: #FFF2E8;
+}
+
+
+/* =====================
+   DESKTOP
 ===================== */
 
 @media (min-width: 768px) {
 
   .deal {
     display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: var(--s3);
+    grid-template-columns: 180px 1fr;
+    gap: var(--s4);
     align-items: center;
   }
 
   .deal-image {
     height: 150px;
-    margin: var(--s3) 0 var(--s3) var(--s3);
+    margin: var(--s4) 0 var(--s4) var(--s4);
+    border-radius: 8px;
   }
 
   .deal-body {
-    padding: var(--s3) var(--s4) var(--s3) 0;
+    padding: var(--s4) var(--s5) var(--s4) 0;
   }
 
 }
+
 
 /* =====================
    MOBILE TEXT CLAMP
@@ -416,10 +454,7 @@ main {
 
     overflow: hidden;
 
-    line-clamp: 2; /* future standard */
+    line-clamp: 2;
   }
 
 }
-
-
-
