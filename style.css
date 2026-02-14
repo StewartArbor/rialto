@@ -544,3 +544,60 @@ main {
   }
 
 }
+
+/* =====================
+   HERO / MASTHEAD TYPE
+===================== */
+
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: var(--ink-soft);
+
+  max-width: 420px;
+
+  margin-bottom: var(--s4);
+}
+
+
+/* Brand refinement */
+
+.brand a {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+}
+
+/* Serif headline override */
+
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+}
