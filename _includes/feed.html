@@ -1,44 +1,48 @@
 {% assign lang = page.lang | default: "en" %}
-{% assign items = site.data.items | where: "active", true %}
+{% assign raw = site.data.items | where: "active", true %}
 
 {% if page.cat %}
-  {% assign items = items | where: "category", page.cat %}
+  {% assign raw = raw | where: "category", page.cat %}
 {% endif %}
-
-{%- comment -%}
-Score system:
-- discount × 3
-- freshness bonus (max 60 days)
-{%- endcomment -%}
 
 {% assign scored = "" | split: "" %}
 
-{% for item in items %}
+{% assign now = site.time | date: "%s" %}
 
-  {% assign discount_score = item.discount | times: 3 %}
+{% for item in raw %}
 
-  {% assign now = site.time | date: "%s" %}
+  {% assign discount = item.discount | default: 0 | times: 3 %}
+
   {% assign added = item.added | date: "%s" %}
-  {% assign days_old = now | minus: added | divided_by: 86400 %}
+  {% assign days = now | minus: added | divided_by: 86400 %}
 
-  {% assign freshness = 60 | minus: days_old %}
+  {% assign freshness = 60 | minus: days %}
   {% if freshness < 0 %}
     {% assign freshness = 0 %}
   {% endif %}
 
-  {% assign score = discount_score | plus: freshness %}
+  {% assign score = discount | plus: freshness %}
 
-  {% assign item = item | merge: {"score": score} %}
-  {% assign scored = scored | push: item %}
+  {% capture pack %}
+{{ score }}||{{ forloop.index0 }}
+  {% endcapture %}
+
+  {% assign scored = scored | push: pack | sort %}
 
 {% endfor %}
 
-{% assign items = scored | sort: "score" | reverse %}
+{% assign sorted = "" | split: "" %}
+
+{% for pack in scored reversed %}
+  {% assign parts = pack | split: "||" %}
+  {% assign i = parts[1] | plus: 0 %}
+  {% assign sorted = sorted | push: raw[i] %}
+{% endfor %}
 
 
 <div class="feed" id="dealFeed">
 
-{% for item in items %}
+{% for item in sorted %}
 {% assign rank = forloop.index %}
 
 {% assign title = item.title[lang] | default: item.title.en %}
@@ -46,14 +50,10 @@ Score system:
 {% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
 {% assign oldp  = item.old_price_fmt[lang] | default: item.old_price_fmt.en %}
 
-
 <article class="deal">
 
-  <!-- Rank -->
   <div class="deal-rank">{{ rank }}</div>
 
-
-  <!-- Image -->
   <a href="{{ item.link }}"
      class="deal-media"
      target="_blank"
@@ -65,57 +65,42 @@ Score system:
         <span class="deal-badge">-{{ item.discount }}%</span>
       {% endif %}
 
-      <img src="{{ item.image }}"
-           loading="lazy"
-           alt="{{ title }}">
+      <img src="{{ item.image }}" loading="lazy" alt="{{ title }}">
 
     </div>
   </a>
 
 
-  <!-- Body -->
   <div class="deal-body">
 
     <h3 class="deal-title">
-      <a href="{{ item.link }}"
-         target="_blank"
-         rel="nofollow noopener">
+      <a href="{{ item.link }}" target="_blank" rel="nofollow noopener">
         {{ title }}
       </a>
     </h3>
-
 
     {% if desc %}
       <p class="deal-desc">{{ desc }}</p>
     {% endif %}
 
-
     <div class="deal-bottom">
 
-      <!-- Price -->
       <div class="deal-price">
-
         <span class="price-now">{{ price }}</span>
 
         {% if item.old_price %}
           <span class="price-old">{{ oldp }}</span>
         {% endif %}
-
       </div>
 
-
-      <!-- CTA -->
       <a class="btn"
          href="{{ item.link }}"
          target="_blank"
          rel="nofollow noopener">
 
-        {% if lang == "ru" %}
-          Смотреть
-        {% elsif lang == "kz" %}
-          Көру
-        {% else %}
-          View
+        {% if lang == "ru" %}Смотреть
+        {% elsif lang == "kz" %}Көру
+        {% else %}View
         {% endif %}
 
       </a>
@@ -129,59 +114,3 @@ Score system:
 {% endfor %}
 
 </div>
-
-
-<!-- Pagination -->
-
-<div class="pager" id="pager"></div>
-
-
-<script>
-(function(){
-
-  const PAGE_SIZE = 12;
-
-  const feed  = document.getElementById('dealFeed');
-  const pager = document.getElementById('pager');
-
-  if(!feed || !pager) return;
-
-  const cards = Array.from(feed.querySelectorAll('article.deal'));
-
-  if(cards.length <= PAGE_SIZE) return;
-
-  let page = 1;
-  const pages = Math.ceil(cards.length / PAGE_SIZE);
-
-
-  function render(){
-
-    const start = (page - 1) * PAGE_SIZE;
-    const end   = start + PAGE_SIZE;
-
-    cards.forEach((c,i)=>{
-      c.style.display = (i >= start && i < end) ? '' : 'none';
-    });
-
-    pager.innerHTML = '';
-
-    const prev = document.createElement('button');
-    prev.textContent = '←';
-    prev.disabled = page === 1;
-    prev.onclick = ()=>{ page--; render(); };
-
-    const next = document.createElement('button');
-    next.textContent = '→';
-    next.disabled = page === pages;
-    next.onclick = ()=>{ page++; render(); };
-
-    const label = document.createElement('span');
-    label.textContent = `Page ${page} / ${pages}`;
-
-    pager.append(prev,label,next);
-  }
-
-  render();
-
-})();
-</script>

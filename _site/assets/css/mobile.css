@@ -1,0 +1,27 @@
+/* Make price dominant */
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+/* Stronger button */
+.btn {
+  background: #111;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Better card spacing */
+.deal {
+  padding: 0;
+}
+
+.deal img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.deal > *:not(img) {
+  padding: 12px;
+}
