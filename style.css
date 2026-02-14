@@ -458,3 +458,37 @@ main {
   }
 
 }
+
+/* =====================
+   MOBILE CARD EXPANSION
+===================== */
+
+@media (max-width: 600px) {
+
+  /* Reduce side padding */
+  .header-inner,
+  .hero-inner,
+  .content,
+  .feed {
+    padding-left: var(--s3);
+    padding-right: var(--s3);
+  }
+
+  /* Make cards feel wider */
+  .deal {
+    margin-left: -6px;
+    margin-right: -6px;
+    border-radius: 16px;
+  }
+
+  /* Bigger image */
+  .deal-image {
+    height: 240px;
+  }
+
+  /* Looser interior */
+  .deal-body {
+    padding: var(--s5) var(--s4);
+  }
+
+}
