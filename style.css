@@ -185,20 +185,12 @@ main {
 ===================== */
 
 .deal {
-  position: relative;
-
+  position: relative; /* THIS LINE */
   background: var(--card);
-
   border: 1px solid var(--border);
   margin-bottom: var(--s4);
-
-  overflow: visible;
-
-  border-radius: 0;
-  box-shadow: none;
+  overflow: hidden;
 }
-
-
 
 
 /* Deal Image — Mobile First, Stronger Presence */
@@ -381,10 +373,9 @@ main {
 }
 
 .deal:nth-of-type(3) .deal-rank {
-  color: #cd7f32; /* bronze */
+  color: #cd7f32;
   border-color: #cd7f32;
 }
-
 
 
 

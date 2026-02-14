@@ -1,47 +1,68 @@
 {% assign lang = page.lang | default: "en" %}
-{% assign raw = site.data.items | where: "active", true %}
+
+{%- comment -%}
+Get all active items
+{%- endcomment -%}
+
+{% assign all_items = site.data.items | where: "active", true %}
+
+
+{%- comment -%}
+Filter by category if needed
+{%- endcomment -%}
 
 {% if page.cat %}
-  {% assign raw = raw | where: "category", page.cat %}
+  {% assign cat_items = all_items | where: "category", page.cat %}
+  {% if cat_items.size > 0 %}
+    {% assign items = cat_items %}
+  {% else %}
+    {% assign items = all_items %}
+  {% endif %}
+{% else %}
+  {% assign items = all_items %}
 {% endif %}
 
-{% assign now = site.time | date: "%s" %}
+
+{%- comment -%}
+Score items
+{%- endcomment -%}
+
 {% assign scored = "" | split: "" %}
 
-{% for item in raw %}
+{% for item in items %}
 
-  {% assign discount = item.discount | default: 0 | times: 3 %}
+  {% assign discount_score = item.discount | times: 3 %}
+
+  {% assign now = site.time | date: "%s" %}
   {% assign added = item.added | date: "%s" %}
-  {% assign days = now | minus: added | divided_by: 86400 %}
 
-  {% assign freshness = 60 | minus: days %}
+  {% assign days_old = now | minus: added | divided_by: 86400 %}
+
+  {% assign freshness = 60 | minus: days_old %}
   {% if freshness < 0 %}
     {% assign freshness = 0 %}
   {% endif %}
 
-  {% assign score = discount | plus: freshness %}
+  {% assign score = discount_score | plus: freshness %}
 
-  {% capture pack %}
-{{ score }}||{{ forloop.index0 }}
-  {% endcapture %}
+  {% assign ranked = item | merge: {"score": score} %}
 
-  {% assign scored = scored | push: pack %}
+  {% assign scored = scored | push: ranked %}
 
 {% endfor %}
 
-{% assign scored = scored | sort %}
-{% assign sorted = "" | split: "" %}
 
-{% for pack in scored reversed %}
-  {% assign parts = pack | split: "||" %}
-  {% assign i = parts[1] | plus: 0 %}
-  {% assign sorted = sorted | push: raw[i] %}
-{% endfor %}
+{%- comment -%}
+Sort by score
+{%- endcomment -%}
+
+{% assign items_sorted = scored | sort: "score" | reverse %}
 
 
 <div class="feed" id="dealFeed">
 
-{% for item in sorted %}
+
+{% for item in items_sorted %}
 {% assign rank = forloop.index %}
 
 {% assign title = item.title[lang] | default: item.title.en %}
@@ -51,9 +72,11 @@
 
 <article class="deal">
 
+  <!-- Rank -->
   <div class="deal-rank">{{ rank }}</div>
 
 
+  <!-- Media -->
   <a href="{{ item.link }}"
      class="deal-media"
      target="_blank"
@@ -65,16 +88,22 @@
         <span class="deal-badge">-{{ item.discount }}%</span>
       {% endif %}
 
-      <img src="{{ item.image }}" loading="lazy" alt="{{ title }}">
+      <img src="{{ item.image }}"
+           loading="lazy"
+           alt="{{ title }}">
 
     </div>
+
   </a>
 
 
+  <!-- Body -->
   <div class="deal-body">
 
     <h3 class="deal-title">
-      <a href="{{ item.link }}" target="_blank" rel="nofollow noopener">
+      <a href="{{ item.link }}"
+         target="_blank"
+         rel="nofollow noopener">
         {{ title }}
       </a>
     </h3>
@@ -87,22 +116,21 @@
 
     <div class="deal-bottom">
 
+      <!-- Price -->
       <div class="deal-price">
         <span class="price-now">{{ price }}</span>
       </div>
 
 
+      <!-- CTA -->
       <a class="btn"
          href="{{ item.link }}"
          target="_blank"
          rel="nofollow noopener">
 
-        {% if lang == "ru" %}
-          Смотреть
-        {% elsif lang == "kz" %}
-          Көру
-        {% else %}
-          View
+        {% if lang == "ru" %}Смотреть
+        {% elsif lang == "kz" %}Көру
+        {% else %}View
         {% endif %}
 
       </a>
