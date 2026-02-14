@@ -73,7 +73,21 @@ Sort by score
 <article class="deal">
 
   <!-- Rank -->
-  <div class="deal-rank">{{ rank }}</div>
+  <div class="deal-rank">
+
+  {% if rank == 1 %}
+    👑
+  {% elsif rank == 2 %}
+    🥈
+  {% elsif rank == 3 %}
+    🥉
+  {% else %}
+    {{ rank }}
+  {% endif %}
+
+</div>
+
+
 
 
   <!-- Media -->
