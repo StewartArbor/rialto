@@ -601,3 +601,99 @@ main {
 .hero h1 {
   font-family: "Playfair Display", Georgia, serif;
 }
+
+/* =====================
+   DARK MODE — PROPER
+===================== */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    /* Surfaces */
+    --bg: #121212;          /* Graphite */
+    --card: #1A1A1A;        /* Soft panel */
+    --border: #2A2A2A;      /* Divider */
+
+    /* Text */
+    --ink: #E6E6E6;         /* Soft white */
+    --ink-soft: #9A9A9A;    /* Muted gray */
+
+    /* Accent */
+    --accent: #6F8FAF;      /* Muted steel blue */
+  }
+
+
+  /* Header */
+
+  .site-header {
+    background: #121212;
+    border-color: var(--border);
+  }
+
+
+  /* Cards */
+
+  .deal {
+    background: var(--card);
+
+    box-shadow:
+      0 6px 28px rgba(0,0,0,0.4);
+  }
+
+
+  /* Images */
+
+  .deal-image {
+    background: #181818;
+  }
+
+
+  /* Language switch */
+
+  .lang-switch {
+    background: var(--card);
+    border-color: var(--border);
+  }
+
+
+  /* Badge */
+
+  .deal-badge {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--ink-soft);
+  }
+
+
+  /* Rank */
+
+  .deal-rank {
+    background: var(--card);
+    border-color: var(--border);
+    color: var(--ink-soft);
+  }
+
+
+  /* Buttons */
+
+  .btn {
+    color: var(--accent);
+  }
+
+
+  /* Hero separator */
+
+  .hero {
+    border-color: var(--border);
+  }
+
+
+  /* Subtle hover lift */
+
+  .deal:hover {
+    box-shadow:
+      0 10px 36px rgba(0,0,0,0.55);
+  }
+
+}
