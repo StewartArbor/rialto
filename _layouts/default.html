@@ -199,12 +199,13 @@ if (document.querySelector(".carousel-track")) {
   let index = 0;
 
 
-  /* Init first slide */
+  /* Activate first slide */
   slides[0].classList.add("active");
 
 
   /* Create dots */
   slides.forEach((_, i) => {
+
     const dot = document.createElement("div");
     dot.classList.add("carousel-dot");
 
@@ -216,6 +217,7 @@ if (document.querySelector(".carousel-track")) {
     });
 
     dotsContainer.appendChild(dot);
+
   });
 
   const dots = document.querySelectorAll(".carousel-dot");
@@ -252,6 +254,7 @@ if (document.querySelector(".carousel-track")) {
 
 }
 </script>
+
 
 
 
