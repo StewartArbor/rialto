@@ -799,6 +799,12 @@ main {
   background: var(--accent);
 }
 
+.carousel-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
 
 @media (prefers-color-scheme: dark) {
   .carousel-btn {

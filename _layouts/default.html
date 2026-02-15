@@ -127,29 +127,36 @@
         | reverse
         | limit: 3 %}
 
-      {% for item in featured %}
+     {% for item in featured %}
 
-      <div class="carousel-slide">
+<div class="carousel-slide">
 
-        <img
-          src="{{ item.image }}"
-          alt="{{ item.title[page.lang] | default: item.title.en }}">
+  <a href="{{ item.link }}"
+     target="_blank"
+     rel="nofollow sponsored noopener"
+     class="carousel-link">
 
-        <div class="carousel-text">
+    <img
+      src="{{ item.image }}"
+      alt="{{ item.title[page.lang] | default: item.title.en }}">
 
-          <h2>
-            {{ item.title[page.lang] | default: item.title.en }}
-          </h2>
+    <div class="carousel-text">
 
-          <p>
-            {{ item.desc[page.lang] | default: item.desc.en }}
-          </p>
+      <h2>
+        {{ item.title[page.lang] | default: item.title.en }}
+      </h2>
 
-        </div>
+      <p>
+        {{ item.desc[page.lang] | default: item.desc.en }}
+      </p>
 
-      </div>
+    </div>
 
-      {% endfor %}
+  </a>
+
+</div>
+
+{% endfor %}
 
     </div>
 
