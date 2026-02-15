@@ -715,20 +715,7 @@ main {
   border: 1px solid var(--border);
 }
 
-/* Track */
 
-.carousel-track {
-  display: flex;
-  width: 100%;
-  transition: transform 0.4s ease;
-}
-
-/* Slides */
-
-.carousel-slide {
-  flex: 0 0 100%;
-  position: relative;
-}
 /* BIG SIDE ARROWS */
 
 .carousel-btn {
@@ -805,6 +792,30 @@ main {
   color: inherit;
   text-decoration: none;
 }
+
+/* FADE CAROUSEL */
+
+.carousel-track {
+  position: relative;
+  min-height: 420px; /* adjust if needed */
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.6s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
 
 @media (prefers-color-scheme: dark) {
   .carousel-btn {
