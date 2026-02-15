@@ -111,11 +111,8 @@
 
 
 
-{% if page.url == "/" 
-   or page.url == "/en/" 
-   or page.url == "/ru/" 
-   or page.url == "/kz/" %}
-   
+{% if page.show_carousel %}
+
 <!-- CAROUSEL -->
 
 <section class="carousel">
@@ -168,7 +165,7 @@
 
     <div class="carousel-dots"></div>
 
-  </div>
+    </div>
 
 </section>
 
