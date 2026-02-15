@@ -107,7 +107,8 @@
 </section>
 {% endif %}
 
-
+</section>
+{% endif %}
 
 <!-- FEATURED CAROUSEL -->
 <section class="carousel">
@@ -148,18 +149,17 @@
 
     </div>
 
-    <button class="carousel-btn prev" aria-label="Previous">
-  <span>&larr;</span>
-</button>
+    <!-- BIG ARROWS -->
+    <button class="carousel-btn prev">←</button>
+    <button class="carousel-btn next">→</button>
 
-<button class="carousel-btn next" aria-label="Next">
-  <span>&rarr;</span>
-</button>
-
+    <!-- STATUS DOTS -->
+    <div class="carousel-dots"></div>
 
   </div>
 
 </section>
+
 
 
 <main class="content">
@@ -177,33 +177,62 @@
   </div>
 </footer>
 
+if (document.querySelector(".carousel-track")) {
 <script>
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".carousel-slide");
+
 const nextBtn = document.querySelector(".carousel-btn.next");
 const prevBtn = document.querySelector(".carousel-btn.prev");
 
+const dotsContainer = document.querySelector(".carousel-dots");
+
 let index = 0;
 
-function updateCarousel() {
+/* Create dots */
+
+slides.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("carousel-dot");
+
+  if (i === 0) dot.classList.add("active");
+
+  dot.addEventListener("click", () => {
+    index = i;
+    update();
+  });
+
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".carousel-dot");
+
+
+function update() {
   track.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
 }
+
 
 nextBtn.addEventListener("click", () => {
   index = (index + 1) % slides.length;
-  updateCarousel();
+  update();
 });
 
 prevBtn.addEventListener("click", () => {
   index = (index - 1 + slides.length) % slides.length;
-  updateCarousel();
+  update();
 });
+
 
 setInterval(() => {
   index = (index + 1) % slides.length;
-  updateCarousel();
+  update();
 }, 6000);
 </script>
+}
 
 
 </body>
