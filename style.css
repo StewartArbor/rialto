@@ -705,34 +705,61 @@ main {
     color: #E6E6E6;
   }
 }
-/* FADE CAROUSEL — CLEAN */
+
+/* ALI-STYLE PEEK FADE CAROUSEL */
 
 .carousel {
   position: relative;
-  overflow: hidden;
+  padding: 0 60px; /* space for side peeks */
 }
 
 .carousel-track {
   position: relative;
-  height: 420px; /* adjust if needed */
+  height: 100%;
 }
 
 .carousel-slide {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
 
+  transform: translate(-50%, -50%) scale(0.9);
   opacity: 0;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
   pointer-events: none;
 
-  transition: opacity 0.7s ease;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 720px;
 }
 
+/* Center slide */
 .carousel-slide.active {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
+  z-index: 3;
+}
+
+/* Left preview */
+.carousel-slide.prev {
+  opacity: 0.25;
+  transform: translate(-140%, -50%) scale(0.85);
   z-index: 2;
+}
+
+/* Right preview */
+.carousel-slide.next {
+  opacity: 0.25;
+  transform: translate(40%, -50%) scale(0.85);
+  z-index: 2;
+}
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
