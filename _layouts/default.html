@@ -111,6 +111,8 @@
 
 
 
+{% if page.url == "/" or page.url == "/en/" or page.url == "/ru/" or page.url == "/kz/" %}
+
 <!-- CAROUSEL -->
 
 <section class="carousel">
@@ -151,16 +153,17 @@
 
     </div>
 
-    <!-- ARROWS -->
     <button class="carousel-btn prev">←</button>
     <button class="carousel-btn next">→</button>
 
-    <!-- DOTS -->
     <div class="carousel-dots"></div>
 
   </div>
 
 </section>
+
+{% endif %}
+
 
 
 
