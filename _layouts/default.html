@@ -188,26 +188,23 @@
 
 
 <!-- CAROUSEL SCRIPT -->
-
 <script>
-
 if (document.querySelector(".carousel-track")) {
 
-  const track = document.querySelector(".carousel-track");
   const slides = document.querySelectorAll(".carousel-slide");
-
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
-
   const dotsContainer = document.querySelector(".carousel-dots");
 
   let index = 0;
 
 
+  /* Init first slide */
+  slides[0].classList.add("active");
+
+
   /* Create dots */
-
   slides.forEach((_, i) => {
-
     const dot = document.createElement("div");
     dot.classList.add("carousel-dot");
 
@@ -219,7 +216,6 @@ if (document.querySelector(".carousel-track")) {
     });
 
     dotsContainer.appendChild(dot);
-
   });
 
   const dots = document.querySelectorAll(".carousel-dot");
@@ -227,33 +223,36 @@ if (document.querySelector(".carousel-track")) {
 
   function update() {
 
-    track.style.transform = `translateX(-${index * 100}%)`;
-
+    slides.forEach(s => s.classList.remove("active"));
     dots.forEach(d => d.classList.remove("active"));
+
+    slides[index].classList.add("active");
     dots[index].classList.add("active");
 
   }
 
 
-  nextBtn.addEventListener("click", () => {
+  function next() {
     index = (index + 1) % slides.length;
     update();
-  });
+  }
 
-  prevBtn.addEventListener("click", () => {
+  function prev() {
     index = (index - 1 + slides.length) % slides.length;
     update();
-  });
+  }
 
 
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    update();
-  }, 6000);
+  nextBtn.addEventListener("click", next);
+  prevBtn.addEventListener("click", prev);
+
+
+  /* Auto rotate */
+  setInterval(next, 6000);
 
 }
-
 </script>
+
 
 
 </body>
