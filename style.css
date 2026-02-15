@@ -705,37 +705,44 @@ main {
     color: #E6E6E6;
   }
 }
+/* ============================
+   ALI-STYLE HERO CAROUSEL
+============================ */
 
-/* ALI-STYLE PEEK FADE CAROUSEL */
+/* Container */
 
 .carousel {
   position: relative;
-  padding: 0 60px; /* space for side peeks */
-  z-index: 1;
+
+  max-width: 900px;
+  margin: var(--s5) auto;
+
+  overflow: hidden;
 }
-.site-header {
-  position: relative;
-  z-index: 10;
-}
+
+/* Track */
 
 .carousel-track {
   position: relative;
-  height: auto;
-  min-height: 420px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel-slide {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 
   width: 100%;
-  max-width: 760px;   /* IMPORTANT: stops fullscreen overlay */
+  height: 420px; /* fixed, stable height */
 
-  transform: translate(-50%, -50%) scale(0.9);
+  overflow: hidden;
+}
+
+/* Slides */
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   opacity: 0;
+  transform: scale(0.92);
 
   transition:
     opacity 0.6s ease,
@@ -744,36 +751,57 @@ main {
   pointer-events: none;
 }
 
+/* Active */
 
-/* Center slide */
 .carousel-slide.active {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: auto;
+  transform: scale(1);
+
   z-index: 3;
+  pointer-events: auto;
 }
 
-/* Left preview */
+/* Peek left */
+
 .carousel-slide.prev {
   opacity: 0.25;
-  transform: translate(-140%, -50%) scale(0.85);
+  transform: translateX(-12%) scale(0.85);
+
   z-index: 2;
 }
 
-/* Right preview */
+/* Peek right */
+
 .carousel-slide.next {
   opacity: 0.25;
-  transform: translate(40%, -50%) scale(0.85);
+  transform: translateX(12%) scale(0.85);
+
   z-index: 2;
 }
+
+/* Links */
+
+.carousel-link {
+  display: block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images */
+
 .carousel-slide img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+
   object-fit: contain;
   display: block;
 }
-.carousel-link {
-  display: inline-block;
-  max-width: 100%;
-  pointer-events: auto;
+@media (max-width: 600px) {
+  .carousel-track {
+    height: 280px;
+  }
 }
