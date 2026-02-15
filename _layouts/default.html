@@ -83,33 +83,21 @@
 
 <!-- HERO -->
 
-{% if page.url == "/" or page.url contains "/ru/" or page.url contains "/kz/" or page.url contains "/en/" %}
+{% if page.hero or site.default_hero %}
 
 <section class="hero">
   <div class="hero-inner">
 
-    {% case page.lang %}
+    <h1>{{ page.hero.title }}</h1>
 
-      {% when "ru" %}
-        <h1>Тех-скидки AliExpress</h1>
-        <p>Реальные скидки. Без накрутки.</p>
-
-      {% when "kz" %}
-        <h1>AliExpress Tech ұсыныстары</h1>
-        <p>Нақты жеңілдіктер. Артық баға жоқ.</p>
-
-      {% else %}
-        <h1>AliExpress Tech Deals</h1>
-        <p>Real discounts. No inflated pricing.</p>
-
-    {% endcase %}
+    {% if page.hero.subtitle %}
+      <p>{{ page.hero.subtitle }}</p>
+    {% endif %}
 
   </div>
 </section>
 
 {% endif %}
-
-
 
 {% if page.show_carousel %}
 
