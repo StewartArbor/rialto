@@ -5,4 +5,4 @@ title: Контакты
 ---
 
 
-Telegram: @rialtokz
+Telegram: https://t.me/rialtokz

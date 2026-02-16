@@ -4,4 +4,4 @@ lang: kz
 title: Байланыс
 ---
 
-Telegram: @rialtokz
+Telegram: https://t.me/rialtokz

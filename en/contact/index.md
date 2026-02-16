@@ -4,4 +4,4 @@ lang: en
 title: Contact
 ---
 
-Telegram: @rialtokz
+Telegram: https://t.me/rialtokz
