@@ -151,12 +151,20 @@
     <span>© {{ site.time | date: "%Y" }} Rialto</span>
 
     <div class="footer-links">
-      <a href="/{{ page.lang }}/about/">About</a>
-      <a href="/{{ page.lang }}/contact/">Contact</a>
+
+      <a href="/{{ page.lang }}/about/">
+        {{ site.data.ui.about[page.lang] }}
+      </a>
+
+      <a href="/{{ page.lang }}/contact/">
+        {{ site.data.ui.contact[page.lang] }}
+      </a>
+
     </div>
 
   </div>
 </footer>
+
 
 
 
