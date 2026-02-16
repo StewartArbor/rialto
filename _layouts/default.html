@@ -102,62 +102,35 @@
 {% if page.show_carousel %}
 
 <!-- CAROUSEL -->
-
 <section class="carousel">
 
-  <div class="hero-inner">
+  <div class="carousel-track">
 
-    <div class="carousel-track">
+    {% for item in featured %}
 
-      {% assign featured = site.data.items
-        | where: "active", true
-        | sort: "added"
-        | reverse
-        | limit: 3 %}
+    <div class="carousel-slide">
 
-     {% for item in featured %}
+      <a href="{{ item.link }}"
+         target="_blank"
+         rel="nofollow sponsored noopener"
+         class="carousel-link">
 
-<div class="carousel-slide">
+        <img
+          src="{{ item.image }}"
+          alt="{{ item.title[page.lang] | default: item.title.en }}">
 
-  <a href="{{ item.link }}"
-     target="_blank"
-     rel="nofollow sponsored noopener"
-     class="carousel-link">
-
-    <img
-      src="{{ item.image }}"
-      alt="{{ item.title[page.lang] | default: item.title.en }}">
-
-    <div class="carousel-text">
-
-      <h2>
-        {{ item.title[page.lang] | default: item.title.en }}
-      </h2>
-
-      <p>
-        {{ item.desc[page.lang] | default: item.desc.en }}
-      </p>
+      </a>
 
     </div>
 
-  </a>
+    {% endfor %}
 
-</div>
+  </div>
 
-{% endfor %}
-
-    </div>
-
-    <button class="carousel-btn prev">←</button>
-    <button class="carousel-btn next">→</button>
-
-    <div class="carousel-dots"></div>
-
-    </div>
+  <div class="carousel-dots"></div>
 
 </section>
 
-{% endif %}
 
 
 
@@ -189,71 +162,73 @@
 
 <!-- CAROUSEL SCRIPT -->
 <script>
-if (document.querySelector(".carousel-track")) {
+document.addEventListener("DOMContentLoaded", () => {
 
   const slides = document.querySelectorAll(".carousel-slide");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const dotsContainer = document.querySelector(".carousel-dots");
+  const dotsBox = document.querySelector(".carousel-dots");
+
+  if (!slides.length) return;
 
   let index = 0;
 
-
-  /* Activate first slide */
-  slides[0].classList.add("active");
-
-
   /* Create dots */
-  slides.forEach((_, i) => {
 
+  slides.forEach((_, i) => {
     const dot = document.createElement("div");
-    dot.classList.add("carousel-dot");
+    dot.className = "carousel-dot";
 
     if (i === 0) dot.classList.add("active");
 
-    dot.addEventListener("click", () => {
+    dot.onclick = () => {
       index = i;
-      update();
-    });
+      render();
+    };
 
-    dotsContainer.appendChild(dot);
-
+    dotsBox.appendChild(dot);
   });
 
   const dots = document.querySelectorAll(".carousel-dot");
 
 
-  function update() {
+  function render() {
 
-    slides.forEach(s => s.classList.remove("active"));
+    slides.forEach((slide, i) => {
+
+      slide.classList.remove("active","prev","next");
+
+      if (i === index) {
+        slide.classList.add("active");
+      }
+
+      if (i === (index - 1 + slides.length) % slides.length) {
+        slide.classList.add("prev");
+      }
+
+      if (i === (index + 1) % slides.length) {
+        slide.classList.add("next");
+      }
+
+    });
+
     dots.forEach(d => d.classList.remove("active"));
-
-    slides[index].classList.add("active");
     dots[index].classList.add("active");
-
   }
 
 
-  function next() {
+  render();
+
+
+  /* Auto play */
+
+  setInterval(() => {
     index = (index + 1) % slides.length;
-    update();
-  }
+    render();
+  }, 6000);
 
-  function prev() {
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  }
-
-
-  nextBtn.addEventListener("click", next);
-  prevBtn.addEventListener("click", prev);
-
-
-  /* Auto rotate */
-  setInterval(next, 6000);
-
-}
+});
 </script>
+
+
 
 
 

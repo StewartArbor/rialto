@@ -705,17 +705,17 @@ main {
     color: #E6E6E6;
   }
 }
-/* ============================
-   ALI-STYLE HERO CAROUSEL
-============================ */
 
-/* Container */
+
+/* =========================
+   ALI HERO FADE CAROUSEL
+========================= */
 
 .carousel {
   position: relative;
 
-  max-width: 900px;
-  margin: var(--s5) auto;
+  max-width: 1100px;
+  margin: 48px auto;
 
   overflow: hidden;
 }
@@ -725,83 +725,107 @@ main {
 .carousel-track {
   position: relative;
 
-  width: 100%;
-  height: 420px; /* fixed, stable height */
+  height: 360px;
 
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Slides */
 
 .carousel-slide {
   position: absolute;
-  inset: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 80%;
+  max-width: 900px;
 
   opacity: 0;
-  transform: scale(0.92);
+  transform: scale(0.9);
 
   transition:
     opacity 0.6s ease,
-    transform 0.6s ease;
+    transform 0.6s ease,
+    left 0.6s ease;
 
   pointer-events: none;
 }
 
-/* Active */
+/* Center */
 
 .carousel-slide.active {
   opacity: 1;
   transform: scale(1);
 
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+
   z-index: 3;
   pointer-events: auto;
 }
 
-/* Peek left */
+/* Left */
 
 .carousel-slide.prev {
-  opacity: 0.25;
-  transform: translateX(-12%) scale(0.85);
+  opacity: 0.35;
+
+  left: 15%;
+  transform: translateX(-50%) scale(0.9);
 
   z-index: 2;
 }
 
-/* Peek right */
+/* Right */
 
 .carousel-slide.next {
-  opacity: 0.25;
-  transform: translateX(12%) scale(0.85);
+  opacity: 0.35;
+
+  left: 85%;
+  transform: translateX(-50%) scale(0.9);
 
   z-index: 2;
+}
+
+/* Images */
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  display: block;
 }
 
 /* Links */
 
 .carousel-link {
   display: block;
-
-  max-width: 100%;
-  max-height: 100%;
-
-  text-decoration: none;
-  color: inherit;
+  width: 100%;
+  height: 100%;
 }
 
-/* Images */
+/* Dots */
 
-.carousel-slide img {
-  max-width: 100%;
-  max-height: 100%;
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 
-  object-fit: contain;
-  display: block;
+  margin-top: 14px;
 }
-@media (max-width: 600px) {
-  .carousel-track {
-    height: 280px;
-  }
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #444;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  transform: scale(1.4);
 }
