@@ -101,7 +101,8 @@
 
 {% if page.show_carousel %}
 
-<!-- CAROUSEL -->
+{% assign featured = site.data.hero %}
+
 <section class="carousel">
 
   <div class="carousel-track">
@@ -131,8 +132,7 @@
 
 </section>
 
-
-
+{% endif %}
 
 
 <!-- MAIN -->
