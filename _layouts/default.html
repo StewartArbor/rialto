@@ -101,7 +101,7 @@
 
 {% if page.show_carousel %}
 
-{% assign featured = site.data.hero %}
+{% assign featured = site.data.hero | limit: 5 %}
 
 <section class="carousel">
 
@@ -236,6 +236,61 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* RANDOM PICK */
+
+  const pickBtn = document.getElementById("randomPick");
+
+  if (pickBtn) {
+
+    pickBtn.addEventListener("click", () => {
+
+      const links = document.querySelectorAll(".deal a");
+
+      if (!links.length) return;
+
+      const i = Math.floor(Math.random() * links.length);
+
+      window.open(links[i].href, "_blank");
+
+    });
+
+  }
+
+
+  /* FILTER (placeholder) */
+
+  const filterBtn = document.getElementById("openFilters");
+
+  if (filterBtn) {
+
+    filterBtn.addEventListener("click", () => {
+
+      alert("Filters coming soon 👀");
+
+    });
+
+  }
+
+});
+</script>
+
+
+<!-- BOTTOM ACTION BAR -->
+
+<div class="bottom-bar">
+
+  <button id="openFilters" class="bottom-btn">
+    🔍 Filter
+  </button>
+
+  <button id="randomPick" class="bottom-btn primary">
+    🎯 Pick for me
+  </button>
+
+</div>
 
 
 
