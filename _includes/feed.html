@@ -70,7 +70,7 @@ Sort by score
 {% assign price = item.price_fmt[lang] | default: item.price_fmt.en %}
 
 
-<article class="deal">
+<article class="deal" data-cat="{{ item.category }}">
 
   <!-- Rank -->
   <div class="deal-rank">
