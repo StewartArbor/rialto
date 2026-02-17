@@ -80,8 +80,6 @@
 </header>
 
 
-
-<!-- HERO -->
 <!-- HERO -->
 
 {% if page.hero or site.default_hero %}
@@ -103,16 +101,26 @@
 
 
 <!-- CAROUSEL -->
-
 {% if page.show_carousel %}
 
 {% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign featured = "" | split: "" %}
 
-{% assign featured = site.data.hero
-  | where_exp: "item", "item.end >= today"
-  | where_exp: "item", "item.start == nil or item.start <= today"
-  | limit: 5
-%}
+{% for item in site.data.hero %}
+
+  {% if item.end >= today %}
+
+    {% if item.start == nil or item.start <= today %}
+
+      {% assign featured = featured | push: item %}
+
+    {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+{% assign featured = featured | limit: 5 %}
 
 {% if featured.size > 0 %}
 
@@ -131,7 +139,7 @@
 
         <img
           src="{{ item.image }}"
-          alt="{{ item.title[page.lang] | default: item.title.en }}">
+          alt="Promo">
 
       </a>
 
