@@ -82,6 +82,7 @@
 
 
 <!-- HERO -->
+<!-- HERO -->
 
 {% if page.hero or site.default_hero %}
 
@@ -99,9 +100,21 @@
 
 {% endif %}
 
+
+
+<!-- CAROUSEL -->
+
 {% if page.show_carousel %}
 
-{% assign featured = site.data.hero | limit: 5 %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+
+{% assign featured = site.data.hero
+  | where_exp: "item", "item.end >= today"
+  | where_exp: "item", "item.start == nil or item.start <= today"
+  | limit: 5
+%}
+
+{% if featured.size > 0 %}
 
 <section class="carousel">
 
@@ -133,6 +146,8 @@
 </section>
 
 {% endif %}
+{% endif %}
+
 
 
 <!-- MAIN -->
