@@ -963,3 +963,8 @@ body {
 
   cursor: pointer;
 }
+.filter-section button.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}

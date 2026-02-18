@@ -1,11 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const filterBtn = document.getElementById("filterBtn");
+  const buttons = document.querySelectorAll(".filter-section button");
+  const deals = document.querySelectorAll(".deal");
 
-  if (!filterBtn) return;
+  if (!buttons.length || !deals.length) return;
 
-  filterBtn.addEventListener("click", () => {
-    alert("Filters coming soon 👀");
+  buttons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+      const cat = btn.dataset.cat;
+
+      // Highlight active button
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      deals.forEach(deal => {
+
+        const dealCat = deal.dataset.cat;
+
+        if (cat === "all" || dealCat === cat) {
+          deal.style.display = "";
+        } else {
+          deal.style.display = "none";
+        }
+
+      });
+
+    });
+
   });
 
 });
