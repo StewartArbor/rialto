@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Test
+title: Rialto
 show_carousel: true
 ---
 
