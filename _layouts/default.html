@@ -101,60 +101,14 @@
 
 
 <!-- CAROUSEL -->
-{% if page.show_carousel %}
+{% if page.show_carousel == true %}
 
-{% assign today = site.time | date: "%Y-%m-%d" %}
-{% assign featured = "" | split: "" %}
-
-{% for item in site.data.hero %}
-
-  {% if item.end >= today %}
-
-    {% if item.start == nil or item.start <= today %}
-
-      {% assign featured = featured | push: item %}
-
-    {% endif %}
-
-  {% endif %}
-
-{% endfor %}
-
-{% assign featured = featured | limit: 5 %}
-
-{% if featured.size > 0 %}
-
-<section class="carousel">
-
-  <div class="carousel-track">
-
-    {% for item in featured %}
-
-    <div class="carousel-slide">
-
-      <a href="{{ item.link }}"
-         target="_blank"
-         rel="nofollow sponsored noopener"
-         class="carousel-link">
-
-        <img
-          src="{{ item.image }}"
-          alt="Promo">
-
-      </a>
-
-    </div>
-
-    {% endfor %}
-
-  </div>
-
-  <div class="carousel-dots"></div>
-
-</section>
+<div style="background:red;color:white;padding:20px;">
+  CAROUSEL FLAG IS TRUE
+</div>
 
 {% endif %}
-{% endif %}
+
 
 
 
