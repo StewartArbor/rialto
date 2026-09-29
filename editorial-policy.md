@@ -1,6 +1,27 @@
 ---
-title: Как мы выбираем
-description: Редакционная политика Treemeliority Market: критерии, источники и партнёрные отношения.
-lang: ru
+title: How we choose
+description: Treemeliority Market's editorial policy: criteria, sources, failure modes, and affiliate relationships.
+lang: en
 ---
-<section class="page"><div class="page-narrow prose"><p class="eyebrow">РЕДАКЦИОННАЯ ПОЛИТИКА</p><h1 class="page-title">Функция раньше витрины</h1><p>Treemeliority Market строит материалы от физической задачи к характеристикам инструмента. Каталог продавца — лишь последний слой.</p><h2>1. Определяем задачу</h2><p>«Хочу бинокль» почти ничего не сообщает. Наблюдение с балкона, длительный маршрут, сумерки и идентификация птиц предъявляют разные требования к увеличению, диаметру объектива, полю зрения, массе и влагозащите.</p><h2>2. Отделяем параметр от рекламной цифры</h2><p>Параметр имеет смысл, если его изменение предсказуемо меняет использование. Маркировка вроде «60×60» на компактном бинокле без внятной оптической спецификации — не полезная информация сама по себе.</p><h2>3. Ищем режим отказа</h2><p>Для полевого предмета важны не только лучшие условия, но и то, что происходит при дожде, падении, грязи, разрядке батареи, плохом освещении или необходимости ремонта.</p><h2>4. Не смешиваем редакционное и коммерческое</h2><p>Партнёрная комиссия возникает только после перехода к внешнему продавцу и подходящей покупки. Она не делает продавца источником технических выводов. Материал должен оставаться полезным даже без перехода по товарной ссылке.</p><h2>5. Ошибки исправляются</h2><p>Если в материале обнаружена техническая ошибка, критерий должен быть исправлен независимо от того, выгодно ли изменение конкретному продавцу или партнёрной программе.</p></div></section>
+
+<section class="page"><div class="page-narrow prose">
+<p class="eyebrow">EDITORIAL POLICY</p>
+<h1 class="page-title">Function before storefront</h1>
+
+<p>Treemeliority Market works from the physical task toward the tool. The merchant catalogue comes last.</p>
+
+<h2>1. Define the job</h2>
+<p>“I need binoculars” is almost content-free. Watching from a window, carrying optics all day, identifying birds at dusk, and scanning open country impose different requirements on magnification, objective size, field of view, weight, and weather sealing.</p>
+
+<h2>2. Separate a specification from a decorative number</h2>
+<p>A specification matters when changing it predictably changes the way the object behaves. A spectacular number printed on a listing is not evidence by itself.</p>
+
+<h2>3. Look at failure modes</h2>
+<p>Field equipment should be judged not only under ideal conditions but under rain, dirt, low light, depleted batteries, rough handling, and ordinary maintenance.</p>
+
+<h2>4. Keep editorial reasoning separate from the affiliate layer</h2>
+<p>An affiliate commission may arise after a visitor follows an external link and makes a qualifying purchase. It does not make the merchant the source of the site's technical conclusions. A guide should remain useful even if the reader never clicks a product link.</p>
+
+<h2>5. Correct technical errors</h2>
+<p>If a specification, explanation, or recommendation is wrong, it should be corrected regardless of whether the correction helps or harms a particular merchant or affiliate programme.</p>
+</div></section>
