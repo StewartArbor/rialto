@@ -1,7 +1,33 @@
 ---
-title: Как выбрать бинокль для птиц и животных
-description: Увеличение, объектив, поле зрения, выходной зрачок, масса и влагозащита без рекламной арифметики.
-lang: ru
+title: Choosing binoculars for birds and wildlife
+description: Magnification, objective size, field of view, exit pupil, weight, and weather sealing without catalogue numerology.
+lang: en
 permalink: /guides/binoculars/
 ---
-<section class="page"><div class="page-narrow prose"><p class="eyebrow">ОПТИКА</p><h1 class="page-title">Как выбрать бинокль для птиц и животных</h1><p>Маркировка <strong>8×42</strong> означает увеличение 8× и диаметр объектива 42 мм. Большее увеличение приближает объект, но сужает поле и усиливает дрожание; больший объектив собирает больше света, но увеличивает массу.</p><h2>8× или 10×</h2><p>Для наблюдений с рук 8× — удобная исходная точка: широкое поле облегчает поиск движущейся птицы. 10× полезно на открытом пространстве и для дальних объектов, но предъявляет больше требований к устойчивости рук и качеству оптики.</p><h2>Диаметр объектива</h2><p>Компактные 25–32 мм легче переносить. 40–42 мм дают больший запас света в сумерках, но весят больше.</p><h2>Выходной зрачок</h2><p>Его грубо считают как диаметр объектива / увеличение. Для 8×42 это около 5,25 мм. Само число не определяет качество изображения, но объясняет различия при слабом свете.</p><table class="criteria"><tr><th>Параметр</th><th>Что меняет</th></tr><tr><td>Увеличение</td><td>Размер изображения, дрожание, поле зрения</td></tr><tr><td>Объектив</td><td>Светосбор, масса, габарит</td></tr><tr><td>Поле зрения</td><td>Насколько легко найти и сопровождать объект</td></tr><tr><td>Влагозащита</td><td>Работа в дожде и при конденсации</td></tr></table><div class="note"><strong>Красный флаг:</strong> эффектная маркировка огромного увеличения на крошечном корпусе без нормальной спецификации поля зрения, призмы и массы.</div></div></section>
+
+<section class="page"><div class="page-narrow prose">
+<p class="eyebrow">OPTICS</p>
+<h1 class="page-title">Choosing binoculars for birds and wildlife</h1>
+
+<p>The marking <strong>8×42</strong> means 8× magnification and a 42 mm objective lens. Those two numbers already encode competing demands: more magnification enlarges the subject but also magnifies hand shake and often narrows the field of view; a larger objective gathers more light but adds bulk and mass.</p>
+
+<h2>8× or 10×</h2>
+<p>For hand-held wildlife observation, 8× is a strong general starting point. The wider field makes a moving bird easier to acquire and follow. 10× gives more apparent detail at distance, but makes steadiness and optical quality more consequential.</p>
+
+<h2>Objective diameter</h2>
+<p>Compact 25–32 mm binoculars are easier to carry. The common 40–42 mm class offers more light-gathering capacity for dawn, dusk, and woodland, but there is no free photon: the payment is weight.</p>
+
+<h2>Exit pupil</h2>
+<p>A rough exit-pupil figure is objective diameter divided by magnification. An 8×42 pair therefore gives about 5.25 mm. The number does not define image quality, but it helps explain why superficially similar binoculars behave differently as light falls.</p>
+
+<table class="criteria">
+<tr><th>Specification</th><th>What it changes</th></tr>
+<tr><td>Magnification</td><td>Apparent size, shake, and usually field of view</td></tr>
+<tr><td>Objective diameter</td><td>Light gathering, weight, and bulk</td></tr>
+<tr><td>Field of view</td><td>How easily a moving subject can be found and tracked</td></tr>
+<tr><td>Close focus</td><td>Usefulness for insects, plants, and nearby birds</td></tr>
+<tr><td>Weather sealing</td><td>Survival in rain, humidity, and condensation-prone conditions</td></tr>
+</table>
+
+<div class="note"><strong>Warning sign:</strong> enormous advertised magnification on a tiny body with no credible field-of-view, prism, weight, or optical specification.</div>
+</div></section>
