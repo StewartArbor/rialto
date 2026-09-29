@@ -1,14 +1,10 @@
-title: Rialto
-description: Curated AliExpress tech deals. Clean pricing. No clutter.
-url: https://rialto.kz   # change if different
+title: Treemeliority Market
+description: Инструменты и предметы для наблюдения, выращивания, документирования и понимания живых систем.
+url: https://market.treemeliority.org
 baseurl: ""
-
-lang: en
-
+lang: ru
 markdown: kramdown
-
 permalink: pretty
-
 timezone: Asia/Almaty
 
 defaults:
@@ -19,7 +15,6 @@ defaults:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-seo-tag
 
 exclude:
   - README.md
@@ -27,3 +22,10 @@ exclude:
   - vendor
   - Gemfile
   - Gemfile.lock
+  - _site
+  - en
+  - ru
+  - kz
+  - _data
+  - _includes
+  - assets
