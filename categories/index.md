@@ -1,6 +1,33 @@
 ---
-title: Категории
-description: Категории Treemeliority Market: наблюдение, выращивание, измерения среды, полевые вещи, инфраструктура для видов и справочники.
-lang: ru
+title: Categories
+description: Treemeliority Market categories: observation, plant care, environmental measurement, field work, habitat, and references.
+lang: en
 ---
-<section class="page"><div class="shell prose"><p class="eyebrow">КАТЕГОРИИ</p><h1 class="page-title">По задаче, не по бренду</h1><h2 id="observation">Наблюдение</h2><p>Оптика и увеличение нужны, когда объект физически мал, далёк или требует деталей, которые глаз не различает напрямую.</p><p><span class="tag">бинокли</span><span class="tag">монокуляры</span><span class="tag">лупы</span><span class="tag">микроскопы</span><span class="tag">макрооптика</span></p><p>Начать: <a href="/guides/binoculars/">бинокль для птиц и животных</a> · <a href="/guides/hand-lens/">полевая лупа</a>.</p><h2 id="growing">Выращивание</h2><p>Инструменты для размножения и ухода за растениями: рез, полив, субстрат, маркировка и контроль микроклимата.</p><p>Начать: <a href="/guides/plant-care-tools/">базовый набор для черенкования и ухода</a>.</p><h2 id="measure">Среда и измерения</h2><p>Температура, влажность, осадки, давление и другие наблюдаемые параметры. Главный вопрос — не количество датчиков, а точность, размещение и интерпретация.</p><p>Начать: <a href="/guides/weather-stations/">как выбрать домашнюю метеостанцию</a>.</p><h2 id="field">Полевые вещи</h2><p>Блокноты, карандаши, масштабные линейки, рулетки, компасы, фонари и защита оборудования от воды.</p><p>Начать: <a href="/guides/field-notebook/">полевой блокнот как система данных</a>.</p><h2 id="habitat">Дом для видов</h2><p>Кормушки, поилки, гнездовые конструкции, посадочные ёмкости и укрытия. Здесь особенно важны размеры, материал, очистка и отсутствие ловушек.</p><h2 id="reference">Справочники</h2><p>Определители, атласы, карты и компактные справочники. Их ценность — в хорошо устроенной классификации и возможности использовать источник там, где сеть недоступна или распознавание алгоритмом сомнительно.</p></div></section>
+
+<section class="page"><div class="shell prose">
+<p class="eyebrow">CATEGORIES</p>
+<h1 class="page-title">Start with the task</h1>
+
+<h2 id="observation">Observation</h2>
+<p>Optics and magnification for things that are too small, too distant, or too detailed for unaided vision.</p>
+<p><span class="tag">binoculars</span><span class="tag">monoculars</span><span class="tag">hand lenses</span><span class="tag">microscopes</span><span class="tag">macro optics</span></p>
+<p>Start with <a href="/guides/binoculars/">binoculars for birds and wildlife</a> or <a href="/guides/hand-lens/">a field hand lens</a>.</p>
+
+<h2 id="growing">Plant care</h2>
+<p>Propagation, pruning, watering, labelling, substrates, and basic microclimate measurement. The useful kit is usually smaller than the garden-centre wall suggests.</p>
+<p>Start with <a href="/guides/plant-care-tools/">the minimal propagation and plant-care kit</a>.</p>
+
+<h2 id="measure">Environment & measurement</h2>
+<p>Temperature, humidity, pressure, rain, wind, and other local observations. More sensors do not rescue poor placement or poor calibration.</p>
+<p>Start with <a href="/guides/weather-stations/">home weather stations</a>.</p>
+
+<h2 id="field">Field work</h2>
+<p>Notebooks, pencils, rulers, tapes, compasses, lights, cases, and weather protection — the unglamorous machinery of recording what actually happened.</p>
+<p>Start with <a href="/guides/field-notebook/">the field notebook as a data system</a>.</p>
+
+<h2 id="habitat">Habitat</h2>
+<p>Feeders, water stations, nest structures, planting containers, and small forms of species infrastructure. Dimensions, materials, drainage, cleaning, and entrapment risk matter more than decorative rusticity.</p>
+
+<h2 id="reference">References</h2>
+<p>Field guides, atlases, maps, taxonomic references, and compact books that remain useful without a signal or a battery.</p>
+</div></section>
