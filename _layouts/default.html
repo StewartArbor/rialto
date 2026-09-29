@@ -1,132 +1,42 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
-
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'ru' }}">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{ '/style.css?v=3' | relative_url }}">
-
-  {% if page.url contains "/en/" or page.url contains "/ru/" or page.url contains "/kz/" %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "{{ page.title | escape }}",
-    "itemListElement": [
-      {% assign items = site.data.items | where: "active", true %}
-      {% if page.cat %}
-        {% assign items = items | where: "category", page.cat %}
-      {% endif %}
-      {% assign items = items | sort: "added" | reverse %}
-      {% for item in items limit: 20 %}
-      {
-        "@type": "ListItem",
-        "position": {{ forloop.index }},
-        "url": "{{ item.link }}",
-        "name": "{{ item.title[page.lang] | default: item.title.en | escape }}",
-        "image": "{{ item.image }}"
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]
-  }
-  </script>
-  {% endif %}
-
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Treemeliority Market</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="theme-color" content="#17241b">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Treemeliority Market">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <link rel="stylesheet" href="{{ '/style.css?v=tm1' | relative_url }}">
 </head>
-
 <body>
-
-
-<!-- HEADER -->
-
 <header class="site-header">
-  <div class="header-inner">
-
-    <div class="brand">
-      <a href="/{{ page.lang }}/">RIALTO</a>
-    </div>
-
-    <div class="controls">
-
-      <nav class="lang-switch">
-
-        {% assign parts = page.url | split: '/' %}
-        {% assign path = parts | slice: 2, parts.size | join: '/' %}
-
-        <a href="/en/{{ path }}" class="{% if page.lang == 'en' %}active{% endif %}">
-          EN
-        </a>
-
-        <a href="/ru/{{ path }}" class="{% if page.lang == 'ru' %}active{% endif %}">
-          RU
-        </a>
-
-        <a href="/kz/{{ path }}" class="{% if page.lang == 'kz' %}active{% endif %}">
-          KZ
-        </a>
-
-      </nav>
-
-    </div>
-
+  <div class="shell header-inner">
+    <a class="brand" href="/"><span class="brand-parent">TREEMELIORITY</span><span class="brand-market">MARKET</span></a>
+    <nav class="main-nav">
+      <a href="/categories/">Категории</a>
+      <a href="/guides/">Гайды</a>
+      <a href="/editorial-policy/">Как мы выбираем</a>
+      <a href="/about/">О проекте</a>
+    </nav>
+    <a class="parent-link" href="https://treemeliority.org/">treemeliority.org ↗</a>
   </div>
 </header>
-
-
-<!-- HERO -->
-
-{% if page.hero or site.default_hero %}
-
-<section class="hero">
-  <div class="hero-inner">
-
-    <h1>{{ page.hero.title }}</h1>
-
-    {% if page.hero.subtitle %}
-      <p>{{ page.hero.subtitle }}</p>
-    {% endif %}
-
+<main>{{ content }}</main>
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><div class="footer-mark">TREEMELIORITY MARKET</div><p>Инструменты для наблюдения, выращивания и понимания живых систем.</p></div>
+    <nav class="footer-links">
+      <a href="/about/">О проекте</a><a href="/editorial-policy/">Редакционная политика</a>
+      <a href="/privacy/">Конфиденциальность</a><a href="/contact/">Контакты</a>
+    </nav>
   </div>
-</section>
-
-{% endif %}
-
-
-
-<!-- CAROUSEL -->
-{% if true %}
-
-<div style="background:red;color:white;padding:20px;">
-  CAROUSEL FLAG IS TRUE
-</div>
-
-{% endif %}
-
-
-
-
-<!-- MAIN -->
-
-<main class="content">
-  {{ content }}
-</main>
-
-
-
-{% include footer.html %}
-
-{% include mobile-ui.html %}
-
-
-<script src="/assets/js/main.js"></script>
-
-
+  <div class="shell disclosure">Treemeliority Market — информационный и партнёрский сайт, а не продавец. Покупка, оплата, доставка и возврат происходят на сайтах внешних продавцов. Некоторые ссылки могут быть партнёрскими: при покупке по такой ссылке сайт может получить комиссию без увеличения цены для покупателя.</div>
+</footer>
 </body>
 </html>
