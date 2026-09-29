@@ -1,7 +1,28 @@
 ---
-title: Полевой блокнот как система данных
-description: Что делает полевой блокнот полезным: идентификаторы, время, место, контекст и устойчивость записи.
-lang: ru
+title: The field notebook as a system of record
+description: What makes a field notebook useful: identifiers, time, place, context, and robust recording.
+lang: en
 permalink: /guides/field-notebook/
 ---
-<section class="page"><div class="page-narrow prose"><p class="eyebrow">ПОЛЕВАЯ РАБОТА</p><h1 class="page-title">Блокнот — это интерфейс к памяти</h1><p>Ценность полевой записи определяется тем, сможет ли будущий читатель восстановить наблюдение. Запись «видел странную птицу у реки» почти бесполезна; дата, время, место, погода, поведение, размер и отличительные признаки превращают впечатление в данные.</p><h2>Что записывать первым</h2><ol><li>Дата и точное время.</li><li>Место или координаты.</li><li>Объект наблюдения или временный идентификатор.</li><li>Наблюдаемые признаки без преждевременного вывода.</li><li>Контекст: погода, субстрат, поведение, соседние виды.</li></ol><h2>Бумага</h2><p>Влагостойкая бумага полезна в сырости; обычная бумага дешевле и приятнее для длинных записей. Карманный формат выигрывает только если блокнот действительно остаётся при вас.</p><h2>Пишущий инструмент</h2><p>Карандаш устойчив к воде и не высыхает. Ручка даёт более тёмную запись, но конкретные чернила могут расплываться или отказывать на влажной бумаге.</p></div></section>
+
+<section class="page"><div class="page-narrow prose">
+<p class="eyebrow">FIELD WORK</p>
+<h1 class="page-title">A notebook is an interface to memory, not stationery theatre</h1>
+
+<p>The value of a field note is whether a future reader — including future you — can reconstruct the observation. “Saw a strange bird by the river” is almost inert. Date, time, location, weather, behaviour, size, and diagnostic features turn an impression into a record.</p>
+
+<h2>Write these first</h2>
+<ol>
+<li>Date and exact time.</li>
+<li>Location or coordinates.</li>
+<li>Subject or temporary identifier.</li>
+<li>Observed features before premature identification.</li>
+<li>Context: weather, substrate, behaviour, associated species.</li>
+</ol>
+
+<h2>Paper</h2>
+<p>Water-resistant paper is useful in persistent wet conditions; ordinary paper is cheaper and often pleasanter for long notes. A pocket format wins only if it actually remains in your pocket. A magnificent notebook left at home has achieved stationery transcendence and nothing else.</p>
+
+<h2>Pencil or pen</h2>
+<p>Pencil tolerates water and does not dry out. Pen gives a darker record, but some inks fail on damp paper or dissolve later. Choose for the environment in which the record must survive.</p>
+</div></section>
