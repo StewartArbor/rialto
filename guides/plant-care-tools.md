@@ -1,7 +1,30 @@
 ---
-title: Что нужно для черенкования и ухода за растениями
-description: Минимальный функциональный набор для чистого реза, маркировки, полива и контроля микроклимата.
-lang: ru
+title: A minimal tool kit for propagation and plant care
+description: The small set of tools that improves cutting, labelling, watering, and microclimate checks.
+lang: en
 permalink: /guides/plant-care-tools/
 ---
-<section class="page"><div class="page-narrow prose"><p class="eyebrow">ВЫРАЩИВАНИЕ</p><h1 class="page-title">Набор для растений: минимум, который работает</h1><p>Инвентарь полезен там, где он уменьшает конкретный класс ошибок. Для черенкования это прежде всего плохой рез, путаница образцов, нестабильная влажность и отсутствие записи о дате или происхождении материала.</p><h2>Режущий инструмент</h2><p>Для небольших побегов важнее чистая острая кромка и возможность дезинфекции, чем массивность секатора.</p><h2>Маркировка</h2><p>Этикетка должна пережить воду и свет дольше, чем память о том, что было посажено. Удобная система содержит как минимум вид/сорт, дату и источник материала.</p><h2>Полив</h2><p>Носик и дозирование важнее объёма ёмкости, если растения стоят плотно.</p><table class="criteria"><tr><th>Инструмент</th><th>Функция</th></tr><tr><td>Острые ножницы/секатор</td><td>Чистый воспроизводимый рез</td></tr><tr><td>Этикетки + стойкий маркер</td><td>Сохранение происхождения и даты</td></tr><tr><td>Мелкая лейка/бутылка с носиком</td><td>Контролируемый полив</td></tr><tr><td>Термометр-гигрометр</td><td>Проверка среды вместо угадывания</td></tr></table></div></section>
+
+<section class="page"><div class="page-narrow prose">
+<p class="eyebrow">GROWING</p>
+<h1 class="page-title">A plant-care kit with an actual job description</h1>
+
+<p>A tool earns its place when it removes a recurring class of error. In propagation, the usual ones are crushed or ragged cuts, mixed-up specimens, erratic watering, and records that disappear into memory.</p>
+
+<h2>Cutting tools</h2>
+<p>For small stems, a clean sharp edge and easy disinfection matter more than the heroic mass of the secateurs. A crushed stem is simply a larger, less controlled wound.</p>
+
+<h2>Labels</h2>
+<p>A useful label should outlive your recollection of what went into the pot. At minimum: taxon or cultivar, date, and source of the material.</p>
+
+<h2>Watering</h2>
+<p>When plants are crowded, a narrow spout and controllable flow are more useful than sheer vessel capacity. A large watering can is excellent only if its weight and flow do not turn irrigation into local flooding.</p>
+
+<table class="criteria">
+<tr><th>Tool</th><th>Function</th></tr>
+<tr><td>Sharp scissors or secateurs</td><td>Clean, repeatable cuts</td></tr>
+<tr><td>Labels + durable marker</td><td>Preserve identity, date, and provenance</td></tr>
+<tr><td>Small watering can or narrow-spout bottle</td><td>Controlled water delivery</td></tr>
+<tr><td>Thermometer-hygrometer</td><td>Check conditions instead of guessing them</td></tr>
+</table>
+</div></section>
