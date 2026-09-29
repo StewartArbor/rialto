@@ -1,8 +1,8 @@
 title: Treemeliority Market
-description: Инструменты и предметы для наблюдения, выращивания, документирования и понимания живых систем.
+description: Field tools, optics, growing equipment, environmental instruments, and references for people interested in trees, animals, and ecosystems.
 url: https://market.treemeliority.org
 baseurl: ""
-lang: ru
+lang: en
 markdown: kramdown
 permalink: pretty
 timezone: Asia/Almaty
