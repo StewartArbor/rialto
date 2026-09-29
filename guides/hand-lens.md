@@ -1,7 +1,27 @@
 ---
-title: Полевая лупа: увеличение, поле зрения и рабочая дистанция
-description: Как выбрать ручную или складную лупу для листьев, коры, насекомых и минералов.
-lang: ru
+title: Field hand lenses: magnification, field of view, and working distance
+description: How to choose a hand lens for leaves, bark, insects, fungi, minerals, and other small structures.
+lang: en
 permalink: /guides/hand-lens/
 ---
-<section class="page"><div class="page-narrow prose"><p class="eyebrow">МАЛЫЙ МАСШТАБ</p><h1 class="page-title">Полевая лупа без магии «30×»</h1><p>Чем выше увеличение, тем меньше поле зрения и короче рабочая дистанция. Для большинства полевых задач 10× полезнее, чем дешёвая «30×», которую приходится прижимать почти вплотную к объекту.</p><h2>Когда хватает 10×</h2><p>Поверхность листа, чечевички коры, мелкие грибные структуры, насекомые, почки и семена обычно хорошо читаются при умеренном увеличении.</p><h2>Оптика важнее подсветки</h2><p>Встроенный LED удобен в тени, но не компенсирует сильные аберрации по краям линзы. Для складной лупы полезнее хорошая оптическая схема, чем набор дополнительных светодиодов.</p><table class="criteria"><tr><th>Смотреть</th><th>Зачем</th></tr><tr><td>10×</td><td>Универсальное полевое увеличение</td></tr><tr><td>Диаметр линзы</td><td>Размер удобного поля зрения</td></tr><tr><td>Складной корпус</td><td>Защита линзы в кармане</td></tr><tr><td>Рабочая дистанция</td><td>Насколько близко нужно поднести линзу и глаз</td></tr></table></div></section>
+
+<section class="page"><div class="page-narrow prose">
+<p class="eyebrow">SMALL SCALE</p>
+<h1 class="page-title">A field hand lens without the 30× theatre</h1>
+
+<p>Higher magnification narrows the field of view and shortens the working distance. For many field tasks, a good 10× loupe is more useful than a cheap “30×” model that demands near-contact with both eye and specimen.</p>
+
+<h2>Why 10× is useful</h2>
+<p>Leaf surfaces, bark pores, buds, seeds, small fungal structures, insect features, and mineral grains are often readily examined at moderate magnification. A wider field also makes the target easier to find in the first place.</p>
+
+<h2>Optics before LEDs</h2>
+<p>An integrated light is convenient in shade, but it cannot repair severe edge distortion or chromatic aberration. A well-made lens assembly matters more than an ornamental constellation of LEDs.</p>
+
+<table class="criteria">
+<tr><th>Feature</th><th>Why it matters</th></tr>
+<tr><td>10× magnification</td><td>A practical general-purpose field scale</td></tr>
+<tr><td>Lens diameter</td><td>Influences usable field of view</td></tr>
+<tr><td>Folding body</td><td>Protects the lens in a pocket or field bag</td></tr>
+<tr><td>Working distance</td><td>Determines how close the lens and eye must be to the subject</td></tr>
+</table>
+</div></section>
